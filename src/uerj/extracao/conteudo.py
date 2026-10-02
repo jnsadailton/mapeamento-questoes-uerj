@@ -45,6 +45,9 @@ def ler(caminho):
         t = l['t']
         if _norm(seguinte) == 'ORIENTACAO GERAL' or AREAS.fullmatch(_norm(t)):
             area, eixo, atual = t.strip(), None, None
+        elif MARCADOR.match(t) and ':' not in t and MARCADOR.match(seguinte):
+            # Título de eixo grafado como item ("• Aspectos literários", Língua Portuguesa de 2021)
+            eixo, atual = MARCADOR.sub('', t).strip(), None
         elif MARCADOR.match(t):
             atual = dict(area=area, eixo=eixo, pagina=l['p'] + 1, x=l['x'], linhas=[MARCADOR.sub('', t)])
             itens.append(atual)

@@ -13,9 +13,10 @@ ALTURA_CABECALHO = 45  # cabeçalho: faixa do topo, à direita da margem onde fi
 MARGEM_ROTULO = 150
 
 # Rótulos dos campos de um comentário, com as variações vistas nos PDFs ("Item:", "Subitens do programa:",
-# "Item do programa do programa:"). O número opcional ("Item do programa 2:") indica a ordem da classificação.
+# "Item do programa do programa:", "Eixo interdisplinar:"). O número opcional ("Item do programa 2:") indica a
+# ordem da classificação.
 CAMPOS = re.compile(
-    r'(?P<campo>Eixo(?: (?:inter)?disciplinar)?|Subite(?:m|ns)(?:\s*do programa)*|Ite(?:m|ns)(?:\s*do programa)*'
+    r'(?P<campo>Eixo(?: (?:inter)?dis\w*)?|Subite(?:m|ns)(?:\s*do programa)*|Ite(?:m|ns)(?:\s*do programa)*'
     r'|Objetivo|Coment[áa]rio|Gabarito|Percentual de acertos?|N[íi]vel de dif+iculdade)(?:\s*(?P<ordem>\d))?\s*:',
     re.I)
 CLASSIFICACAO = re.compile(r'Eixo|Subite(?:m|ns)\b|Ite(?:m|ns)\b', re.I)
@@ -60,7 +61,7 @@ def _cabecalho(l):
 def _campos(texto):
     """Separa o texto do comentário pelos rótulos dos campos e corta o que sobra depois do último campo final.
 
-    Devolve (texto cortado, lista de (campo, ordem, valor)).
+    Devolve (texto cortado, lista de (campo, ordem, valor, rótulo como está no PDF)).
     """
     ms = list(CAMPOS.finditer(texto))
     out = []
@@ -71,7 +72,7 @@ def _campos(texto):
         if campo in FINAIS and i + 1 == len(ms):
             valor = FINAIS[campo].match(valor)[0]
             texto = texto[:m.end() + len(valor)]
-        out.append((campo, int(m['ordem'] or 1), valor.strip()))
+        out.append((campo, int(m['ordem'] or 1), valor.strip(), m['campo']))
     return texto, out
 
 
@@ -133,7 +134,7 @@ def ler(caminho):
         questao = rot.get('numero') or b['numero_no_comentario']
         if any((c['questao'], c['idioma'], c['texto']) == (questao, idioma, texto) for c in comentarios):
             continue  # o PDF repete a página do comentário (2019-2, questão 32)
-        valor = {c: v for c, o, v in campos if o == 1 and v}
+        valor = {c: v for c, o, v, _ in campos if o == 1 and v}
         # Nos anos recentes o comentário segue o objetivo sem rótulo próprio: o objetivo vai até o fim da 1ª frase.
         objetivo = re.match(r'.*?\.(?=\s+[A-ZÀ-Ú]|$)', valor.get('objetivo', ''))
         comentarios.append(dict(
@@ -148,18 +149,52 @@ def ler(caminho):
 
 
 def _classificacoes(campos):
-    """Liga cada subitem ao item mais recente antes dele; item sem subitem vira classificação só de item.
+    """Monta as classificações (eixo, item, subitem) a partir dos campos do comentário.
 
-    A numeração dos rótulos ("Subitem do programa 2") não é confiável nos PDFs (há "Item 1 ... Subitem 2" e um só
-    item com vários subitens numerados), por isso vale a posição. O eixo é o de mesmo número do item, se houver;
-    senão, o último eixo antes do item.
+    Quando há mais de um item e a numeração é consistente (itens com números distintos e cada subitem com o número
+    de um item, como em "Item 1, Item 2, Subitem 1, Subitem 2"), item e subitem são ligados pelo número. Senão, a
+    numeração não é confiável ("Item 1 ... Subitem 2 ... Item 1", ou um só item com vários subitens numerados) e
+    cada subitem é ligado ao item mais recente antes dele. Item sem subitem vira classificação só de item, a não
+    ser que o mesmo item já tenha subitem (o PDF às vezes repete as linhas de eixo e item).
+
+    Campos de classificação depois do objetivo só valem com o rótulo completo ("Item do programa"): há comentários
+    com duas classificações, cada uma com seu objetivo (2024-2, questão 23 de espanhol).
     """
+    selecionados, depois_do_objetivo = [], False
+    for campo, ordem, valor, rotulo in campos:
+        if campo in ('gabarito', 'percentual', 'nivel'):
+            break
+        if campo in ('objetivo', 'comentario'):
+            depois_do_objetivo = True
+        elif valor and not (depois_do_objetivo and campo != 'eixo' and 'PROGRAMA' not in _norm(rotulo)):
+            selecionados.append((campo, ordem, valor))
+
+    itens = [(o, v) for c, o, v in selecionados if c == 'item']
+    subitens = [(o, v) for c, o, v in selecionados if c == 'subitem']
+    numeros = [o for o, _ in itens]
+    if (len(itens) > 1 and len(set(numeros)) == len(numeros)
+            and len({o for o, _ in subitens}) == len(subitens) and all(o in numeros for o, _ in subitens)):
+        eixos = {o: v for c, o, v in selecionados if c == 'eixo'}
+        out = []
+        for o, item in itens:
+            eixo = eixos.get(o, next(iter(eixos.values()), None))
+            out += [dict(eixo=eixo, item=item, subitem=s) for so, s in subitens if so == o] or [
+                dict(eixo=eixo, item=item, subitem=None)]
+    else:
+        out = _por_posicao(selecionados)
+
+    com_subitem = {(c['eixo'], c['item']) for c in out if c['subitem']}
+    unicos = []
+    for c in out:
+        if c not in unicos and not (c['subitem'] is None and (c['eixo'], c['item']) in com_subitem):
+            unicos.append(c)
+    return unicos
+
+
+def _por_posicao(campos):
+    """Liga cada subitem ao item mais recente antes dele; o eixo é o de mesmo número do item ou o último antes."""
     out, eixos, eixo, atual = [], {}, None, None
     for campo, ordem, valor in campos:
-        if campo in ('objetivo', 'comentario', 'gabarito', 'percentual', 'nivel'):
-            break
-        if not valor:
-            continue
         if campo == 'eixo':
             eixos[ordem], eixo = valor, valor
         elif campo == 'item':

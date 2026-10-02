@@ -1,13 +1,10 @@
 """Testes dos parsers sobre a cópia versionada dos PDFs (fontes/pdfs/), com os casos especiais conhecidos."""
 from collections import Counter, defaultdict
-from concurrent.futures import ProcessPoolExecutor
 
 import pytest
 
-from uerj.extracao.bronze import extrair_exame
-from uerj.ingestao.manifesto import EXAMES, RAIZ
+from uerj.ingestao.manifesto import EXAMES
 
-PDFS = RAIZ / 'fontes' / 'pdfs'
 UNICO = {'2021-1', '2022-1', '2023-1'}
 ANULADAS = {'2017-2': 35, '2023-1': 34, '2024-1': 29, '2024-2': 59, '2025-2': 38, '2026-1': 38, '2027-1': 29,
             '2027-2': 34}
@@ -19,12 +16,6 @@ SEM_CLASSIFICACAO = {('2026-2', 32, None), ('2026-2', 34, None), ('2026-2', 42, 
 SEM_QUESTAO = {'2021-1': 1}
 # Percentual de acertos ausente no PDF (além das anuladas).
 SEM_PERCENTUAL = {'2021-1', '2024-2', '2027-2'}
-
-
-@pytest.fixture(scope='module')
-def bronze():
-    with ProcessPoolExecutor() as ex:
-        return dict(zip(EXAMES, ex.map(extrair_exame, EXAMES, [PDFS] * len(EXAMES))))
 
 
 def chave(r):
@@ -118,6 +109,16 @@ def test_comentado_casos_especiais(bronze):
     assert len(classificacoes('2023-1', 20)) == 3
     # percentual sem o símbolo de %
     assert comentario('2019-1', 1)['percentual_acertos'] == 72.46
+    # itens e subitens listados em bloco ("Item 1, Item 2, Subitem 1, Subitem 2"): ligação pelo número
+    assert [(c['item'], c['subitem']) for c in classificacoes('2018-1', 5)] == [
+        ('sucessões.', 'por recorrência.'), ('figuras no plano.', 'relações métricas.')]
+    # linhas de eixo e item repetidas no PDF não geram classificação duplicada
+    assert len(classificacoes('2022-1', 15, 'ES')) == 1
+    # segunda classificação depois do primeiro "Objetivo"
+    assert [c['item'] for c in classificacoes('2024-2', 23, 'ES')] == [
+        'métodos de argumentação.', 'formas de articulação de ideias.']
+    # rótulo com erro de digitação ("Eixo interdisplinar")
+    assert classificacoes('2024-1', 27, 'EN')[0]['eixo'] == 'construção do texto.'
     # texto da questão seguinte não vaza para o fim do comentário
     assert comentario('2024-1', 11)['texto'].endswith('Nível de dificuldade: fácil.')
     assert comentario('2024-1', 11)['nivel'] == 'facil'
@@ -138,6 +139,14 @@ def test_conteudo_igual_nos_dois_exames_do_ano(bronze):
         return [(c['area'], c['eixo'], c['item'], c['subitem']) for c in bronze[e]['conteudo_programatico']]
     for ano in [2016, 2017, 2018, 2019, 2020, 2025, 2026, 2027]:
         assert conteudo(f'{ano}-1') == conteudo(f'{ano}-2')
+
+
+def test_conteudo_titulo_de_eixo_grafado_como_item(bronze):
+    # o edital de 2021 escreve "• Aspectos literários" (com marcador de item) na Língua Portuguesa
+    cont = [c for c in bronze['2021-1']['conteudo_programatico'] if c['item'] == 'Elementos da narrativa'
+            and 'Portuguesa' in c['area']]
+    assert {c['eixo'] for c in cont} == {'Aspectos literários'}
+    assert all(c['subitem'] for c in bronze['2021-1']['conteudo_programatico'])
 
 
 def test_conteudo_subitens_separados_por_ponto_e_virgula(bronze):
