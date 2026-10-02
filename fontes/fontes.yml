@@ -1,0 +1,686 @@
+# Manifesto dos PDFs oficiais usados no projeto.
+#
+# Um registro por exame e tipo de documento (21 exames x 4 tipos). A ingestão (python -m uerj.ingestao) tenta as fontes
+# nesta ordem e usa a primeira que devolver o arquivo com o sha256 abaixo:
+#   1. url_oficial  - site da UERJ (vestibular.uerj.br ou revista.vestibular.uerj.br)
+#   2. url_wayback  - captura do Wayback Machine com o mesmo conteúdo (null quando não há)
+#   3. arquivo      - cópia versionada neste repositório
+#
+# coletado_em: data em que o sha256 foi conferido na fonte oficial ou no Wayback.
+# Os conteúdos programáticos de 2016 a 2018 estavam em sistema.vestibular.uerj.br, que saiu do ar, e o de 2024-1 foi
+# removido do site: nesses, url_oficial é o endereço original e o arquivo vem do Wayback.
+# Nos anos com dois exames, o conteúdo programático é o mesmo arquivo nos dois.
+
+documentos:
+  - exame: "2016-1"
+    tipo: prova
+    arquivo: fontes/pdfs/2016-1/2016-1_prova.pdf
+    sha256: c2f58e2b5ac6acb2f9c58bbd2a7ca74767b2942bb2a6f5aacc5f8922f2a36b93
+    tamanho: 2429227
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2016_1eq_prova.pdf
+    url_wayback: null
+    coletado_em: 2026-10-02
+  - exame: "2016-1"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2016-1/2016-1_gabarito.pdf
+    sha256: c2c2fe8d489051985812de1f0a99a5239e8306235ca1cc116a6905e94507288e
+    tamanho: 62248
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2016_1eq_gabarito.pdf
+    url_wayback: https://web.archive.org/web/20201027121243id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2016_1eq_gabarito.pdf
+    coletado_em: 2026-10-02
+  - exame: "2016-1"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2016-1/2016-1_conteudo_programatico.pdf
+    sha256: 336359872d516c565154c856a8fbe9aaefad1c0cf2d26afb5664371b3570417f
+    tamanho: 52872
+    url_oficial: https://sistema.vestibular.uerj.br/portal_vestibular_uerj/arquivos/arquivos2016/1_eq_2016/edital/Manual_1fase_2016_anexo3.pdf
+    url_wayback: https://web.archive.org/web/20240624053710id_/https://sistema.vestibular.uerj.br/portal_vestibular_uerj/arquivos/arquivos2016/1_eq_2016/edital/Manual_1fase_2016_anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2016-1"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2016-1/2016-1_gabarito_comentado.pdf
+    sha256: d8ee035c15c4476bcbf1f6d3c01c84da637e1be91c6c304024388b397d826329
+    tamanho: 4970396
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/23.pdf
+    url_wayback: https://web.archive.org/web/20161019094851id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/23.pdf
+    coletado_em: 2026-10-02
+  - exame: "2016-2"
+    tipo: prova
+    arquivo: fontes/pdfs/2016-2/2016-2_prova.pdf
+    sha256: 9701405043a383e3f3df81773b5f1a20898512323eb23c0656f7bb5df1a1f378
+    tamanho: 1498172
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2016_2eq_prova.pdf
+    url_wayback: https://web.archive.org/web/20220815173404id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2016_2eq_prova.pdf
+    coletado_em: 2026-10-02
+  - exame: "2016-2"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2016-2/2016-2_gabarito.pdf
+    sha256: 51553cdb0715f3d07dcca83ba09ed377e1da143a38c77d9ac61e586f7565ce11
+    tamanho: 62249
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2016_2eq_gabarito.pdf
+    url_wayback: https://web.archive.org/web/20201021214709id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2016_2eq_gabarito.pdf
+    coletado_em: 2026-10-02
+  - exame: "2016-2"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2016-2/2016-2_conteudo_programatico.pdf
+    sha256: 336359872d516c565154c856a8fbe9aaefad1c0cf2d26afb5664371b3570417f
+    tamanho: 52872
+    url_oficial: https://sistema.vestibular.uerj.br/portal_vestibular_uerj/arquivos/arquivos2016/1_eq_2016/edital/Manual_1fase_2016_anexo3.pdf
+    url_wayback: https://web.archive.org/web/20240624053710id_/https://sistema.vestibular.uerj.br/portal_vestibular_uerj/arquivos/arquivos2016/1_eq_2016/edital/Manual_1fase_2016_anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2016-2"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2016-2/2016-2_gabarito_comentado.pdf
+    sha256: b591b2f5b23b593f32426efa1e2ba2ddf4df7ce8f36882537938ccd524a553a2
+    tamanho: 4530044
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/24.pdf
+    url_wayback: https://web.archive.org/web/20161122163726id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/24.pdf
+    coletado_em: 2026-10-02
+  - exame: "2017-1"
+    tipo: prova
+    arquivo: fontes/pdfs/2017-1/2017-1_prova.pdf
+    sha256: 108f5563a12d69efb515df09b82770583aadb9a0d79963e76abdb2881ca4d6ca
+    tamanho: 1348963
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2017_1eq_prova.pdf
+    url_wayback: https://web.archive.org/web/20230530165814id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2017_1eq_prova.pdf
+    coletado_em: 2026-10-02
+  - exame: "2017-1"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2017-1/2017-1_gabarito.pdf
+    sha256: ae8d9a4317e53199fc409411aa36ceebf28178acd0ef5346acd6ce27d17d8d3e
+    tamanho: 79345
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2017_1eq_gabarito.pdf
+    url_wayback: https://web.archive.org/web/20201021212947id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2017_1eq_gabarito.pdf
+    coletado_em: 2026-10-02
+  - exame: "2017-1"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2017-1/2017-1_conteudo_programatico.pdf
+    sha256: dcddd9862a6e9caec1ecaa99fa7c5ac8f039c6ce623cfe5ef59d32869327af0c
+    tamanho: 61770
+    url_oficial: https://sistema.vestibular.uerj.br/portal_vestibular_uerj/arquivos/arquivos2017/1_eq_2017/edital/Manual_1fase_2017_anexo3.pdf
+    url_wayback: https://web.archive.org/web/20240624060825id_/https://sistema.vestibular.uerj.br/portal_vestibular_uerj/arquivos/arquivos2017/1_eq_2017/edital/Manual_1fase_2017_anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2017-1"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2017-1/2017-1_gabarito_comentado.pdf
+    sha256: c14c3a0e1db8358315132f7f7c64bdcd1a3db86d4964fc6be9008715948111ef
+    tamanho: 7703882
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/26.pdf
+    url_wayback: https://web.archive.org/web/20161122163737id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/26.pdf
+    coletado_em: 2026-10-02
+  - exame: "2017-2"
+    tipo: prova
+    arquivo: fontes/pdfs/2017-2/2017-2_prova.pdf
+    sha256: 572934efd1d3d5e10b5c2928fa25afb25e5d5589e7fa5fcbe2b224a10cd72365
+    tamanho: 2339138
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2017_2eq_prova.pdf
+    url_wayback: null
+    coletado_em: 2026-10-02
+  - exame: "2017-2"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2017-2/2017-2_gabarito.pdf
+    sha256: c4d9486440fd01ad0d72a8bb104c6b4db399200533804024d08588ac55fc5b28
+    tamanho: 45721
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2017_2eq_gabarito_retificado.pdf
+    url_wayback: https://web.archive.org/web/20201021211847id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2017_2eq_gabarito_retificado.pdf
+    coletado_em: 2026-10-02
+  - exame: "2017-2"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2017-2/2017-2_conteudo_programatico.pdf
+    sha256: dcddd9862a6e9caec1ecaa99fa7c5ac8f039c6ce623cfe5ef59d32869327af0c
+    tamanho: 61770
+    url_oficial: https://sistema.vestibular.uerj.br/portal_vestibular_uerj/arquivos/arquivos2017/1_eq_2017/edital/Manual_1fase_2017_anexo3.pdf
+    url_wayback: https://web.archive.org/web/20240624060825id_/https://sistema.vestibular.uerj.br/portal_vestibular_uerj/arquivos/arquivos2017/1_eq_2017/edital/Manual_1fase_2017_anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2017-2"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2017-2/2017-2_gabarito_comentado.pdf
+    sha256: 321219935635b9381c46caacd1bf796f4c6d25903bda1daf7a3982b0433cfda9
+    tamanho: 3589738
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/27.pdf
+    url_wayback: https://web.archive.org/web/20161231230655id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/27.pdf
+    coletado_em: 2026-10-02
+  - exame: "2018-1"
+    tipo: prova
+    arquivo: fontes/pdfs/2018-1/2018-1_prova.pdf
+    sha256: a0b1ca6e4f789bb3bd249faea8a9ee7e5651eb10cedf4fab0333858959d84c50
+    tamanho: 2113722
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2018_1eq_prova.pdf
+    url_wayback: https://web.archive.org/web/20220818044007id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2018_1eq_prova.pdf
+    coletado_em: 2026-10-02
+  - exame: "2018-1"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2018-1/2018-1_gabarito.pdf
+    sha256: 1094711db3054ec2b2b3d13284e40d1c6888a8e160b63f44325b35df2ec66728
+    tamanho: 60824
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2018_1eq_gabarito.pdf
+    url_wayback: https://web.archive.org/web/20220818000755id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2018_1eq_gabarito.pdf
+    coletado_em: 2026-10-02
+  - exame: "2018-1"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2018-1/2018-1_conteudo_programatico.pdf
+    sha256: 240d3c6e8f53809513abb8e5c1fd2dc320d518bb582974a3e7ab65ab718bcdef
+    tamanho: 73125
+    url_oficial: https://sistema.vestibular.uerj.br/portal_vestibular_uerj/arquivos/arquivos2018/1_eq_2018/edital/Manual_1fase_2018_anexo3.pdf
+    url_wayback: https://web.archive.org/web/20240624063142id_/https://sistema.vestibular.uerj.br/portal_vestibular_uerj/arquivos/arquivos2018/1_eq_2018/edital/Manual_1fase_2018_anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2018-1"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2018-1/2018-1_gabarito_comentado.pdf
+    sha256: 96b5edf092b5579d7a11d03d154b6ab33d4b7ccc7166de50c9b8ec806c603192
+    tamanho: 2283765
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/29.pdf
+    url_wayback: https://web.archive.org/web/20170822082829id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/29.pdf
+    coletado_em: 2026-10-02
+  - exame: "2018-2"
+    tipo: prova
+    arquivo: fontes/pdfs/2018-2/2018-2_prova.pdf
+    sha256: b8c4d8b12ab3df98ed57abbc6e384775cc885bb8f55cdd0324a1037ce66dd416
+    tamanho: 2206509
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2018_2eq_prova.pdf
+    url_wayback: https://web.archive.org/web/20240417153330id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2018_2eq_prova.pdf
+    coletado_em: 2026-10-02
+  - exame: "2018-2"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2018-2/2018-2_gabarito.pdf
+    sha256: f8b56cdb25629d2628a5115e4f0a85218cc5bb7269122c46080f2187c5a911c9
+    tamanho: 60812
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2018_2eq_gabarito.pdf
+    url_wayback: https://web.archive.org/web/20220815173415id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/03/2018_2eq_gabarito.pdf
+    coletado_em: 2026-10-02
+  - exame: "2018-2"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2018-2/2018-2_conteudo_programatico.pdf
+    sha256: 240d3c6e8f53809513abb8e5c1fd2dc320d518bb582974a3e7ab65ab718bcdef
+    tamanho: 73125
+    url_oficial: https://sistema.vestibular.uerj.br/portal_vestibular_uerj/arquivos/arquivos2018/1_eq_2018/edital/Manual_1fase_2018_anexo3.pdf
+    url_wayback: https://web.archive.org/web/20240624063142id_/https://sistema.vestibular.uerj.br/portal_vestibular_uerj/arquivos/arquivos2018/1_eq_2018/edital/Manual_1fase_2018_anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2018-2"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2018-2/2018-2_gabarito_comentado.pdf
+    sha256: 5b8019cf4ab1bb3425f0614c2cd6c121d478300f391db6a8e1755d879940ae09
+    tamanho: 2489761
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/30.pdf
+    url_wayback: https://web.archive.org/web/20171025093841id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/30.pdf
+    coletado_em: 2026-10-02
+  - exame: "2019-1"
+    tipo: prova
+    arquivo: fontes/pdfs/2019-1/2019-1_prova.pdf
+    sha256: 85da3f061fbe1691a32a31e156182f0cefca6786e789d9bbfb9471e50da9d4ef
+    tamanho: 3741742
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/02/2019_1eq_prova.pdf
+    url_wayback: https://web.archive.org/web/20240501194853id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/02/2019_1eq_prova.pdf
+    coletado_em: 2026-10-02
+  - exame: "2019-1"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2019-1/2019-1_gabarito.pdf
+    sha256: bb91b6ddb69e5550362711f610269e7001770b9059d192b2702798d02aa89088
+    tamanho: 59236
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2018/09/2019_1eq_gabarito-1.pdf
+    url_wayback: https://web.archive.org/web/20220117042120id_/https://www.vestibular.uerj.br/wp-content/uploads/2018/09/2019_1eq_gabarito-1.pdf
+    coletado_em: 2026-10-02
+  - exame: "2019-1"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2019-1/2019-1_conteudo_programatico.pdf
+    sha256: 4ba9db530a9ac65bcae145cdddc6eb0f8a395577a6a4bf4f2defadcca0ef0ad0
+    tamanho: 74708
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2018/09/Manual_1fase_2019_Anexo3.pdf
+    url_wayback: https://web.archive.org/web/20190916040514id_/https://www.vestibular.uerj.br/wp-content/uploads/2018/09/Manual_1fase_2019_Anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2019-1"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2019-1/2019-1_gabarito_comentado.pdf
+    sha256: b6f8c88267b5a1e658122e5c24d2367696621b02d960b090a314234a213054ba
+    tamanho: 13132948
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/32.pdf
+    url_wayback: https://web.archive.org/web/20190618022351id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/32.pdf
+    coletado_em: 2026-10-02
+  - exame: "2019-2"
+    tipo: prova
+    arquivo: fontes/pdfs/2019-2/2019-2_prova.pdf
+    sha256: 014f10674114426826eebb3ef41e67a569350191143db28ff79e9424c5eb2556
+    tamanho: 3745424
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/02/2019_2eq_prova.pdf
+    url_wayback: https://web.archive.org/web/20240513120748id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/02/2019_2eq_prova.pdf
+    coletado_em: 2026-10-02
+  - exame: "2019-2"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2019-2/2019-2_gabarito.pdf
+    sha256: e193c9d6bf0b0e7481bb3f78f113119cf8a9e7eadcdca41593398645e3a68523
+    tamanho: 64290
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/02/2019_2eq_gabarito.pdf
+    url_wayback: https://web.archive.org/web/20220117042708id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/02/2019_2eq_gabarito.pdf
+    coletado_em: 2026-10-02
+  - exame: "2019-2"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2019-2/2019-2_conteudo_programatico.pdf
+    sha256: 4ba9db530a9ac65bcae145cdddc6eb0f8a395577a6a4bf4f2defadcca0ef0ad0
+    tamanho: 74708
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2018/09/Manual_1fase_2019_Anexo3.pdf
+    url_wayback: https://web.archive.org/web/20190916040514id_/https://www.vestibular.uerj.br/wp-content/uploads/2018/09/Manual_1fase_2019_Anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2019-2"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2019-2/2019-2_gabarito_comentado.pdf
+    sha256: ff81b50d38a6d5b3c5a2fc3bf0ebb5fb0de9e4657b7bfb212725f48ad3f5277e
+    tamanho: 4172421
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/33.pdf
+    url_wayback: https://web.archive.org/web/20190711131629id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/33.pdf
+    coletado_em: 2026-10-02
+  - exame: "2020-1"
+    tipo: prova
+    arquivo: fontes/pdfs/2020-1/2020-1_prova.pdf
+    sha256: a7cd970a70d275f9d72b61505f8afb2f33507137a1b8b781f5c789742393e3b1
+    tamanho: 4194138
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/06/1_Exame_Qualificacao.pdf
+    url_wayback: https://web.archive.org/web/20210901010135id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/06/1_Exame_Qualificacao.pdf
+    coletado_em: 2026-10-02
+  - exame: "2020-1"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2020-1/2020-1_gabarito.pdf
+    sha256: 321f303fd2d558c9bfda1285fafad2b8daee920fbc67c22365ae9cdd1a894895
+    tamanho: 29141
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/06/Gabarito.pdf
+    url_wayback: https://web.archive.org/web/20190611013201id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/06/Gabarito.pdf
+    coletado_em: 2026-10-02
+  - exame: "2020-1"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2020-1/2020-1_conteudo_programatico.pdf
+    sha256: 4260337185a85e78b8027884826316ca7906f25bd8d7f6ec8977bba6a758b3b4
+    tamanho: 78262
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/04/Manual_1fase_2020_Anexo3.pdf
+    url_wayback: https://web.archive.org/web/20191112212119id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/04/Manual_1fase_2020_Anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2020-1"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2020-1/2020-1_gabarito_comentado.pdf
+    sha256: 814baca7188a622c0a4ddb0c98cd0be5c3299973e49057d8c7108258f11bbd43
+    tamanho: 4653538
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/35.pdf
+    url_wayback: https://web.archive.org/web/20191104162337id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/35.pdf
+    coletado_em: 2026-10-02
+  - exame: "2020-2"
+    tipo: prova
+    arquivo: fontes/pdfs/2020-2/2020-2_prova.pdf
+    sha256: 3c73c2149d5a2f64f31e2b91bfc3f81ace6d6522c0ae6cc5898b9f45088f9bb7
+    tamanho: 1738480
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/09/2EQ_2020-p.pdf
+    url_wayback: https://web.archive.org/web/20240616073709id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/09/2EQ_2020-p.pdf
+    coletado_em: 2026-10-02
+  - exame: "2020-2"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2020-2/2020-2_gabarito.pdf
+    sha256: 085a0fc482e3309cf5d1194432071875ff1cde972bd702534f37804423f1e949
+    tamanho: 106136
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/09/Gabarito_2EQ_2020.pdf
+    url_wayback: https://web.archive.org/web/20220117043321id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/09/Gabarito_2EQ_2020.pdf
+    coletado_em: 2026-10-02
+  - exame: "2020-2"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2020-2/2020-2_conteudo_programatico.pdf
+    sha256: 4260337185a85e78b8027884826316ca7906f25bd8d7f6ec8977bba6a758b3b4
+    tamanho: 78262
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2019/04/Manual_1fase_2020_Anexo3.pdf
+    url_wayback: https://web.archive.org/web/20191112212119id_/https://www.vestibular.uerj.br/wp-content/uploads/2019/04/Manual_1fase_2020_Anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2020-2"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2020-2/2020-2_gabarito_comentado.pdf
+    sha256: 8c7a63ed5ed7eaa1054c8f3d25099fc203db34097b6eed01717b8ece53575b3f
+    tamanho: 6840249
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/36.pdf
+    url_wayback: https://web.archive.org/web/20220127121106id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/36.pdf
+    coletado_em: 2026-10-02
+  - exame: "2021-1"
+    tipo: prova
+    arquivo: fontes/pdfs/2021-1/2021-1_prova.pdf
+    sha256: c64a731649d5bca87b0a369b783d888a0e8c7bd0deee45b80b500617be56a9a4
+    tamanho: 6891553
+    url_oficial: https://www.vestibular.uerj.br/anexos/Exame_Unico_Objetiva.pdf
+    url_wayback: https://web.archive.org/web/20221016015414id_/https://www.vestibular.uerj.br/anexos/Exame_Unico_Objetiva.pdf
+    coletado_em: 2026-10-02
+  - exame: "2021-1"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2021-1/2021-1_gabarito.pdf
+    sha256: b8f43cb6a6178c11b46eb41dd99b6196dccbd6b1cef6b6acf56211b5f70c9dbc
+    tamanho: 31645
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2021/07/Gabarito-Geral_Divulgacao.pdf
+    url_wayback: https://web.archive.org/web/20210718185955id_/https://www.vestibular.uerj.br/wp-content/uploads/2021/07/Gabarito-Geral_Divulgacao.pdf
+    coletado_em: 2026-10-02
+  - exame: "2021-1"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2021-1/2021-1_conteudo_programatico.pdf
+    sha256: 75a1c95cfd430a697f0b8e7b9f465e336c6b33ff00fdd40a987a34b331de2fc3
+    tamanho: 100754
+    url_oficial: https://www.vestibular.uerj.br/wp-content/uploads/2021/03/Anexo-4-vest-2021.pdf
+    url_wayback: https://web.archive.org/web/20211028215857id_/https://www.vestibular.uerj.br/wp-content/uploads/2021/03/Anexo-4-vest-2021.pdf
+    coletado_em: 2026-10-02
+  - exame: "2021-1"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2021-1/2021-1_gabarito_comentado.pdf
+    sha256: 71ea15c73e37255d8ccc9a70b6d00e7c9f1305ef48349a67c4ecffdc49c23bd1
+    tamanho: 3358256
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/39.pdf
+    url_wayback: https://web.archive.org/web/20220209013926id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/39.pdf
+    coletado_em: 2026-10-02
+  - exame: "2022-1"
+    tipo: prova
+    arquivo: fontes/pdfs/2022-1/2022-1_prova.pdf
+    sha256: 5080bf8f0d4fd0c53aab4a568ede71e084bb6d00a5604986151ee00614428bb4
+    tamanho: 6486341
+    url_oficial: https://www.vestibular.uerj.br/anexos/223/prova_2022.pdf
+    url_wayback: https://web.archive.org/web/20220325054241id_/https://www.vestibular.uerj.br/anexos/223/prova_2022.pdf
+    coletado_em: 2026-10-02
+  - exame: "2022-1"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2022-1/2022-1_gabarito.pdf
+    sha256: f1b951dbcc90db0af5732f1e8f8fc8fd2b6395320c0667722edab5e5e59a252e
+    tamanho: 29058
+    url_oficial: https://www.vestibular.uerj.br/anexos/223/gabarito_2022.pdf
+    url_wayback: https://web.archive.org/web/20220325053831id_/https://www.vestibular.uerj.br/anexos/223/gabarito_2022.pdf
+    coletado_em: 2026-10-02
+  - exame: "2022-1"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2022-1/2022-1_conteudo_programatico.pdf
+    sha256: 567eff9d9fc900e5eadc70e9e0f3da2e399557cc612a8df9887936be16d385c7
+    tamanho: 62961
+    url_oficial: https://www.vestibular.uerj.br/anexos/Manual_Exame_Unico_2022_Anexo4.pdf
+    url_wayback: https://web.archive.org/web/20240420130408id_/https://www.vestibular.uerj.br/anexos/Manual_Exame_Unico_2022_Anexo4.pdf
+    coletado_em: 2026-10-02
+  - exame: "2022-1"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2022-1/2022-1_gabarito_comentado.pdf
+    sha256: ff08de2d929ff7a9a86b7ef2956407afd860433a4153374d6bb24fc85e6ba81b
+    tamanho: 3051278
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/40.pdf
+    url_wayback: https://web.archive.org/web/20220907231054id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/40.pdf
+    coletado_em: 2026-10-02
+  - exame: "2023-1"
+    tipo: prova
+    arquivo: fontes/pdfs/2023-1/2023-1_prova.pdf
+    sha256: b8a37f4df324d2194afa7761f4f6e3691e85c7f11770c9925c999833abf6f82e
+    tamanho: 5419873
+    url_oficial: https://www.vestibular.uerj.br/anexos/233/prova_vetibular_2023.pdf
+    url_wayback: https://web.archive.org/web/20221204211425id_/https://www.vestibular.uerj.br/anexos/233/prova_vetibular_2023.pdf
+    coletado_em: 2026-10-02
+  - exame: "2023-1"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2023-1/2023-1_gabarito.pdf
+    sha256: 224b80ed74cedf891b400716defd5933c477a26d431ba9bb4e6b62474aa9f5b7
+    tamanho: 117694
+    url_oficial: https://www.vestibular.uerj.br/anexos/233/gabarito_vestibular_2023_retificado.pdf
+    url_wayback: https://web.archive.org/web/20240617193639id_/https://www.vestibular.uerj.br/anexos/233/gabarito_vestibular_2023_retificado.pdf
+    coletado_em: 2026-10-02
+  - exame: "2023-1"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2023-1/2023-1_conteudo_programatico.pdf
+    sha256: cf458634b40f827b8a30042bd1e60b3760899fd1ebdbb75bedff8bca076c6b19
+    tamanho: 67734
+    url_oficial: https://www.vestibular.uerj.br/anexos/233/Manual_Exame_Unico_2023_Anexo4.pdf
+    url_wayback: https://web.archive.org/web/20240617205633id_/https://www.vestibular.uerj.br/anexos/233/Manual_Exame_Unico_2023_Anexo4.pdf
+    coletado_em: 2026-10-02
+  - exame: "2023-1"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2023-1/2023-1_gabarito_comentado.pdf
+    sha256: feeb623d28ddd953f494e96f02b03bc8af038095f2b56114498c87eea2c1d062
+    tamanho: 3120180
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/42.pdf
+    url_wayback: https://web.archive.org/web/20230612230304id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/42.pdf
+    coletado_em: 2026-10-02
+  - exame: "2024-1"
+    tipo: prova
+    arquivo: fontes/pdfs/2024-1/2024-1_prova.pdf
+    sha256: 26d08adf5118a3b20f8beaf2e70b317d313924ac9389ae1745f8cf7c56b282a6
+    tamanho: 8024521
+    url_oficial: https://www.vestibular.uerj.br/anexos/241/prova.pdf
+    url_wayback: https://web.archive.org/web/20230604184153id_/https://www.vestibular.uerj.br/anexos/241/prova.pdf
+    coletado_em: 2026-10-02
+  - exame: "2024-1"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2024-1/2024-1_gabarito.pdf
+    sha256: 1acd6860708852f65d6817b68b2600c1ac4a47804afc89edf4376709146c3f1f
+    tamanho: 519645
+    url_oficial: https://www.vestibular.uerj.br/anexos/241/Gabarito_VESTIBULAR_ANULADA.pdf
+    url_wayback: https://web.archive.org/web/20240519105645id_/https://www.vestibular.uerj.br/anexos/241/Gabarito_VESTIBULAR_ANULADA.pdf
+    coletado_em: 2026-10-02
+  - exame: "2024-1"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2024-1/2024-1_conteudo_programatico.pdf
+    sha256: a671e180993507763bf620c3b031e55114a002f00e2488b46b29dec32feb2934
+    tamanho: 54424
+    url_oficial: https://www.vestibular.uerj.br/anexos/241/Manual_1fase_2024_anexo3.pdf
+    url_wayback: https://web.archive.org/web/20230407144525id_/https://www.vestibular.uerj.br/anexos/241/Manual_1fase_2024_anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2024-1"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2024-1/2024-1_gabarito_comentado.pdf
+    sha256: cd05fa5db9997548c4a0b33d8d558020e3b0551fb91d89934c9f6b1ea24ef3ae
+    tamanho: 3070760
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/44.pdf
+    url_wayback: https://web.archive.org/web/20231016163910id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/44.pdf
+    coletado_em: 2026-10-02
+  - exame: "2024-2"
+    tipo: prova
+    arquivo: fontes/pdfs/2024-2/2024-2_prova.pdf
+    sha256: 53a5922e903438655bdc39f666b5303f9a5ebbc5d55b432421b39893ae704de6
+    tamanho: 8580612
+    url_oficial: https://www.vestibular.uerj.br/anexos/242/2o_EQ_prova.pdf
+    url_wayback: https://web.archive.org/web/20230924033100id_/https://www.vestibular.uerj.br/anexos/242/2o_EQ_prova.pdf
+    coletado_em: 2026-10-02
+  - exame: "2024-2"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2024-2/2024-2_gabarito.pdf
+    sha256: 192cccbf02752b41487127a7b450542fd869e4346a906b7e1f0dfcac7e28f50d
+    tamanho: 517237
+    url_oficial: https://www.vestibular.uerj.br/anexos/242/2o_EQ_gabarito_retificado.pdf
+    url_wayback: https://web.archive.org/web/20240301115323id_/https://www.vestibular.uerj.br/anexos/242/2o_EQ_gabarito_retificado.pdf
+    coletado_em: 2026-10-02
+  - exame: "2024-2"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2024-2/2024-2_conteudo_programatico.pdf
+    sha256: 55e504a93fea41c3a31fc86edb1c3d126d98c14847a4738644963ce4fc95d837
+    tamanho: 54520
+    url_oficial: https://www.vestibular.uerj.br/anexos/242/Manual_1fase_2024_anexo3.pdf
+    url_wayback: https://web.archive.org/web/20240508204926id_/https://www.vestibular.uerj.br/anexos/242/Manual_1fase_2024_anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2024-2"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2024-2/2024-2_gabarito_comentado.pdf
+    sha256: 02f03ed33c9c024ad9ba493380cee543ebd9d086dda7ce0a2d30e5996061189c
+    tamanho: 3421556
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/45.pdf
+    url_wayback: https://web.archive.org/web/20231015175947id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/45.pdf
+    coletado_em: 2026-10-02
+  - exame: "2025-1"
+    tipo: prova
+    arquivo: fontes/pdfs/2025-1/2025-1_prova.pdf
+    sha256: d2628c8e72a097fb060e5aead98c7e115e2ee654ea02712f3166509d66e8c7de
+    tamanho: 13857566
+    url_oficial: https://www.vestibular.uerj.br/anexos/251/01_Exame_Qualificacao.pdf
+    url_wayback: https://web.archive.org/web/20240609213322id_/https://www.vestibular.uerj.br/anexos/251/01_Exame_Qualificacao.pdf
+    coletado_em: 2026-10-02
+  - exame: "2025-1"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2025-1/2025-1_gabarito.pdf
+    sha256: 199a5aa58a2f2cafb5c46050624fe77dde3c2bd2789ae8699d7c4d5641516e85
+    tamanho: 175290
+    url_oficial: https://www.vestibular.uerj.br/anexos/251/Gabarito_VESTIBULAR.pdf
+    url_wayback: https://web.archive.org/web/20240609203806id_/https://www.vestibular.uerj.br/anexos/251/Gabarito_VESTIBULAR.pdf
+    coletado_em: 2026-10-02
+  - exame: "2025-1"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2025-1/2025-1_conteudo_programatico.pdf
+    sha256: d09b8e87d8a41668f435c8b86c1f8cdc121a02ec9367725288c57505e809c072
+    tamanho: 60956
+    url_oficial: https://www.vestibular.uerj.br/anexos/251/Manual_1fase_2025_Anexo3.pdf
+    url_wayback: https://web.archive.org/web/20240417161717id_/https://www.vestibular.uerj.br/anexos/251/Manual_1fase_2025_Anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2025-1"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2025-1/2025-1_gabarito_comentado.pdf
+    sha256: fb2863ce49b9bfde5aea4e775e8c0767eafcadb918066351c814b4ee38a6b4ab
+    tamanho: 14501682
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/47.pdf
+    url_wayback: https://web.archive.org/web/20250904153257id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/47.pdf
+    coletado_em: 2026-10-02
+  - exame: "2025-2"
+    tipo: prova
+    arquivo: fontes/pdfs/2025-2/2025-2_prova.pdf
+    sha256: a93cda2ea1c0341d3e5640834b51bca4db29837be0fd2854afb2ded29405b8a9
+    tamanho: 8395168
+    url_oficial: https://www.vestibular.uerj.br/anexos/252/252_prova.pdf
+    url_wayback: https://web.archive.org/web/20251002180548id_/https://www.vestibular.uerj.br/anexos/252/252_prova.pdf
+    coletado_em: 2026-10-02
+  - exame: "2025-2"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2025-2/2025-2_gabarito.pdf
+    sha256: 932b7db9dfc4a202d985e7ae5f633bf5c8833c8c866b065d4507d96213522253
+    tamanho: 556783
+    url_oficial: https://www.vestibular.uerj.br/anexos/252/252_gabarito_retificado.pdf
+    url_wayback: https://web.archive.org/web/20251002164252id_/https://www.vestibular.uerj.br/anexos/252/252_gabarito_retificado.pdf
+    coletado_em: 2026-10-02
+  - exame: "2025-2"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2025-2/2025-2_conteudo_programatico.pdf
+    sha256: d09b8e87d8a41668f435c8b86c1f8cdc121a02ec9367725288c57505e809c072
+    tamanho: 60956
+    url_oficial: https://www.vestibular.uerj.br/anexos/251/Manual_1fase_2025_Anexo3.pdf
+    url_wayback: https://web.archive.org/web/20240417161717id_/https://www.vestibular.uerj.br/anexos/251/Manual_1fase_2025_Anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2025-2"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2025-2/2025-2_gabarito_comentado.pdf
+    sha256: 53a5d373b5b04b5d0e30240e0b292afcbe6a99fd24df7d1ba025309234f694c2
+    tamanho: 5168027
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/49.pdf
+    url_wayback: https://web.archive.org/web/20241004143131id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/49.pdf
+    coletado_em: 2026-10-02
+  - exame: "2026-1"
+    tipo: prova
+    arquivo: fontes/pdfs/2026-1/2026-1_prova.pdf
+    sha256: 05848496b1c8827919a9cc2923757a035076d769640dfaa324e3a28d0e4c17e0
+    tamanho: 7752876
+    url_oficial: https://www.vestibular.uerj.br/anexos/261/prova_261.pdf
+    url_wayback: https://web.archive.org/web/20250608212312id_/https://www.vestibular.uerj.br/anexos/261/prova_261.pdf
+    coletado_em: 2026-10-02
+  - exame: "2026-1"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2026-1/2026-1_gabarito.pdf
+    sha256: a3cb5b4d016187da70182c23f73c44d21ffd17ed156e43a92bb193403f56476d
+    tamanho: 194246
+    url_oficial: https://www.vestibular.uerj.br/anexos/261/gabarito_261.pdf
+    url_wayback: https://web.archive.org/web/20250608212327id_/https://www.vestibular.uerj.br/anexos/261/gabarito_261.pdf
+    coletado_em: 2026-10-02
+  - exame: "2026-1"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2026-1/2026-1_conteudo_programatico.pdf
+    sha256: d1ed5e591ab0efc253e78b6129d13d4b2b2e43e2abc70db92ff0b529a1acd734
+    tamanho: 50458
+    url_oficial: https://www.vestibular.uerj.br/anexos/261/Manual_1fase_2026_Anexo3.pdf
+    url_wayback: https://web.archive.org/web/20250328190614id_/https://www.vestibular.uerj.br/anexos/261/Manual_1fase_2026_Anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2026-1"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2026-1/2026-1_gabarito_comentado.pdf
+    sha256: 696d975423bfac54fedbff87b7b063dc71067ef1a604d4c2d87b22cdc31d6b0b
+    tamanho: 4676650
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/53.pdf
+    url_wayback: https://web.archive.org/web/20250803081602id_/https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/53.pdf
+    coletado_em: 2026-10-02
+  - exame: "2026-2"
+    tipo: prova
+    arquivo: fontes/pdfs/2026-2/2026-2_prova.pdf
+    sha256: 96b5836f5a75d0b7ae306c3f9cf246bce3bda0c9bf7131f715edb3d112837f66
+    tamanho: 5344631
+    url_oficial: https://www.vestibular.uerj.br/anexos/262/Prova_2_EQ.pdf
+    url_wayback: https://web.archive.org/web/20250831184611id_/https://www.vestibular.uerj.br/anexos/262/Prova_2_EQ.pdf
+    coletado_em: 2026-10-02
+  - exame: "2026-2"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2026-2/2026-2_gabarito.pdf
+    sha256: 06bb2f0c9822c2b0aed7ece6c512a4899a2b567b7e490c149340c434be9536b3
+    tamanho: 188030
+    url_oficial: https://www.vestibular.uerj.br/anexos/262/Gabarito_VESTIBULAR.pdf
+    url_wayback: https://web.archive.org/web/20250831183153id_/https://www.vestibular.uerj.br/anexos/262/Gabarito_VESTIBULAR.pdf
+    coletado_em: 2026-10-02
+  - exame: "2026-2"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2026-2/2026-2_conteudo_programatico.pdf
+    sha256: d1ed5e591ab0efc253e78b6129d13d4b2b2e43e2abc70db92ff0b529a1acd734
+    tamanho: 50458
+    url_oficial: https://www.vestibular.uerj.br/anexos/261/Manual_1fase_2026_Anexo3.pdf
+    url_wayback: https://web.archive.org/web/20250328190614id_/https://www.vestibular.uerj.br/anexos/261/Manual_1fase_2026_Anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2026-2"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2026-2/2026-2_gabarito_comentado.pdf
+    sha256: 5a25398f8a2cfb32840936ff2f62c9d354df667f5ec2c9220b952841738ed747
+    tamanho: 6351922
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/54.pdf
+    url_wayback: null
+    coletado_em: 2026-10-02
+  - exame: "2027-1"
+    tipo: prova
+    arquivo: fontes/pdfs/2027-1/2027-1_prova.pdf
+    sha256: f98a78f3b542da6d81b3f4565b1b516fe553fc6f6aaa25e748cd97dc77551d70
+    tamanho: 11532227
+    url_oficial: https://www.vestibular.uerj.br/anexos/271/ExamedeQualificacao_2027.pdf
+    url_wayback: null
+    coletado_em: 2026-10-02
+  - exame: "2027-1"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2027-1/2027-1_gabarito.pdf
+    sha256: ac5d7749fdae9cc9a484badc111992a215ee1ab2790e9d358694c5fbfa0c48d3
+    tamanho: 177845
+    url_oficial: https://www.vestibular.uerj.br/anexos/271/Gabarito_VESTIBULAR_Anulada.pdf
+    url_wayback: null
+    coletado_em: 2026-10-02
+  - exame: "2027-1"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2027-1/2027-1_conteudo_programatico.pdf
+    sha256: 484b6b8d4c7cbf30eb8fd828642ac1d0ca08f34f45e8faf6844f3072f74d4188
+    tamanho: 58700
+    url_oficial: https://www.vestibular.uerj.br/anexos/271/Manual_1fase_2027_Anexo3.pdf
+    url_wayback: https://web.archive.org/web/20260408155331id_/https://www.vestibular.uerj.br/anexos/271/Manual_1fase_2027_Anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2027-1"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2027-1/2027-1_gabarito_comentado.pdf
+    sha256: d26d40a9a6b6e0fda96442319583897510d83ee0c42b8148146afea028319c52
+    tamanho: 12786801
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/57.pdf
+    url_wayback: null
+    coletado_em: 2026-10-02
+  - exame: "2027-2"
+    tipo: prova
+    arquivo: fontes/pdfs/2027-2/2027-2_prova.pdf
+    sha256: 15241535eb6d422e0ded723776887ae61156c6c87d7d14c524377c567d4a915e
+    tamanho: 8879669
+    url_oficial: https://www.vestibular.uerj.br/anexos/272/prova.pdf
+    url_wayback: null
+    coletado_em: 2026-10-02
+  - exame: "2027-2"
+    tipo: gabarito
+    arquivo: fontes/pdfs/2027-2/2027-2_gabarito.pdf
+    sha256: 92c84908fd09a2313f8e787689c99ad54542f06f9782ba031fa43c6ad1b35eff
+    tamanho: 256542
+    url_oficial: https://www.vestibular.uerj.br/anexos/272/Gabarito_272_09-09-2026.pdf
+    url_wayback: null
+    coletado_em: 2026-10-02
+  - exame: "2027-2"
+    tipo: conteudo_programatico
+    arquivo: fontes/pdfs/2027-2/2027-2_conteudo_programatico.pdf
+    sha256: 484b6b8d4c7cbf30eb8fd828642ac1d0ca08f34f45e8faf6844f3072f74d4188
+    tamanho: 58700
+    url_oficial: https://www.vestibular.uerj.br/anexos/271/Manual_1fase_2027_Anexo3.pdf
+    url_wayback: https://web.archive.org/web/20260408155331id_/https://www.vestibular.uerj.br/anexos/271/Manual_1fase_2027_Anexo3.pdf
+    coletado_em: 2026-10-02
+  - exame: "2027-2"
+    tipo: gabarito_comentado
+    arquivo: fontes/pdfs/2027-2/2027-2_gabarito_comentado.pdf
+    sha256: dfc9ea6f49875df1599d9f1506507542b0b5970b4e36d8525023f9d7f119123b
+    tamanho: 9819987
+    url_oficial: https://www.revista.vestibular.uerj.br/arquivos/pdf/questao/58.pdf
+    url_wayback: null
+    coletado_em: 2026-10-02
