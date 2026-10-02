@@ -93,8 +93,9 @@ def test_percentual_de_acertos(bronze, exame):
     if exame in SEM_PERCENTUAL:
         assert not percentuais
     else:
-        # só faltam os das anuladas e poucos casos em que o PDF não traz o campo (2020-2 e 2022-1)
-        assert len(percentuais) >= len(com) - (12 if exame == '2022-1' else 2)
+        # só faltam os das anuladas, os casos em que o PDF não traz o campo (2020-2 e 2022-1) e os de texto
+        # embaralhado (2026-2), que vêm de seeds/correcoes.csv
+        assert len(percentuais) >= len(com) - {'2022-1': 12, '2026-2': 3}.get(exame, 2)
 
 
 def test_comentado_casos_especiais(bronze):

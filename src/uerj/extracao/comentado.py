@@ -76,7 +76,8 @@ def _campos(texto):
 
 
 def _percentual(v):
-    m = re.match(r'(\d+(?:[,.]\d+)?)', v or '')
+    # Exige casas decimais ou "%": em texto embaralhado (2026-2) "4 1,91%" não pode virar 4.
+    m = re.match(r'(\d+[,.]\d+|\d+(?=\s*%))', v or '')
     return float(m[1].replace(',', '.')) if m else None
 
 
