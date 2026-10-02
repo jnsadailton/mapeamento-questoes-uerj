@@ -21,7 +21,21 @@ Requer Python 3.12 e [uv](https://docs.astral.sh/uv/).
 uv sync
 uv run pytest
 uv run python -m uerj.ingestao          # baixa os PDFs para data/raw/
+uv run python -m uerj.extracao          # extrai os PDFs para data/bronze/ (Parquet)
 ```
+
+## Extração (camada bronze)
+
+| Tabela | Uma linha por | Origem |
+|---|---|---|
+| `gabarito` | questão e idioma | gabarito oficial (resposta e data de aplicação) |
+| `comentario` | comentário | gabarito comentado (percentual de acertos, nível, objetivo, texto) |
+| `classificacao` | classificação de uma questão | gabarito comentado (eixo, item e subitem do programa) |
+| `conteudo_programatico` | subitem do edital | anexo de conteúdos do edital (área, eixo, item, subitem) |
+
+Os PDFs mudam de layout ao longo dos anos. Os gabaritos são lidos pela posição das palavras na página, e nos
+gabaritos comentados cada comentário é ligado ao rótulo da questão pela posição, porque a ordem do texto extraído é
+embaralhada. Os testes em `tests/test_extracao.py` cobrem os 21 exames e as lacunas conhecidas das próprias fontes.
 
 ## Fontes
 
