@@ -26,6 +26,27 @@ def _descartar(l):
             or re.fullmatch(r'CONTEUDOS (BASICOS|PROGRAMATICOS)', t))
 
 
+def _linhas(caminho):
+    """Linhas do PDF, juntando os fragmentos que estão na mesma altura (marcador solto, texto após um expoente).
+
+    Em 2016, "g.L-1" quebra a linha: o trecho depois do expoente fica um pouco mais alto e, ordenado só por y,
+    iria parar antes do item a que pertence.
+    """
+    linhas = []
+    for l in sorted(linhas_pdf(caminho), key=lambda l: (l['p'], l['y'], l['x'])):
+        meio = (l['y'] + l['y1']) / 2
+        atual = linhas[-1] if linhas else None
+        if atual and atual['p'] == l['p'] and atual['y'] <= meio <= atual['y1']:
+            atual['partes'].append(l)
+        else:
+            linhas.append(dict(p=l['p'], y=l['y'], y1=l['y1'], partes=[l]))
+    for r in linhas:
+        r['partes'].sort(key=lambda l: l['x'])
+        r['x'] = r['partes'][0]['x']
+        r['t'] = ' '.join(l['t'] for l in r['partes'])
+    return linhas
+
+
 def _item(texto):
     """Separa "Item: sub1; sub2" em (item, [subitens])."""
     nome, _, resto = texto.partition(':')
@@ -35,8 +56,7 @@ def _item(texto):
 
 def ler(caminho):
     """Devolve lista de dict(area, eixo, item, subitem, ordem_item, ordem_subitem, pagina)."""
-    linhas = [l for l in sorted(linhas_pdf(caminho), key=lambda l: (l['p'], round(l['y']), l['x']))
-              if not _descartar(l)]
+    linhas = [l for l in _linhas(caminho) if not _descartar(l)]
     area = eixo = None
     itens = []  # (area, eixo, pagina, x do marcador, [linhas])
     atual = None

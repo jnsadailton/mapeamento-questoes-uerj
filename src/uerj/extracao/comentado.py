@@ -17,7 +17,7 @@ MARGEM_ROTULO = 150
 # ordem da classificação.
 CAMPOS = re.compile(
     r'(?P<campo>Eixo(?: (?:inter)?dis\w*)?|Subite(?:m|ns)(?:\s*do programa)*|Ite(?:m|ns)(?:\s*do programa)*'
-    r'|Objetivo|Coment[áa]rio|Gabarito|Percentual de acertos?|N[íi]vel de dif+iculdade)(?:\s*(?P<ordem>\d))?\s*:',
+    r'|Objetivos?|Coment[áa]rio|Gabarito|Percentual de acertos?|N[íi]vel de dif+iculdade)(?:\s*(?P<ordem>\d))?\s*:',
     re.I)
 CLASSIFICACAO = re.compile(r'Eixo|Subite(?:m|ns)\b|Ite(?:m|ns)\b', re.I)
 NOMES = {'EIXO': 'eixo', 'SUBITE': 'subitem', 'ITE': 'item', 'OBJETIVO': 'objetivo', 'COMENTARIO': 'comentario',
@@ -167,7 +167,8 @@ def _classificacoes(campos):
         if campo in ('objetivo', 'comentario'):
             depois_do_objetivo = True
         elif valor and not (depois_do_objetivo and campo != 'eixo' and 'PROGRAMA' not in _norm(rotulo)):
-            selecionados.append((campo, ordem, valor))
+            # sem o rótulo do campo seguinte, o texto da resolução vaza para o valor: vale até o fim da 1ª frase
+            selecionados.append((campo, ordem, re.split(r'(?<=\.)\s+(?=[A-ZÀ-Ú0-9])', valor)[0]))
 
     itens = [(o, v) for c, o, v in selecionados if c == 'item']
     subitens = [(o, v) for c, o, v in selecionados if c == 'subitem']

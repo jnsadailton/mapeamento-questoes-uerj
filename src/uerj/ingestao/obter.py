@@ -76,12 +76,13 @@ def obter(doc, destino=DESTINO, fontes=FONTES, baixar=baixar, raiz=RAIZ):
 
 
 def obter_todos(docs, destino=DESTINO, paralelo=4, **kw):
-    """Obtém todos os documentos e grava destino/proveniencia.csv."""
+    """Obtém todos os documentos e grava destino/proveniencia.csv e destino/fontes.csv (o manifesto em CSV)."""
     with ThreadPoolExecutor(paralelo) as ex:
         provs = list(ex.map(lambda d: obter(d, destino, **kw), docs))
     Path(destino).mkdir(parents=True, exist_ok=True)
-    with open(Path(destino) / 'proveniencia.csv', 'w', newline='', encoding='utf-8') as f:
-        w = csv.DictWriter(f, fieldnames=list(Proveniencia.__dataclass_fields__))
-        w.writeheader()
-        w.writerows(asdict(p) for p in provs)
+    for nome, linhas in (('proveniencia.csv', [asdict(p) for p in provs]), ('fontes.csv', [asdict(d) for d in docs])):
+        with open(Path(destino) / nome, 'w', newline='', encoding='utf-8') as f:
+            w = csv.DictWriter(f, fieldnames=list(linhas[0]))
+            w.writeheader()
+            w.writerows(linhas)
     return provs

@@ -1,0 +1,335 @@
+id_subitem,area_sigla,area,disciplina,eixo,item,subitem,item_vigente,subitem_vigente
+LIN.1.01.01,LIN,Linguagens,Língua Portuguesa,Construção do texto,Tipologias,descrição,True,True
+LIN.1.01.02,LIN,Linguagens,Língua Portuguesa,Construção do texto,Tipologias,narração,True,True
+LIN.1.01.03,LIN,Linguagens,Língua Portuguesa,Construção do texto,Tipologias,argumentação,True,True
+LIN.1.01.04,LIN,Linguagens,Língua Portuguesa,Construção do texto,Tipologias,injunção,True,True
+LIN.1.02.01,LIN,Linguagens,Língua Portuguesa,Construção do texto,Gêneros,composição típica dos enunciados,True,True
+LIN.1.02.02,LIN,Linguagens,Língua Portuguesa,Construção do texto,Gêneros,suportes,True,True
+LIN.1.02.03,LIN,Linguagens,Língua Portuguesa,Construção do texto,Gêneros,função social,True,True
+LIN.1.02.04,LIN,Linguagens,Língua Portuguesa,Construção do texto,Gêneros,graus de formalidade,True,True
+LIN.1.03.01,LIN,Linguagens,Língua Portuguesa,Construção do texto,Organização textual,tema global,True,True
+LIN.1.03.02,LIN,Linguagens,Língua Portuguesa,Construção do texto,Organização textual,informações específicas,True,True
+LIN.1.03.03,LIN,Linguagens,Língua Portuguesa,Construção do texto,Organização textual,progressão temática,True,True
+LIN.1.04.01,LIN,Linguagens,Língua Portuguesa,Construção do texto,Perspectivas enunciativas,"quem enuncia, a quem enuncia, espaço, tempo",True,True
+LIN.1.04.02,LIN,Linguagens,Língua Portuguesa,Construção do texto,Perspectivas enunciativas,vozes,True,True
+LIN.1.04.03,LIN,Linguagens,Língua Portuguesa,Construção do texto,Perspectivas enunciativas,modalização,True,True
+LIN.1.05.01,LIN,Linguagens,Língua Portuguesa,Construção do texto,Polifonia e intertextualidade,"reformulação, paráfrase, paródia, citação",True,True
+LIN.1.05.02,LIN,Linguagens,Língua Portuguesa,Construção do texto,Polifonia e intertextualidade,"diálogo, discurso relatado",True,True
+LIN.1.05.03,LIN,Linguagens,Língua Portuguesa,Construção do texto,Polifonia e intertextualidade,"inferência, pressuposição e subentendido",True,True
+LIN.1.05.04,LIN,Linguagens,Língua Portuguesa,Construção do texto,Polifonia e intertextualidade,estratégias de neutralidade,True,False
+LIN.1.06.01,LIN,Linguagens,Língua Portuguesa,Construção do texto,Métodos de argumentação,indução e dedução,True,True
+LIN.1.06.02,LIN,Linguagens,Língua Portuguesa,Construção do texto,Métodos de argumentação,dialética,True,True
+LIN.1.07.01,LIN,Linguagens,Língua Portuguesa,Construção do texto,Formas de articulação de ideias,"fato, opinião",True,True
+LIN.1.07.02,LIN,Linguagens,Língua Portuguesa,Construção do texto,Formas de articulação de ideias,causalidade,True,True
+LIN.1.07.03,LIN,Linguagens,Língua Portuguesa,Construção do texto,Formas de articulação de ideias,conclusão,True,True
+LIN.1.07.04,LIN,Linguagens,Língua Portuguesa,Construção do texto,Formas de articulação de ideias,comparação,True,True
+LIN.1.07.05,LIN,Linguagens,Língua Portuguesa,Construção do texto,Formas de articulação de ideias,exemplificação,True,True
+LIN.1.07.06,LIN,Linguagens,Língua Portuguesa,Construção do texto,Formas de articulação de ideias,enumeração,True,True
+LIN.1.07.07,LIN,Linguagens,Língua Portuguesa,Construção do texto,Formas de articulação de ideias,"generalização, particularização",True,True
+LIN.1.07.08,LIN,Linguagens,Língua Portuguesa,Construção do texto,Formas de articulação de ideias,"gradação, ênfase",True,True
+LIN.1.07.09,LIN,Linguagens,Língua Portuguesa,Construção do texto,Formas de articulação de ideias,contra-argumentação,True,True
+LIN.1.08.01,LIN,Linguagens,Língua Portuguesa,Construção do texto,Procedimentos de coesão e coerência,"anáfora, catáfora, dêixis",True,True
+LIN.1.08.02,LIN,Linguagens,Língua Portuguesa,Construção do texto,Procedimentos de coesão e coerência,"substituição, designação, elipse",True,True
+LIN.1.08.03,LIN,Linguagens,Língua Portuguesa,Construção do texto,Procedimentos de coesão e coerência,uso de conectores,True,True
+LIN.1.08.04,LIN,Linguagens,Língua Portuguesa,Construção do texto,Procedimentos de coesão e coerência,condições de interpretabilidade,True,True
+LIN.1.08.05,LIN,Linguagens,Língua Portuguesa,Construção do texto,Procedimentos de coesão e coerência,relações entre as partes do texto,True,True
+LIN.1.08.06,LIN,Linguagens,Língua Portuguesa,Construção do texto,Procedimentos de coesão e coerência,informação dada e informação nova,True,False
+LIN.1.08.07,LIN,Linguagens,Língua Portuguesa,Construção do texto,Procedimentos de coesão e coerência,informação principal e informação secundária,True,False
+LIN.1.09.01,LIN,Linguagens,Língua Portuguesa,Construção do texto,Relações semânticas,"sinonímia, antonímia, ambiguidade, polissemia",True,True
+LIN.1.09.02,LIN,Linguagens,Língua Portuguesa,Construção do texto,Relações semânticas,metalinguagem,True,True
+LIN.1.09.03,LIN,Linguagens,Língua Portuguesa,Construção do texto,Relações semânticas,"conhecimento lexical, expressões idiomáticas, formação de palavras",True,True
+LIN.1.09.04,LIN,Linguagens,Língua Portuguesa,Construção do texto,Relações semânticas,"metáfora, metonímia, personificação, hipérbole, antítese, paradoxo, eufemismo, ironia",True,True
+LIN.1.10.01,LIN,Linguagens,Língua Portuguesa,Construção do texto,Usos do verbo,"tempo, modo, aspecto, voz",True,True
+LIN.1.10.02,LIN,Linguagens,Língua Portuguesa,Construção do texto,Usos do verbo,"formas afirmativa, interrogativa e negativa",True,True
+LIN.1.10.03,LIN,Linguagens,Língua Portuguesa,Construção do texto,Usos do verbo,a semântica dos tempos verbais,True,True
+LIN.1.11.01,LIN,Linguagens,Língua Portuguesa,Construção do texto,Elementos não verbais,relação entre o verbal e o não verbal,True,True
+LIN.1.11.02,LIN,Linguagens,Língua Portuguesa,Construção do texto,Elementos não verbais,imagens,True,True
+LIN.1.11.03,LIN,Linguagens,Língua Portuguesa,Construção do texto,Elementos não verbais,recursos gráficos e tipográficos,True,True
+LIN.1.11.04,LIN,Linguagens,Língua Portuguesa,Construção do texto,Elementos não verbais,sentidos da pontuação,True,True
+LIN.1.12.01,LIN,Linguagens,Língua Portuguesa,Construção do texto,Unidade e diversidade da língua portuguesa,registros de uso na oralidade e na escrita,False,False
+LIN.1.12.02,LIN,Linguagens,Língua Portuguesa,Construção do texto,Unidade e diversidade da língua portuguesa,"variação regional, variação social",False,False
+LIN.1.12.03,LIN,Linguagens,Língua Portuguesa,Construção do texto,Unidade e diversidade da língua portuguesa,norma padrão,False,False
+LIN.2.01.01,LIN,Linguagens,Literatura,Aspectos literários,Natureza dos textos,o poético,True,True
+LIN.2.01.02,LIN,Linguagens,Literatura,Aspectos literários,Natureza dos textos,o narrativo,True,True
+LIN.2.01.03,LIN,Linguagens,Literatura,Aspectos literários,Natureza dos textos,o dramático,True,True
+LIN.2.02.01,LIN,Linguagens,Literatura,Aspectos literários,Literatura e sociedade,contextos sócio-históricos de produção e recepção dos textos,True,True
+LIN.2.02.02,LIN,Linguagens,Literatura,Aspectos literários,Literatura e sociedade,relações com movimentos estético-culturais,True,True
+LIN.2.02.03,LIN,Linguagens,Literatura,Aspectos literários,Literatura e sociedade,diálogos entre a literatura e as artes em geral,True,True
+LIN.2.03.01,LIN,Linguagens,Literatura,Aspectos literários,Representações da realidade,efeito de real,True,True
+LIN.2.03.02,LIN,Linguagens,Literatura,Aspectos literários,Representações da realidade,verossimilhança externa e interna,True,True
+LIN.2.04.01,LIN,Linguagens,Literatura,Aspectos literários,Elementos da narrativa,construção de personagens,True,True
+LIN.2.04.02,LIN,Linguagens,Literatura,Aspectos literários,Elementos da narrativa,"narrador, foco narrativo, índices narrativos",True,True
+LIN.2.04.03,LIN,Linguagens,Literatura,Aspectos literários,Elementos da narrativa,representações do tempo e do espaço,True,True
+LIN.2.04.04,LIN,Linguagens,Literatura,Aspectos literários,Elementos da narrativa,epifania,True,False
+LIN.2.04.05,LIN,Linguagens,Literatura,Aspectos literários,Elementos da narrativa,metaficção,True,False
+LIN.2.04.06,LIN,Linguagens,Literatura,Aspectos literários,Elementos da narrativa,enredo,True,False
+LIN.2.05.01,LIN,Linguagens,Literatura,Aspectos literários,Recursos estilísticos,seleção e combinação de palavras,True,True
+LIN.2.05.02,LIN,Linguagens,Literatura,Aspectos literários,Recursos estilísticos,formas dos vocábulos,True,True
+LIN.2.05.03,LIN,Linguagens,Literatura,Aspectos literários,Recursos estilísticos,efeitos sonoros,True,True
+LIN.2.05.04,LIN,Linguagens,Literatura,Aspectos literários,Recursos estilísticos,figurações e imagens,True,True
+LIN.2.05.05,LIN,Linguagens,Literatura,Aspectos literários,Recursos estilísticos,representações da variabilidade linguística,True,True
+LIN.2.05.06,LIN,Linguagens,Literatura,Aspectos literários,Recursos estilísticos,efeitos de sentido decorrentes de usos expressivos da linguagem,True,True
+LIN.2.06.01,LIN,Linguagens,Literatura,Aspectos literários,Leitura de obras indicadas,aspectos temáticos e estilísticos,False,False
+MAT.1.01.01,MAT,Matemática,Matemática,Aritmética,Sistema decimal,representações,True,True
+MAT.1.01.02,MAT,Matemática,Matemática,Aritmética,Sistema decimal,operações,True,True
+MAT.1.02.01,MAT,Matemática,Matemática,Aritmética,Números naturais,"números primos, decomposição em fatores primos, divisibilidade",True,True
+MAT.1.02.02,MAT,Matemática,Matemática,Aritmética,Números naturais,MMC,True,True
+MAT.1.02.03,MAT,Matemática,Matemática,Aritmética,Números naturais,MDC,True,True
+MAT.1.03.01,MAT,Matemática,Matemática,Aritmética,Números reais,operações,True,True
+MAT.1.03.02,MAT,Matemática,Matemática,Aritmética,Números reais,representações,True,True
+MAT.1.03.03,MAT,Matemática,Matemática,Aritmética,Números reais,intervalos de números reais,True,True
+MAT.1.04.01,MAT,Matemática,Matemática,Aritmética,Proporcionalidade,grandezas diretamente ou inversamente proporcionais,True,True
+MAT.1.04.02,MAT,Matemática,Matemática,Aritmética,Proporcionalidade,razões,True,True
+MAT.1.04.03,MAT,Matemática,Matemática,Aritmética,Proporcionalidade,proporções,True,True
+MAT.1.04.04,MAT,Matemática,Matemática,Aritmética,Proporcionalidade,divisão em partes proporcionais,True,True
+MAT.1.04.05,MAT,Matemática,Matemática,Aritmética,Proporcionalidade,regra de sociedade,True,True
+MAT.1.04.06,MAT,Matemática,Matemática,Aritmética,Proporcionalidade,regra de três simples,True,True
+MAT.1.04.07,MAT,Matemática,Matemática,Aritmética,Proporcionalidade,regra de três composta,True,True
+MAT.1.04.08,MAT,Matemática,Matemática,Aritmética,Proporcionalidade,"porcentagem, representação gráfica",True,True
+MAT.1.05.01,MAT,Matemática,Matemática,Aritmética,Conjuntos,relações de pertinência e inclusão,True,True
+MAT.1.05.02,MAT,Matemática,Matemática,Aritmética,Conjuntos,união,True,True
+MAT.1.05.03,MAT,Matemática,Matemática,Aritmética,Conjuntos,interseção,True,True
+MAT.1.05.04,MAT,Matemática,Matemática,Aritmética,Conjuntos,diferença,True,True
+MAT.1.05.05,MAT,Matemática,Matemática,Aritmética,Conjuntos,complementar,True,True
+MAT.2.01.01,MAT,Matemática,Matemática,Álgebra,Expressões algébricas,operações,True,True
+MAT.2.01.02,MAT,Matemática,Matemática,Álgebra,Expressões algébricas,identidades,True,True
+MAT.2.01.03,MAT,Matemática,Matemática,Álgebra,Expressões algébricas,equações,True,True
+MAT.2.01.04,MAT,Matemática,Matemática,Álgebra,Expressões algébricas,inequações,True,True
+MAT.2.02.01,MAT,Matemática,Matemática,Álgebra,Funções,afim,True,True
+MAT.2.02.02,MAT,Matemática,Matemática,Álgebra,Funções,quadrática,True,True
+MAT.2.02.03,MAT,Matemática,Matemática,Álgebra,Funções,exponencial e logarítmica,True,True
+MAT.2.02.04,MAT,Matemática,Matemática,Álgebra,Funções,trigonométricas,True,True
+MAT.2.02.05,MAT,Matemática,Matemática,Álgebra,Funções,representações gráficas,True,True
+MAT.2.02.06,MAT,Matemática,Matemática,Álgebra,Funções,características e operações,True,True
+MAT.2.02.07,MAT,Matemática,Matemática,Álgebra,Funções,taxa de variação média,True,True
+MAT.2.03.01,MAT,Matemática,Matemática,Álgebra,Sucessões,aritméticas,True,True
+MAT.2.03.02,MAT,Matemática,Matemática,Álgebra,Sucessões,geométricas,True,True
+MAT.2.03.03,MAT,Matemática,Matemática,Álgebra,Sucessões,por recorrências,True,True
+MAT.2.03.04,MAT,Matemática,Matemática,Álgebra,Sucessões,juros simples e compostos,True,True
+MAT.2.04.01,MAT,Matemática,Matemática,Álgebra,Problemas de contagem,princípios de contagem,True,True
+MAT.2.04.02,MAT,Matemática,Matemática,Álgebra,Problemas de contagem,análise combinatória simples e com repetição,True,True
+MAT.2.04.03,MAT,Matemática,Matemática,Álgebra,Problemas de contagem,binômio de Newton,True,True
+MAT.2.05.01,MAT,Matemática,Matemática,Álgebra,Matrizes,representações,True,True
+MAT.2.05.02,MAT,Matemática,Matemática,Álgebra,Matrizes,operações,True,True
+MAT.2.05.03,MAT,Matemática,Matemática,Álgebra,Matrizes,determinantes até 3ª ordem,True,True
+MAT.2.06.01,MAT,Matemática,Matemática,Álgebra,Sistemas de equações,lineares de duas ou três incógnitas,True,True
+MAT.2.06.02,MAT,Matemática,Matemática,Álgebra,Sistemas de equações,não lineares,True,True
+MAT.2.07.01,MAT,Matemática,Matemática,Álgebra,Geometria analítica no R2,reta,False,False
+MAT.2.07.02,MAT,Matemática,Matemática,Álgebra,Geometria analítica no R2,circunferência,False,False
+MAT.3.01.01,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras no plano,ângulos em graus,True,True
+MAT.3.01.02,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras no plano,congruências,True,True
+MAT.3.01.03,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras no plano,simetrias e homotetias,True,True
+MAT.3.01.04,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras no plano,"polígonos, circunferências e arcos em radianos",True,True
+MAT.3.01.05,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras no plano,círculos,True,True
+MAT.3.01.06,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras no plano,relações métricas,True,True
+MAT.3.01.07,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras no plano,razões trigonométricas,True,True
+MAT.3.01.08,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras no plano,"distâncias, áreas, perímetros",True,True
+MAT.3.02.01,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras tridimensionais,congruências,True,True
+MAT.3.02.02,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras tridimensionais,simetrias e homotetias,True,True
+MAT.3.02.03,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras tridimensionais,características dos poliedros,True,True
+MAT.3.02.04,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras tridimensionais,poliedros regulares,True,True
+MAT.3.02.05,MAT,Matemática,Matemática,Geometria e trigonometria,Figuras tridimensionais,"áreas e volumes de prismas, pirâmides, cilindros, cones e esferas. Troncos de prismas, pirâmides, cilindros e cone",True,True
+MAT.3.03.01,MAT,Matemática,Matemática,Geometria e trigonometria,Geometria de posição no plano e no espaço,paralelismo,True,True
+MAT.3.03.02,MAT,Matemática,Matemática,Geometria e trigonometria,Geometria de posição no plano e no espaço,perpendicularismo,True,True
+MAT.3.03.03,MAT,Matemática,Matemática,Geometria e trigonometria,Geometria de posição no plano e no espaço,projeções ortogonais,True,True
+MAT.3.04.01,MAT,Matemática,Matemática,Geometria e trigonometria,Círculo trigonométrico,"linhas trigonométricas, relações fundamentais",True,True
+MAT.3.04.02,MAT,Matemática,Matemática,Geometria e trigonometria,Círculo trigonométrico,identidades,True,True
+MAT.3.04.03,MAT,Matemática,Matemática,Geometria e trigonometria,Círculo trigonométrico,equações e inequações trigonométricas,True,True
+MAT.3.04.04,MAT,Matemática,Matemática,Geometria e trigonometria,Círculo trigonométrico,lei dos cossenos,True,True
+MAT.3.04.05,MAT,Matemática,Matemática,Geometria e trigonometria,Círculo trigonométrico,lei dos senos,True,True
+MAT.3.04.06,MAT,Matemática,Matemática,Geometria e trigonometria,Círculo trigonométrico,representações,True,False
+MAT.3.05.01,MAT,Matemática,Matemática,Geometria e trigonometria,Relações trigonométricas,da adição e subtração de arcos,True,True
+MAT.3.05.02,MAT,Matemática,Matemática,Geometria e trigonometria,Relações trigonométricas,do arco duplo,True,True
+MAT.3.05.03,MAT,Matemática,Matemática,Geometria e trigonometria,Relações trigonométricas,do arco metade,True,True
+MAT.4.01.01,MAT,Matemática,Matemática,Estatística,Representações,tabulações,True,True
+MAT.4.01.02,MAT,Matemática,Matemática,Estatística,Representações,pictográficos,True,True
+MAT.4.01.03,MAT,Matemática,Matemática,Estatística,Representações,gráficos de setores,True,True
+MAT.4.01.04,MAT,Matemática,Matemática,Estatística,Representações,histogramas,True,True
+MAT.4.01.05,MAT,Matemática,Matemática,Estatística,Representações,gráficos cartesianos,True,True
+MAT.4.01.06,MAT,Matemática,Matemática,Estatística,Representações,análise de gráficos e tabelas,True,False
+MAT.4.02.01,MAT,Matemática,Matemática,Estatística,Medidas de tendência central,"média aritmética, geométrica e harmônica",True,True
+MAT.4.02.02,MAT,Matemática,Matemática,Estatística,Medidas de tendência central,moda,True,True
+MAT.4.02.03,MAT,Matemática,Matemática,Estatística,Medidas de tendência central,mediana,True,True
+MAT.4.03.01,MAT,Matemática,Matemática,Estatística,Medidas de dispersão,variância,True,True
+MAT.4.03.02,MAT,Matemática,Matemática,Estatística,Medidas de dispersão,desvio padrão,True,True
+MAT.4.04.01,MAT,Matemática,Matemática,Estatística,Probabilidade,conceito e cálculo,True,True
+MAT.4.04.02,MAT,Matemática,Matemática,Estatística,Probabilidade,probabilidade da união de eventos,True,True
+MAT.4.04.03,MAT,Matemática,Matemática,Estatística,Probabilidade,probabilidade da interseção de eventos,True,True
+MAT.4.04.04,MAT,Matemática,Matemática,Estatística,Probabilidade,probabilidade condicional,True,True
+MAT.4.04.05,MAT,Matemática,Matemática,Estatística,Probabilidade,distribuição binomial de probabilidades,True,True
+CNT.1.01.01,CNT,Ciências da Natureza,Química,Os constituintes fundamentais da matéria,Átomos,partículas subatômicas,True,True
+CNT.1.01.02,CNT,Ciências da Natureza,Química,Os constituintes fundamentais da matéria,Átomos,configuração eletrônica,True,True
+CNT.1.02.01,CNT,Ciências da Natureza,Química,Os constituintes fundamentais da matéria,Elementos químicos,"massa atômica, número atômico, isotopia",True,True
+CNT.1.02.02,CNT,Ciências da Natureza,Química,Os constituintes fundamentais da matéria,Elementos químicos,classificação periódica e propriedades periódicas,True,True
+CNT.1.03.01,CNT,Ciências da Natureza,Química,Os constituintes fundamentais da matéria,Íons e moléculas,ligações químicas,True,True
+CNT.1.03.02,CNT,Ciências da Natureza,Química,Os constituintes fundamentais da matéria,Íons e moléculas,geometria molecular,True,True
+CNT.1.03.03,CNT,Ciências da Natureza,Química,Os constituintes fundamentais da matéria,Íons e moléculas,interações intermoleculares,True,True
+CNT.1.04.01,CNT,Ciências da Natureza,Biologia,Os constituintes fundamentais da matéria,Bases moleculares da vida,ácidos nucleicos,True,True
+CNT.1.04.02,CNT,Ciências da Natureza,Biologia,Os constituintes fundamentais da matéria,Bases moleculares da vida,proteínas,True,True
+CNT.1.04.03,CNT,Ciências da Natureza,Biologia,Os constituintes fundamentais da matéria,Bases moleculares da vida,lipídios,True,True
+CNT.1.04.04,CNT,Ciências da Natureza,Biologia,Os constituintes fundamentais da matéria,Bases moleculares da vida,carboidratos,True,True
+CNT.1.05.01,CNT,Ciências da Natureza,Química,Os constituintes fundamentais da matéria,Radioatividade,desintegrações radioativas,False,False
+CNT.1.05.02,CNT,Ciências da Natureza,Química,Os constituintes fundamentais da matéria,Radioatividade,tempo de meia-vida,False,False
+CNT.1.05.03,CNT,Ciências da Natureza,Química,Os constituintes fundamentais da matéria,Radioatividade,fissão e fusão nuclear,False,False
+CNT.2.01.01,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Experimentos, hipóteses e leis da natureza","grandezas, medições, algarismos significativos, ordens de grandeza",True,True
+CNT.2.01.02,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Experimentos, hipóteses e leis da natureza",tabulação e representação gráfica de dados,True,True
+CNT.2.01.03,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Experimentos, hipóteses e leis da natureza","média, desvio padrão",True,True
+CNT.2.02.01,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Leis de Newton,"massa, velocidade, aceleração, força",True,True
+CNT.2.02.02,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Leis de Newton,movimento uniforme e uniformemente variado,True,True
+CNT.2.02.03,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Leis de Newton,queda dos corpos com atrito e sem atrito,True,False
+CNT.2.02.04,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Leis de Newton,movimento de projéteis,True,False
+CNT.2.02.05,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Leis de Newton,movimentos circulares,True,False
+CNT.2.02.06,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Leis de Newton,pêndulo simples,True,False
+CNT.2.02.07,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Leis de Newton,movimento dos planetas,True,False
+CNT.2.02.08,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Leis de Newton,oscilador harmônico simples,True,False
+CNT.2.03.01,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Leis de conservação,"energia cinética, força-peso, trabalho, energia potencial, energia mecânica",True,True
+CNT.2.03.02,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Leis de conservação,"momentum linear, colisões unidimensionais elásticas e totalmente inelásticas",True,True
+CNT.2.04.01,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Equilíbrio de corpos rígidos,"centro de gravidade, momento de força, alavancas, roldanas simples, balanças",True,True
+CNT.2.04.02,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Equilíbrio de corpos rígidos,plano inclinado e forças de atrito,True,True
+CNT.2.05.01,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Hidrostática,pressão atmosférica,True,True
+CNT.2.05.02,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Hidrostática,princípio de Arquimedes,True,True
+CNT.2.05.03,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Hidrostática,princípio de Pascal,True,True
+CNT.2.05.04,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,Hidrostática,lei de Stevin,True,True
+CNT.2.06.01,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Fenômenos elétricos, magnéticos e ondulatórios","processos de eletrização, carga, corrente, potência, campo e potencial elétricos",True,True
+CNT.2.06.02,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Fenômenos elétricos, magnéticos e ondulatórios","resistores, lei de Ohm, circuitos elétricos",True,True
+CNT.2.06.03,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Fenômenos elétricos, magnéticos e ondulatórios","indução eletromagnética, campo magnético, fluxo, lei de Faraday",True,True
+CNT.2.06.04,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Fenômenos elétricos, magnéticos e ondulatórios",geradores e transformadores,True,True
+CNT.2.06.05,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Fenômenos elétricos, magnéticos e ondulatórios",princípios básicos da óptica geométrica,True,True
+CNT.2.06.06,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Fenômenos elétricos, magnéticos e ondulatórios",movimento de partículas em campos eletromagnéticos uniformes,True,False
+CNT.2.06.07,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Fenômenos elétricos, magnéticos e ondulatórios","ondas acústicas e eletromagnéticas: reflexão, refração, interferência, difração, polarização",True,False
+CNT.2.06.08,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Fenômenos elétricos, magnéticos e ondulatórios",cordas vibrantes,True,False
+CNT.2.06.09,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Fenômenos elétricos, magnéticos e ondulatórios",tubos sonoros,True,False
+CNT.2.06.10,CNT,Ciências da Natureza,Física,A matéria em equilíbrio e em movimento,"Fenômenos elétricos, magnéticos e ondulatórios","espectro eletromagnético, fontes de luz",True,False
+CNT.3.01.01,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Substância pura e misturas,"conceitos, propriedades, classificações",True,True
+CNT.3.01.02,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Substância pura e misturas,processos de separação de misturas,True,True
+CNT.3.02.01,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Soluções,"unidades de concentração expressas em percentagem, em g.L-1 e em quantidade de matéria",True,True
+CNT.3.02.02,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Soluções,diluição e misturas,True,True
+CNT.3.03.01,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Gases ideais,transformações,True,True
+CNT.3.03.02,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Gases ideais,equação geral dos gases,True,True
+CNT.3.03.03,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Gases ideais,misturas gasosas,True,True
+CNT.3.04.01,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Funções químicas,classificação e nomenclatura das substâncias orgânicas e inorgânicas,True,True
+CNT.3.04.02,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Funções químicas,isomeria,True,True
+CNT.3.05.01,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Reações químicas,"síntese, decomposição, deslocamento, dupla-troca",True,True
+CNT.3.05.02,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Reações químicas,"balanceamento, ocorrência",True,True
+CNT.3.05.03,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Reações químicas,oxirredução,True,True
+CNT.3.06.01,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Cálculo estequiométrico simples,"fórmula percentual, mínima e molecular",True,True
+CNT.3.06.02,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Cálculo estequiométrico simples,"quantidade de matéria, de massa e de volume nas condições normais",True,True
+CNT.3.07.01,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Cinética reacional,taxa de reação,True,True
+CNT.3.07.02,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Cinética reacional,fatores de interferência,True,True
+CNT.3.07.03,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Cinética reacional,reações enzimáticas,True,True
+CNT.3.08.01,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Equilíbrio químico,perturbações,True,True
+CNT.3.08.02,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Equilíbrio químico,acidez e basicidade,True,True
+CNT.3.08.03,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Equilíbrio químico,constantes de equilíbrio em função das concentrações e das pressões parciais,True,False
+CNT.3.09.01,CNT,Ciências da Natureza,Física,As substâncias e suas transformações,Fenômenos térmicos,"temperatura, calor, dilatação térmica",True,True
+CNT.3.09.02,CNT,Ciências da Natureza,Física,As substâncias e suas transformações,Fenômenos térmicos,"calor específico, calor latente, mudanças de estado, calorimetria, termoquímica",True,True
+CNT.3.10.01,CNT,Ciências da Natureza,Biologia,As substâncias e suas transformações,Transformações energéticas nos seres vivos,cadeia respiratória e fosforilação oxidativa na mitocôndria,True,True
+CNT.3.10.02,CNT,Ciências da Natureza,Biologia,As substâncias e suas transformações,Transformações energéticas nos seres vivos,fases da fotossíntese nos cloroplastos,True,True
+CNT.3.11.01,CNT,Ciências da Natureza,Física,As substâncias e suas transformações,Estrutura molecular da matéria,"interpretação microscópica da pressão, da temperatura e do calor",False,False
+CNT.3.11.02,CNT,Ciências da Natureza,Física,As substâncias e suas transformações,Estrutura molecular da matéria,comportamento dos gases,False,False
+CNT.3.11.03,CNT,Ciências da Natureza,Física,As substâncias e suas transformações,Estrutura molecular da matéria,equação de Clapeyron,False,False
+CNT.3.12.01,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Entalpia e variação de entalpia,equação termoquímica,False,False
+CNT.3.12.02,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Entalpia e variação de entalpia,calor de formação,False,False
+CNT.3.12.03,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Entalpia e variação de entalpia,calor de combustão,False,False
+CNT.3.12.04,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Entalpia e variação de entalpia,energia de ligação,False,False
+CNT.3.12.05,CNT,Ciências da Natureza,Química,As substâncias e suas transformações,Entalpia e variação de entalpia,lei de Hess,False,False
+CNT.4.01.01,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Biodiversidade,características gerais dos principais grupos de seres vivos,True,True
+CNT.4.01.02,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Biodiversidade,teorias e conceitos de evolução,True,True
+CNT.4.02.01,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Integração entre seres vivos e meio ambiente,"ecossistemas, cadeia alimentar, ciclos biogeoquímicos",True,True
+CNT.4.02.02,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Integração entre seres vivos e meio ambiente,poluição e desequilíbrio ecológico,True,True
+CNT.4.03.01,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,A célula,funções das estruturas e organelas,True,True
+CNT.4.03.02,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,A célula,fases da divisão celular,True,True
+CNT.4.03.03,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,A célula,características morfológicas e funcionais,True,False
+CNT.4.03.04,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,A célula,principais componentes químicos,True,False
+CNT.4.03.05,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,A célula,sistema de biomembranas e mecanismos de transporte,True,False
+CNT.4.04.01,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,As bases da genética,genes,True,True
+CNT.4.04.02,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,As bases da genética,código genético,True,True
+CNT.4.04.03,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,As bases da genética,cromossomos,True,True
+CNT.4.04.04,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,As bases da genética,hereditariedade e doenças hereditárias,True,True
+CNT.4.05.01,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Doenças parasitárias,"ciclos de vida de parasitas, modos de transmissão",True,True
+CNT.4.05.02,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Doenças parasitárias,profilaxia,True,True
+CNT.4.06.01,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,digestão e absorção dos alimentos,True,True
+CNT.4.06.02,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,respiração,True,True
+CNT.4.06.03,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,circulação,True,True
+CNT.4.06.04,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,excreção,True,True
+CNT.4.06.05,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,"metabolismo de carboidratos, de lipídios e de proteínas",True,True
+CNT.4.06.06,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,funções dos hormônios no metabolismo,True,True
+CNT.4.06.07,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,sistema nervoso e órgãos dos sentidos,True,True
+CNT.4.06.08,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,sistemas reprodutores,True,True
+CNT.4.06.09,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,produção de óvulos e espermatozoides na reprodução humana,True,True
+CNT.4.06.10,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,atuação dos hormônios sexuais,True,True
+CNT.4.06.11,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,fotossíntese,True,True
+CNT.4.06.12,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,vitaminas,True,False
+CNT.4.06.13,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Sistemas vitais dos animais e vegetais,polinização e dispersão de sementes,True,False
+CNT.4.07.01,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Multicelularidade,"classificação, estrutura e funções dos tecidos animais e vegetais",False,False
+CNT.4.07.02,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Multicelularidade,desenvolvimento embrionário dos animais,False,False
+CNT.4.07.03,CNT,Ciências da Natureza,Biologia,Os seres vivos e sua relação com o ambiente,Multicelularidade,germinação e dormência,False,False
+CHS.1.01.01,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",Espaço e tempo nas Ciências Humanas,"a relação espaço geográfico/espaço social e os conceitos de território, região, fronteira, rede e lugar",True,True
+CHS.1.01.02,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",Espaço e tempo nas Ciências Humanas,"representações do espaço, orientação espacial, linguagem e escala cartográficas, coordenadas geográficas e o sistema de fusos horários",True,True
+CHS.1.01.03,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",Espaço e tempo nas Ciências Humanas,"os diferentes ritmos, percepções e concepções de tempo histórico, calendários, cronologias e poder",True,False
+CHS.1.01.04,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",Espaço e tempo nas Ciências Humanas,"as relações entre passado, presente e futuro e os conceitos de evolucionismo, providencialismo e presentismo",True,False
+CHS.1.02.01,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",A relação sociedade-natureza e suas dinâmicas,fundamentos dos processos físicos-naturais e suas especificidades,True,True
+CHS.1.02.02,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",A relação sociedade-natureza e suas dinâmicas,"atores sociais, interferências econômicas e disputas políticas na apropriação e uso dos recursos naturais e das fontes de energia",True,True
+CHS.1.02.03,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",A relação sociedade-natureza e suas dinâmicas,"organismos internacionais, movimentos sociais, atividades econômicas, técnica e sustentabilidade ambiental na sociedade contemporânea",True,True
+CHS.1.02.04,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",A relação sociedade-natureza e suas dinâmicas,interferência social sobre os fatores naturais e os impactos ambientais do fenômeno urbano,True,True
+CHS.1.02.05,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",A relação sociedade-natureza e suas dinâmicas,problemas ambientais urbanos,True,False
+CHS.1.02.06,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",A relação sociedade-natureza e suas dinâmicas,movimentos sociais ambientalistas nas sociedades contemporâneas,True,False
+CHS.1.03.01,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",Expansão urbana no mundo e no Brasil contemporâneo,dimensões sociológicas e econômicas do processo de urbanização e a organização interna da cidade,True,True
+CHS.1.03.02,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",Expansão urbana no mundo e no Brasil contemporâneo,"redes, hierarquias, territorializações, formas espaciais e dinâmicas da urbanização",True,True
+CHS.1.03.03,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",Expansão urbana no mundo e no Brasil contemporâneo,processos espaço-temporais de formação da região metropolitana do Rio de Janeiro,True,True
+CHS.1.03.04,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço",Expansão urbana no mundo e no Brasil contemporâneo,"crescimento urbano, hierarquizações sócio econômicas do território e direitos políticos, com ênfase no Brasil",True,False
+CHS.1.04.01,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço","Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico",migrações e seus impactos socioculturais,True,True
+CHS.1.04.02,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço","Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico",teorias demográficas e políticas demográficas governamentais,True,True
+CHS.1.04.03,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço","Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico",crescimento demográfico e as inter-relações entre dinâmica e estrutura populacional,True,True
+CHS.1.04.04,CHS,Ciências Humanas,Ciências Humanas,"Sociedade, tempo e espaço","Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico",dimensões sociopolíticas e impactos culturais das transformações da composição demográfica na sociedade brasileira,True,False
+CHS.2.01.01,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura","Relações entre política, cidadania e cultura","identidade, alteridade, etnia, raça, etnocentrismo, multiculturalismo",True,True
+CHS.2.01.02,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura","Relações entre política, cidadania e cultura","patrimônio, políticas de memória e questões identitárias e suas territorialidades",True,True
+CHS.2.01.03,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura","Relações entre política, cidadania e cultura",tradição e modernidade,True,True
+CHS.2.01.04,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura","Relações entre política, cidadania e cultura","ideologia, ciência, ética",True,True
+CHS.2.01.05,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura","Relações entre política, cidadania e cultura","nação, nacionalismo, globalização, soberania, democracia e representação política, Estado e governo",True,True
+CHS.2.02.01,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"conflitos políticos, revoltas e revoluções liberais e socialistas",True,True
+CHS.2.02.02,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"imperialismo, neocolonialismo e Guerra Fria",True,True
+CHS.2.02.03,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"movimentos nacionalistas, rivalidades regionais e étnico-culturais, disputas territoriais e organização política na formação de Estados nacionais",True,True
+CHS.2.02.04,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"Estado, território e fronteira nas políticas nacionais",True,True
+CHS.2.02.05,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"globalização/fragmentação territorial, política, social e cultural na contemporaneidade",True,True
+CHS.2.02.06,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,a construção de uma nova ordem geopolítica mundial e o papel das organizações internacionais multilaterais,True,True
+CHS.2.02.07,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"os ritmos e modalidades de inserção internacional de países da Ásia, da África e da América Latina, em especial, o Brasil",True,True
+CHS.2.02.08,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"os principais conflitos geopolíticos, étnicos e religiosos e suas inter-relações",True,False
+CHS.2.02.09,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"identidade regional, regionalismos e a relevância do poder local nos processos de fragmentação territorial",True,False
+CHS.2.02.10,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,os processos de formação dos estados nacionais americanos no século XIX,True,False
+CHS.2.02.11,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"impactos da expansão imperialista nas sociedades africanas, asiáticas e americanas",True,False
+CHS.2.02.12,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"as relações internacionais, políticas e econômicas na Primeira Guerra Mundial (1914-1918)",True,False
+CHS.2.02.13,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"as relações internacionais, políticas e econômicas na Segunda Guerra Mundial (1939-1945)",True,False
+CHS.2.02.14,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"fascismos e nacionalismos no período do entre-guerras, com ênfase nos casos da Alemanha e da Itália",True,False
+CHS.2.02.15,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,descolonização e anticolonialismo nos processos de independência afro-asiáticos,True,False
+CHS.2.02.16,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Relações internacionais no mundo contemporâneo,"as ditaduras civil- militares na América Latina, os movimentos de resistência e os processos de democratização",True,False
+CHS.2.03.01,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Processo sócio-histórico de constituição da sociedade brasileira,"heranças coloniais, hierarquias e exclusões sociais",True,True
+CHS.2.03.02,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Processo sócio-histórico de constituição da sociedade brasileira,"conflitos e negociações políticas na formação, consolidação e transformações da organização do Estado",True,True
+CHS.2.03.03,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Processo sócio-histórico de constituição da sociedade brasileira,interesses sociais e práticas culturais na formação da identidade nacional,True,True
+CHS.2.03.04,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Processo sócio-histórico de constituição da sociedade brasileira,indústria cultural e sociedade de consumo,True,True
+CHS.2.03.05,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Processo sócio-histórico de constituição da sociedade brasileira,movimentos sociais e a organização de trabalhadores urbanos e rurais,True,True
+CHS.2.03.06,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Processo sócio-histórico de constituição da sociedade brasileira,"autoritarismo, resistência política e características e impasses da ordem democrática",True,True
+CHS.2.03.07,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Processo sócio-histórico de constituição da sociedade brasileira,dependência e desenvolvimento econômico,True,False
+CHS.2.03.08,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Processo sócio-histórico de constituição da sociedade brasileira,particularidades sócio-históricas do processo de constituição e consolidação do Império do Brasil,True,False
+CHS.2.03.09,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Processo sócio-histórico de constituição da sociedade brasileira,"relações entre Estado, capital e sociedade civil no Brasil urbano-industrial",True,False
+CHS.2.04.01,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Organização e ação do Estado,"conceitos de nação, Estado-Nação, identidade nacional e nacionalismos",False,False
+CHS.2.04.02,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Organização e ação do Estado,diferentes configurações do Estado moderno territorial e a dimensão espacial da representação política e da organização político-administrativa,False,False
+CHS.2.04.03,CHS,Ciências Humanas,Ciências Humanas,"Política, cidadania e cultura",Organização e ação do Estado,políticas públicas de caráter nacional e regional e seu papel na estruturação do espaço geográfico,False,False
+CHS.3.01.01,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia","Relações entre economia, trabalho e tecnologia","desenvolvimento, dependência, capitalismo, socialismo",True,True
+CHS.3.01.02,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia","Relações entre economia, trabalho e tecnologia","ciência, técnica, modernidade e globalização",True,True
+CHS.3.01.03,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia","Relações entre economia, trabalho e tecnologia",sustentabilidade e tecnologia,True,False
+CHS.3.02.01,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Agentes econômicos do capitalismo e a organização do espaço,"o processo histórico de industrialização, modelos produtivos/padrões de consumo do capitalismo e as configurações espaciais da produção contemporânea de bens",True,True
+CHS.3.02.02,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Agentes econômicos do capitalismo e a organização do espaço,"Estado, planejamento e regulação da economia",True,True
+CHS.3.02.03,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Agentes econômicos do capitalismo e a organização do espaço,"redes técnicas, fluxos de pessoas, bens e capitais e as interações socioespaciais no capitalismo globalizado",True,True
+CHS.3.02.04,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Agentes econômicos do capitalismo e a organização do espaço,organização socioespacial da agropecuária e as novas interações urbano-rurais,True,True
+CHS.3.02.05,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Agentes econômicos do capitalismo e a organização do espaço,as diferenças socioespaciais no mundo contemporâneo,True,False
+CHS.3.02.06,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Agentes econômicos do capitalismo e a organização do espaço,blocos regionais de comércio internacional,True,False
+CHS.3.02.07,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Agentes econômicos do capitalismo e a organização do espaço,"os agentes do capitalismo financeiro, os fluxos globais de capital e suas assimetrias",True,False
+CHS.3.02.08,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Agentes econômicos do capitalismo e a organização do espaço,formação e consolidação do capitalismo nos Estados Unidos,True,False
+CHS.3.02.09,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Agentes econômicos do capitalismo e a organização do espaço,globalização e antiglobalização,True,False
+CHS.3.03.01,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Relações de trabalho no mundo moderno,"processos de produção, desenvolvimento técnico-científico e as formas de organização do trabalho",True,True
+CHS.3.03.02,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Relações de trabalho no mundo moderno,"relações trabalhistas e mercado de trabalho no mundo globalizado, informalidade, marginalidade social e formação profissional na contemporaneidade",True,True
+CHS.3.03.03,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Relações de trabalho no mundo moderno,a transição do trabalho escravo para o trabalho livre na sociedade brasileira,True,True
+CHS.3.03.04,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Relações de trabalho no mundo moderno,"os conflitos sociais, as estruturas agrária e fundiária e a modernização no campo",True,True
+CHS.3.03.05,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Relações de trabalho no mundo moderno,"informação, a sociedade do conhecimento e seus impactos nas relações de trabalho",True,False
+CHS.3.04.01,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Os espaços da produção e da circulação de riquezas,"os fatores locacionais, as novas estratégias de organização da produção e as espacializações do processo de industrialização",False,False
+CHS.3.04.02,CHS,Ciências Humanas,Ciências Humanas,"Economia, trabalho e tecnologia",Os espaços da produção e da circulação de riquezas,as múltiplas formas de organização da produção agrária e a modernização do campo no mundo e no Brasil,False,False

@@ -1,0 +1,8 @@
+uerj:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      # caminho relativo à pasta dbt/, de onde os comandos são executados
+      path: "{{ env_var('UERJ_DUCKDB', '../data/warehouse/uerj.duckdb') }}"
+      threads: 4

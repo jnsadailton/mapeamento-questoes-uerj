@@ -1,0 +1,827 @@
+item_texto,subitem_texto,id_conteudo,origem,metodo,justificativa
+Tipologias,descrição,LIN.1.01.01,edital,exato,
+Tipologias,narração,LIN.1.01.02,edital,exato,
+Tipologias,argumentação,LIN.1.01.03,edital,exato,
+Tipologias,injunção,LIN.1.01.04,edital,exato,
+Gêneros,composição típica dos enunciados,LIN.1.02.01,edital,exato,
+Gêneros,suportes,LIN.1.02.02,edital,exato,
+Gêneros,função social,LIN.1.02.03,edital,exato,
+Gêneros,graus de formalidade,LIN.1.02.04,edital,exato,
+Organização textual,tema global,LIN.1.03.01,edital,exato,
+Organização textual,informações específicas,LIN.1.03.02,edital,exato,
+Organização textual,progressão temática,LIN.1.03.03,edital,exato,
+Perspectivas enunciativas,"quem enuncia, a quem enuncia, espaço, tempo",LIN.1.04.01,edital,exato,
+Perspectivas enunciativas,vozes,LIN.1.04.02,edital,exato,
+Perspectivas enunciativas,modalização,LIN.1.04.03,edital,exato,
+Polifonia e intertextualidade,"reformulação, paráfrase, paródia, citação",LIN.1.05.01,edital,exato,
+Polifonia e intertextualidade,"diálogo, discurso relatado",LIN.1.05.02,edital,exato,
+Polifonia e intertextualidade,"inferência, pressuposição e subentendido",LIN.1.05.03,edital,exato,
+Métodos de argumentação,indução e dedução,LIN.1.06.01,edital,exato,
+Métodos de argumentação,dialética,LIN.1.06.02,edital,exato,
+Formas de articulação de ideias,tema global,LIN.1.03.01,edital,manual,"O edital de 2027 repete este subitem em ""Organização textual""; vale o primeiro."
+Formas de articulação de ideias,informações específicas,LIN.1.03.02,edital,manual,"O edital de 2027 repete este subitem em ""Organização textual""; vale o primeiro."
+Formas de articulação de ideias,progressão temática,LIN.1.03.03,edital,manual,"O edital de 2027 repete este subitem em ""Organização textual""; vale o primeiro."
+Formas de articulação de ideias,"fato, opinião",LIN.1.07.01,edital,exato,
+Formas de articulação de ideias,causalidade,LIN.1.07.02,edital,exato,
+Formas de articulação de ideias,conclusão,LIN.1.07.03,edital,exato,
+Formas de articulação de ideias,comparação,LIN.1.07.04,edital,exato,
+Formas de articulação de ideias,exemplificação,LIN.1.07.05,edital,exato,
+Formas de articulação de ideias,enumeração,LIN.1.07.06,edital,exato,
+Formas de articulação de ideias,"generalização, particularização",LIN.1.07.07,edital,exato,
+Formas de articulação de ideias,"gradação, ênfase",LIN.1.07.08,edital,exato,
+Formas de articulação de ideias,contra-argumentação,LIN.1.07.09,edital,exato,
+Procedimentos de coesão e coerência,"anáfora, catáfora, dêixis",LIN.1.08.01,edital,exato,
+Procedimentos de coesão e coerência,"substituição, designação, elipse",LIN.1.08.02,edital,exato,
+Procedimentos de coesão e coerência,uso de conectores,LIN.1.08.03,edital,exato,
+Procedimentos de coesão e coerência,condições de interpretabilidade,LIN.1.08.04,edital,exato,
+Procedimentos de coesão e coerência,relações entre as partes do texto,LIN.1.08.05,edital,exato,
+Relações semânticas,"sinonímia, antonímia, ambiguidade, polissemia",LIN.1.09.01,edital,exato,
+Relações semânticas,metalinguagem,LIN.1.09.02,edital,exato,
+Relações semânticas,"conhecimento lexical, expressões idiomáticas, formação de palavras",LIN.1.09.03,edital,exato,
+Relações semânticas,"metáfora, metonímia, personificação, hipérbole, antítese, paradoxo, eufemismo, ironia",LIN.1.09.04,edital,exato,
+Usos do verbo,"tempo, modo, aspecto, voz",LIN.1.10.01,edital,exato,
+Usos do verbo,"formas afirmativa, interrogativa e negativa",LIN.1.10.02,edital,exato,
+Usos do verbo,a semântica dos tempos verbais,LIN.1.10.03,edital,exato,
+Elementos não verbais,relação entre o verbal e o não verbal,LIN.1.11.01,edital,exato,
+Elementos não verbais,imagens,LIN.1.11.02,edital,exato,
+Elementos não verbais,recursos gráficos e tipográficos,LIN.1.11.03,edital,exato,
+Elementos não verbais,sentidos da pontuação,LIN.1.11.04,edital,exato,
+Natureza dos textos,o poético,LIN.2.01.01,edital,exato,
+Natureza dos textos,o narrativo,LIN.2.01.02,edital,exato,
+Natureza dos textos,o dramático,LIN.2.01.03,edital,exato,
+Literatura e sociedade,contextos sócio-históricos de produção e recepção dos textos,LIN.2.02.01,edital,exato,
+Literatura e sociedade,relações com movimentos estético-culturais,LIN.2.02.02,edital,exato,
+Literatura e sociedade,diálogos entre a literatura e as artes em geral,LIN.2.02.03,edital,exato,
+Representações da realidade,efeito de real,LIN.2.03.01,edital,exato,
+Representações da realidade,verossimilhança externa e interna,LIN.2.03.02,edital,exato,
+Elementos da narrativa,construção de personagens,LIN.2.04.01,edital,exato,
+Elementos da narrativa,"narrador, foco narrativo, índices narrativos",LIN.2.04.02,edital,exato,
+Elementos da narrativa,representações do tempo e do espaço,LIN.2.04.03,edital,exato,
+Recursos estilísticos,seleção e combinação de palavras,LIN.2.05.01,edital,exato,
+Recursos estilísticos,formas dos vocábulos,LIN.2.05.02,edital,exato,
+Recursos estilísticos,efeitos sonoros,LIN.2.05.03,edital,exato,
+Recursos estilísticos,figurações e imagens,LIN.2.05.04,edital,exato,
+Recursos estilísticos,representações da variabilidade linguística,LIN.2.05.05,edital,exato,
+Recursos estilísticos,efeitos de sentido decorrentes de usos expressivos da linguagem,LIN.2.05.06,edital,exato,
+Sistema decimal,representações,MAT.1.01.01,edital,exato,
+Sistema decimal,operações,MAT.1.01.02,edital,exato,
+Números naturais,"números primos, decomposição em fatores primos, divisibilidade",MAT.1.02.01,edital,exato,
+Números naturais,MMC,MAT.1.02.02,edital,exato,
+Números naturais,MDC,MAT.1.02.03,edital,exato,
+Números reais,operações,MAT.1.03.01,edital,exato,
+Números reais,representações,MAT.1.03.02,edital,exato,
+Números reais,intervalos de números reais,MAT.1.03.03,edital,exato,
+Proporcionalidade,grandezas diretamente ou inversamente proporcionais: razões,MAT.1.04.01,edital,manual,Texto do edital de 2027 dividido ou corrigido na hierarquia canônica.
+Proporcionalidade,grandezas diretamente ou inversamente proporcionais: razões,MAT.1.04.02,edital,manual,Texto do edital de 2027 dividido ou corrigido na hierarquia canônica.
+Proporcionalidade,proporções,MAT.1.04.03,edital,exato,
+Proporcionalidade,divisão em partes proporcionais,MAT.1.04.04,edital,exato,
+Proporcionalidade,regra de sociedade,MAT.1.04.05,edital,exato,
+Proporcionalidade,regra de três simples,MAT.1.04.06,edital,exato,
+Proporcionalidade,regra de três composta,MAT.1.04.07,edital,exato,
+Proporcionalidade,"porcentagem, representação gráfica",MAT.1.04.08,edital,exato,
+Conjuntos,relações de pertinência e inclusão,MAT.1.05.01,edital,exato,
+Conjuntos,união,MAT.1.05.02,edital,exato,
+Conjuntos,interseção,MAT.1.05.03,edital,exato,
+Conjuntos,diferença,MAT.1.05.04,edital,exato,
+Conjuntos,complementar,MAT.1.05.05,edital,exato,
+Expressões algébricas,operações,MAT.2.01.01,edital,exato,
+Expressões algébricas,identidades,MAT.2.01.02,edital,exato,
+Expressões algébricas,equações,MAT.2.01.03,edital,exato,
+Expressões algébricas,inequações,MAT.2.01.04,edital,exato,
+Funções,afim,MAT.2.02.01,edital,exato,
+Funções,quadrática,MAT.2.02.02,edital,exato,
+Funções,exponencial e logarítmica,MAT.2.02.03,edital,exato,
+Funções,trigonométricas,MAT.2.02.04,edital,exato,
+Funções,representações gráficas,MAT.2.02.05,edital,exato,
+Funções,características e operações,MAT.2.02.06,edital,exato,
+Funções,taxa de variação média,MAT.2.02.07,edital,exato,
+Sucessões,aritméticas,MAT.2.03.01,edital,exato,
+Sucessões,geométricas,MAT.2.03.02,edital,exato,
+Sucessões,"por recorrências, juros simples e compostos",MAT.2.03.03,edital,manual,Texto do edital de 2027 dividido ou corrigido na hierarquia canônica.
+Sucessões,"por recorrências, juros simples e compostos",MAT.2.03.04,edital,manual,Texto do edital de 2027 dividido ou corrigido na hierarquia canônica.
+Problemas de contagem,princípios de contagem,MAT.2.04.01,edital,exato,
+Problemas de contagem,análise combinatória simples e com repetição,MAT.2.04.02,edital,exato,
+Problemas de contagem,binômio de Newton,MAT.2.04.03,edital,exato,
+Matrizes,representações,MAT.2.05.01,edital,exato,
+Matrizes,operações,MAT.2.05.02,edital,exato,
+Matrizes,determinantes até 3ª ordem,MAT.2.05.03,edital,exato,
+Sistemas de equações,lineares de duas ou três incógnitas,MAT.2.06.01,edital,exato,
+Sistemas de equações,não lineares,MAT.2.06.02,edital,exato,
+Figuras no plano,ângulos em graus,MAT.3.01.01,edital,exato,
+Figuras no plano,congruências,MAT.3.01.02,edital,exato,
+Figuras no plano,simetrias e homotetias,MAT.3.01.03,edital,exato,
+Figuras no plano,"polígonos, circunferências e arcos em radianos",MAT.3.01.04,edital,exato,
+Figuras no plano,círculos,MAT.3.01.05,edital,exato,
+Figuras no plano,relações métricas,MAT.3.01.06,edital,exato,
+Figuras no plano,razões trigonométricas,MAT.3.01.07,edital,exato,
+Figuras no plano,"distâncias, áreas, perímetros",MAT.3.01.08,edital,exato,
+Figuras tridimensionais,congruências,MAT.3.02.01,edital,exato,
+Figuras tridimensionais,simetrias e homotetias,MAT.3.02.02,edital,exato,
+Figuras tridimensionais,características dos poliedros,MAT.3.02.03,edital,exato,
+Figuras tridimensionais,poliedros regulares,MAT.3.02.04,edital,exato,
+Figuras tridimensionais,"áreas e volumes de prismas, pirâmides, cilindros, cones e esferas. Troncos de prismas, pirâmides, cilindros e cone",MAT.3.02.05,edital,exato,
+Geometria de posição no plano e no espaço,paralelismo,MAT.3.03.01,edital,exato,
+Geometria de posição no plano e no espaço,perpendicularismo,MAT.3.03.02,edital,exato,
+Geometria de posição no plano e no espaço,projeções ortogonais,MAT.3.03.03,edital,exato,
+Círculo trigonométrico,"linhas trigonométricas, relações fundamentais",MAT.3.04.01,edital,exato,
+Círculo trigonométrico,identidades,MAT.3.04.02,edital,exato,
+Círculo trigonométrico,equações e inequações trigonométricas,MAT.3.04.03,edital,exato,
+Círculo trigonométrico,lei dos cossenos,MAT.3.04.04,edital,exato,
+Círculo trigonométrico,lei dos seno,MAT.3.04.05,edital,manual,Texto do edital de 2027 dividido ou corrigido na hierarquia canônica.
+Relações trigonométricas,da adição e subtração de arcos,MAT.3.05.01,edital,exato,
+Relações trigonométricas,do arco duplo,MAT.3.05.02,edital,exato,
+Relações trigonométricas,do arco metade,MAT.3.05.03,edital,exato,
+Representações,tabulações,MAT.4.01.01,edital,exato,
+Representações,pictográficos,MAT.4.01.02,edital,exato,
+Representações,gráficos de setores,MAT.4.01.03,edital,exato,
+Representações,histogramas,MAT.4.01.04,edital,exato,
+Representações,gráficos cartesianos,MAT.4.01.05,edital,exato,
+Medidas de tendência central,"médica aritmética, geométrica e harmônica",MAT.4.02.01,edital,manual,Texto do edital de 2027 dividido ou corrigido na hierarquia canônica.
+Medidas de tendência central,moda,MAT.4.02.02,edital,exato,
+Medidas de tendência central,mediana,MAT.4.02.03,edital,exato,
+Medidas de dispersão,variância,MAT.4.03.01,edital,exato,
+Medidas de dispersão,desvio padrão,MAT.4.03.02,edital,exato,
+Probabilidade,conceito e cálculo,MAT.4.04.01,edital,exato,
+Probabilidade,probabilidade da união de eventos,MAT.4.04.02,edital,exato,
+Probabilidade,probabilidade da interseção de eventos,MAT.4.04.03,edital,exato,
+Probabilidade,probabilidade condicional,MAT.4.04.04,edital,exato,
+Probabilidade,distribuição binomial de probabilidades,MAT.4.04.05,edital,exato,
+Átomos,partículas subatômicas,CNT.1.01.01,edital,exato,
+Átomos,configuração eletrônica,CNT.1.01.02,edital,exato,
+Elementos químicos,"massa atômica, número atômico, isotopia",CNT.1.02.01,edital,exato,
+Elementos químicos,classificação periódica e propriedades periódicas,CNT.1.02.02,edital,exato,
+Íons e moléculas,ligações químicas,CNT.1.03.01,edital,exato,
+Íons e moléculas,geometria molecular,CNT.1.03.02,edital,exato,
+Íons e moléculas,interações intermoleculares,CNT.1.03.03,edital,exato,
+Bases moleculares da vida,ácidos nucleicos,CNT.1.04.01,edital,exato,
+Bases moleculares da vida,proteínas,CNT.1.04.02,edital,exato,
+Bases moleculares da vida,lipídios,CNT.1.04.03,edital,exato,
+Bases moleculares da vida,carboidratos,CNT.1.04.04,edital,exato,
+"Experimentos, hipóteses e leis da natureza","grandezas, medições, algarismos significativos, ordens de grandeza",CNT.2.01.01,edital,exato,
+"Experimentos, hipóteses e leis da natureza",tabulação e representação gráfica de dados,CNT.2.01.02,edital,exato,
+"Experimentos, hipóteses e leis da natureza","média, desvio padrão",CNT.2.01.03,edital,exato,
+Leis de Newton,"massa, velocidade, aceleração, força",CNT.2.02.01,edital,exato,
+Leis de Newton,movimento uniforme e uniformemente variado,CNT.2.02.02,edital,exato,
+Leis de conservação,"energia cinética, força-peso, trabalho, energia potencial, energia mecânica",CNT.2.03.01,edital,exato,
+Leis de conservação,"momentum linear, colisões unidimensionais elásticas e totalmente inelásticas",CNT.2.03.02,edital,exato,
+Equilíbrio de corpos rígidos,"centro de gravidade, momento de força, alavancas, roldanas simples, balanças",CNT.2.04.01,edital,exato,
+Equilíbrio de corpos rígidos,plano inclinado e forças de atrito,CNT.2.04.02,edital,exato,
+Hidrostática,pressão atmosférica,CNT.2.05.01,edital,exato,
+Hidrostática,princípio de Arquimedes,CNT.2.05.02,edital,exato,
+Hidrostática,princípio de Pascal,CNT.2.05.03,edital,exato,
+Hidrostática,lei de Stevin,CNT.2.05.04,edital,exato,
+"Fenômenos elétricos, magnéticos e ondulatórios","processos de eletrização, carga, corrente, potência, campo e potencial elétricos",CNT.2.06.01,edital,exato,
+"Fenômenos elétricos, magnéticos e ondulatórios","resistores, lei de Ohm, circuitos elétricos",CNT.2.06.02,edital,exato,
+"Fenômenos elétricos, magnéticos e ondulatórios","indução eletromagnética, campo magnético, fluxo, lei de Faraday",CNT.2.06.03,edital,exato,
+"Fenômenos elétricos, magnéticos e ondulatórios",geradores e transformadores,CNT.2.06.04,edital,exato,
+"Fenômenos elétricos, magnéticos e ondulatórios",princípios básicos da óptica geométrica,CNT.2.06.05,edital,exato,
+Substância pura e misturas,"conceitos, propriedades, classificações",CNT.3.01.01,edital,exato,
+Substância pura e misturas,processos de separação de misturas,CNT.3.01.02,edital,exato,
+Soluções,"unidades de concentração expressas em percentagem, em g.L-1 e em quantidade de matéria",CNT.3.02.01,edital,exato,
+Soluções,diluição e misturas,CNT.3.02.02,edital,exato,
+Gases ideais,transformações,CNT.3.03.01,edital,exato,
+Gases ideais,equação geral dos gases,CNT.3.03.02,edital,exato,
+Gases ideais,misturas gasosas,CNT.3.03.03,edital,exato,
+Funções químicas,classificação e nomenclatura das substâncias orgânicas e inorgânicas,CNT.3.04.01,edital,exato,
+Funções químicas,isomeria,CNT.3.04.02,edital,exato,
+Reações químicas,"síntese, decomposição, deslocamento, dupla-troca",CNT.3.05.01,edital,exato,
+Reações químicas,"balanceamento, ocorrência",CNT.3.05.02,edital,exato,
+Reações químicas,oxirredução,CNT.3.05.03,edital,exato,
+Cálculo estequiométrico simples,"fórmula percentual, mínima e molecular",CNT.3.06.01,edital,exato,
+Cálculo estequiométrico simples,"quantidade de matéria, de massa e de volume nas condições normais",CNT.3.06.02,edital,exato,
+Cinética reacional,taxa de reação,CNT.3.07.01,edital,exato,
+Cinética reacional,fatores de interferência,CNT.3.07.02,edital,exato,
+Cinética reacional,reações enzimáticas,CNT.3.07.03,edital,exato,
+Equilíbrio químico,perturbações,CNT.3.08.01,edital,exato,
+Equilíbrio químico,acidez e basicidade,CNT.3.08.02,edital,exato,
+Fenômenos térmicos,"temperatura, calor, dilatação térmica",CNT.3.09.01,edital,exato,
+Fenômenos térmicos,"calor específico, calor latente, mudanças de estado, calorimetria, termoquímica",CNT.3.09.02,edital,exato,
+Transformações energéticas nos seres vivos,cadeia respiratória e fosforilação oxidativa na mitocôndria,CNT.3.10.01,edital,exato,
+Transformações energéticas nos seres vivos,fases da fotossíntese nos cloroplastos,CNT.3.10.02,edital,exato,
+Biodiversidade,características gerais dos principais grupos de seres vivos,CNT.4.01.01,edital,exato,
+Biodiversidade,teorias e conceitos de evolução,CNT.4.01.02,edital,exato,
+Integração entre seres vivos e meio ambiente,"ecossistemas, cadeia alimentar, ciclos biogeoquímicos",CNT.4.02.01,edital,exato,
+Integração entre seres vivos e meio ambiente,poluição e desequilíbrio ecológico,CNT.4.02.02,edital,exato,
+A célula,funções das estruturas e organelas,CNT.4.03.01,edital,exato,
+A célula,fases da divisão celular,CNT.4.03.02,edital,exato,
+As bases da genética,genes,CNT.4.04.01,edital,exato,
+As bases da genética,código genético,CNT.4.04.02,edital,exato,
+As bases da genética,cromossomos,CNT.4.04.03,edital,exato,
+As bases da genética,hereditariedade e doenças hereditárias,CNT.4.04.04,edital,exato,
+Doenças parasitárias,"ciclos de vida de parasitas, modos de transmissão",CNT.4.05.01,edital,exato,
+Doenças parasitárias,profilaxia,CNT.4.05.02,edital,exato,
+Sistemas vitais dos animais e vegetais,digestão e absorção dos alimentos,CNT.4.06.01,edital,exato,
+Sistemas vitais dos animais e vegetais,respiração,CNT.4.06.02,edital,exato,
+Sistemas vitais dos animais e vegetais,circulação,CNT.4.06.03,edital,exato,
+Sistemas vitais dos animais e vegetais,excreção,CNT.4.06.04,edital,exato,
+Sistemas vitais dos animais e vegetais,"metabolismo de carboidratos, de lipídios e de proteínas",CNT.4.06.05,edital,exato,
+Sistemas vitais dos animais e vegetais,funções dos hormônios no metabolismo,CNT.4.06.06,edital,exato,
+Sistemas vitais dos animais e vegetais,sistema nervoso e órgãos dos sentidos,CNT.4.06.07,edital,exato,
+Sistemas vitais dos animais e vegetais,sistemas reprodutores,CNT.4.06.08,edital,exato,
+Sistemas vitais dos animais e vegetais,produção de óvulos e espermatozoides na reprodução humana,CNT.4.06.09,edital,exato,
+Sistemas vitais dos animais e vegetais,atuação dos hormônios sexuais,CNT.4.06.10,edital,exato,
+Sistemas vitais dos animais e vegetais,fotossíntese,CNT.4.06.11,edital,exato,
+Espaço e tempo nas Ciências Humanas,"a relação espaço geográfico/espaço social e os conceitos de território, região, fronteira, rede e lugar",CHS.1.01.01,edital,exato,
+Espaço e tempo nas Ciências Humanas,"representações do espaço, orientação espacial, linguagem e escala cartográficas, coordenadas geográficas e o sistema de fusos horários",CHS.1.01.02,edital,exato,
+A relação sociedade-natureza e suas dinâmicas,fundamentos dos processos físicos-naturais e suas especificidades,CHS.1.02.01,edital,exato,
+A relação sociedade-natureza e suas dinâmicas,"atores sociais, interferências econômicas e disputas políticas na apropriação e uso dos recursos naturais e das fontes de energia",CHS.1.02.02,edital,exato,
+A relação sociedade-natureza e suas dinâmicas,"organismos internacionais, movimentos sociais, atividades econômicas, técnica e sustentabilidade ambiental na sociedade contemporânea",CHS.1.02.03,edital,exato,
+A relação sociedade-natureza e suas dinâmicas,interferência social sobre os fatores naturais e os impactos ambientais do fenômeno urbano,CHS.1.02.04,edital,exato,
+Expansão urbana no mundo e no Brasil contemporâneo,dimensões sociológicas e econômicas do processo de urbanização e a organização interna da cidade,CHS.1.03.01,edital,exato,
+Expansão urbana no mundo e no Brasil contemporâneo,"redes, hierarquias, territorializações, formas espaciais e dinâmicas da urbanização",CHS.1.03.02,edital,exato,
+Expansão urbana no mundo e no Brasil contemporâneo,processos espaço-temporais de formação da região metropolitana do Rio de Janeiro,CHS.1.03.03,edital,exato,
+"Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico",migrações e seus impactos socioculturais,CHS.1.04.01,edital,exato,
+"Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico",teorias demográficas e políticas demográficas governamentais,CHS.1.04.02,edital,exato,
+"Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico",crescimento demográfico e as inter-relações entre dinâmica e estrutura populacional,CHS.1.04.03,edital,exato,
+"Relações entre política, cidadania e cultura","identidade, alteridade, etnia, raça, etnocentrismo, multiculturalismo",CHS.2.01.01,edital,exato,
+"Relações entre política, cidadania e cultura","patrimônio, políticas de memória e questões identitárias e suas territorialidades",CHS.2.01.02,edital,exato,
+"Relações entre política, cidadania e cultura",tradição e modernidade,CHS.2.01.03,edital,exato,
+"Relações entre política, cidadania e cultura","ideologia, ciência, ética",CHS.2.01.04,edital,exato,
+"Relações entre política, cidadania e cultura","nação, nacionalismo, globalização, soberania, democracia e representação política, Estado e governo",CHS.2.01.05,edital,exato,
+Relações internacionais no mundo contemporâneo,"conflitos políticos, revoltas e revoluções liberais e socialistas",CHS.2.02.01,edital,exato,
+Relações internacionais no mundo contemporâneo,"imperialismo, neocolonialismo e Guerra Fria",CHS.2.02.02,edital,exato,
+Relações internacionais no mundo contemporâneo,"movimentos nacionalistas, rivalidades regionais e étnico-culturais, disputas territoriais e organização política na formação de Estados nacionais",CHS.2.02.03,edital,exato,
+Relações internacionais no mundo contemporâneo,"Estado, território e fronteira nas políticas nacionais",CHS.2.02.04,edital,exato,
+Relações internacionais no mundo contemporâneo,"globalização/fragmentação territorial, política, social e cultural na contemporaneidade",CHS.2.02.05,edital,exato,
+Relações internacionais no mundo contemporâneo,a construção de uma nova ordem geopolítica mundial e o papel das organizações internacionais multilaterais,CHS.2.02.06,edital,exato,
+Relações internacionais no mundo contemporâneo,"os ritmos e modalidades de inserção internacional de países da Ásia, da África e da América Latina, em especial, o Brasil",CHS.2.02.07,edital,exato,
+Processo sócio-histórico de constituição da sociedade brasileira,"heranças coloniais, hierarquias e exclusões sociais",CHS.2.03.01,edital,exato,
+Processo sócio-histórico de constituição da sociedade brasileira,"conflitos e negociações políticas na formação, consolidação e transformações da organização do Estado",CHS.2.03.02,edital,exato,
+Processo sócio-histórico de constituição da sociedade brasileira,interesses sociais e práticas culturais na formação da identidade nacional,CHS.2.03.03,edital,exato,
+Processo sócio-histórico de constituição da sociedade brasileira,indústria cultural e sociedade de consumo,CHS.2.03.04,edital,exato,
+Processo sócio-histórico de constituição da sociedade brasileira,movimentos sociais e a organização de trabalhadores urbanos e rurais,CHS.2.03.05,edital,exato,
+Processo sócio-histórico de constituição da sociedade brasileira,"autoritarismo, resistência política e características e impasses da ordem democrática",CHS.2.03.06,edital,exato,
+"Relações entre economia, trabalho e tecnologia","desenvolvimento, dependência, capitalismo, socialismo",CHS.3.01.01,edital,exato,
+"Relações entre economia, trabalho e tecnologia","ciência, técnica, modernidade e globalização",CHS.3.01.02,edital,exato,
+Agentes econômicos do capitalismo e a organização do espaço,"o processo histórico de industrialização, modelos produtivos/padrões de consumo do capitalismo e as configurações espaciais da produção contemporânea de bens",CHS.3.02.01,edital,exato,
+Agentes econômicos do capitalismo e a organização do espaço,"Estado, planejamento e regulação da economia",CHS.3.02.02,edital,exato,
+Agentes econômicos do capitalismo e a organização do espaço,"redes técnicas, fluxos de pessoas, bens e capitais e as interações socioespaciais no capitalismo globalizado",CHS.3.02.03,edital,exato,
+Agentes econômicos do capitalismo e a organização do espaço,organização socioespacial da agropecuária e as novas interações urbano-rurais,CHS.3.02.04,edital,exato,
+Relações de trabalho no mundo moderno,"processos de produção, desenvolvimento técnico-científico e as formas de organização do trabalho",CHS.3.03.01,edital,exato,
+Relações de trabalho no mundo moderno,"relações trabalhistas e mercado de trabalho no mundo globalizado, informalidade, marginalidade social e formação profissional na contemporaneidade",CHS.3.03.02,edital,exato,
+Relações de trabalho no mundo moderno,a transição do trabalho escravo para o trabalho livre na sociedade brasileira,CHS.3.03.03,edital,exato,
+Relações de trabalho no mundo moderno,"os conflitos sociais, as estruturas agrária e fundiária e a modernização no campo",CHS.3.03.04,edital,exato,
+Usos do verbo,semântica dos tempos verbais,LIN.1.10.03,edital,similar,
+Elementos das narrativas selecionadas,construção dos personagens,LIN.2.04.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Elementos das narrativas selecionadas,"narrador, foco narrativo, índices narrativos",LIN.2.04.02,edital,exato,
+Elementos das narrativas selecionadas,representações do tempo e do espaço,LIN.2.04.03,edital,exato,
+Elementos das narrativas selecionadas,epifania,LIN.2.04.04,edital,exato,
+Elementos das narrativas selecionadas,metaficção,LIN.2.04.05,edital,exato,
+Números naturais,divisibilidade,MAT.1.02.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Educação financeira,grandezas diretamente ou inversamente proporcionais,MAT.1.04.01,edital,exato,
+Educação financeira,razões,MAT.1.04.02,edital,exato,
+Educação financeira,proporções,MAT.1.04.03,edital,exato,
+Educação financeira,divisão em partes proporcionais,MAT.1.04.04,edital,exato,
+Educação financeira,regra de sociedade,MAT.1.04.05,edital,exato,
+Educação financeira,regra de três simples,MAT.1.04.06,edital,exato,
+Educação financeira,regra de três composta,MAT.1.04.07,edital,exato,
+Educação financeira,"porcentagem, representação gráfica",MAT.1.04.08,edital,exato,
+Figuras no plano,"polígonos, circunferências e círculos",MAT.3.01.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+Figuras no plano,"polígonos, circunferências e círculos",MAT.3.01.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+Figuras no plano,"distâncias, ângulos, áreas, perímetros",MAT.3.01.08,edital,manual,Equivalência definida na curadoria da hierarquia.
+Figuras no plano,"distâncias, ângulos, áreas, perímetros",MAT.3.01.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Figuras tridimensionais,poliedros regulares,MAT.3.02.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Geometria de posição no plano e no espaço,"paralelismo, perpendicularismo",MAT.3.03.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Geometria de posição no plano e no espaço,"paralelismo, perpendicularismo",MAT.3.03.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Círculo trigonométrico,lei dos senos,MAT.3.04.05,edital,exato,
+"Experimentos, hipóteses e leis da natureza","grandezas, medições, ordens de grandeza",CNT.2.01.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Fenômenos elétricos e magnéticos,"carga, corrente, potência, campo e potencial elétricos",CNT.2.06.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Fenômenos elétricos e magnéticos,"resistores, lei de Ohm, circuitos elétricos",CNT.2.06.02,edital,exato,
+Fenômenos elétricos e magnéticos,"indução eletromagnética, campo magnético, fluxo, lei de Faraday",CNT.2.06.03,edital,exato,
+Fenômenos elétricos e magnéticos,geradores e transformadores,CNT.2.06.04,edital,exato,
+Gases ideais,misturar gasosas,CNT.3.03.03,edital,similar,
+Sistemas vitais dos animais e vegetais,"homeostase, digestão e absorção dos alimentos",CNT.4.06.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+A relação sociedade-natureza e suas dinâmicas,interferência social sobre os fatores naturais,CHS.1.02.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+Expansão urbana no mundo e no Brasil contemporâneo,dimensões sociológicas e econômicas e impactos ambientais do fenômeno urbano,CHS.1.03.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Expansão urbana no mundo e no Brasil contemporâneo,"redes, hierarquias, territorializações, formas espaciais e dinâmicas sociais da urbanização",CHS.1.03.02,edital,similar,
+"Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico",crescimento demográfico,CHS.1.04.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico","crescimento populacional, teorias demográficas e transformações sociais",CHS.1.04.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico",inter-relação entre dinâmica social e estrutura populacional,CHS.1.04.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico",Estado e políticas demográficas,CHS.1.04.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre política, cidadania e cultura","patrimônio, políticas de memória e questões identitárias",CHS.2.01.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Processo sócio-histórico de constituição da sociedade brasileira,dependência e desenvolvimento econômico,CHS.2.03.07,edital,exato,
+Agentes econômicos do capitalismo e a organização do espaço,"redes técnicas, fluxos de pessoas e bens e as interações socioespaciais no capitalismo globalizado",CHS.3.02.03,edital,similar,
+Agentes econômicos do capitalismo e a organização do espaço,organização socioespacial da agropecuária e as ovas interações urbano-rurais,CHS.3.02.04,edital,similar,
+Grandezas diretamente ou inversamente proporcionais,razões,MAT.1.04.02,edital,exato,
+Grandezas diretamente ou inversamente proporcionais,proporções,MAT.1.04.03,edital,exato,
+Grandezas diretamente ou inversamente proporcionais,divisão em partes proporcionais,MAT.1.04.04,edital,exato,
+Grandezas diretamente ou inversamente proporcionais,regra de sociedade,MAT.1.04.05,edital,exato,
+Grandezas diretamente ou inversamente proporcionais,regra de três simples,MAT.1.04.06,edital,exato,
+Grandezas diretamente ou inversamente proporcionais,regra de três composta,MAT.1.04.07,edital,exato,
+Grandezas diretamente ou inversamente proporcionais,"porcentagem, representação gráfica",MAT.1.04.08,edital,exato,
+Relações semânticas,"metáfora, metonímia, personificação, hipérbole, antítese, eufemismo, ironia",LIN.1.09.04,edital,similar,
+Figuras tridimensionais,"áreas e volumes de prismas, pirâmides, cilindros, cones e esferas. Troncos de prismas, pirâmides, cilindros e cones",MAT.3.02.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+Medidas de tendência central,"média aritmética, geométrica e harmônica",MAT.4.02.01,edital,exato,
+Fenômenos térmicos,"calor específico, calor latente, mudanças de estado, calorimetria",CNT.3.09.02,edital,similar,
+Espaço e tempo nas Ciências Humanas,"os diferentes ritmos, percepções e concepções de tempo histórico, calendários, cronologias e poder",CHS.1.01.03,edital,exato,
+A relação sociedade-natureza e suas dinâmicas,fundamentos dos processos físicos-naturais e suas espacialidades,CHS.1.02.01,edital,similar,
+Processo sóciohistórico de constituição da sociedade brasileira,"heranças coloniais, hierarquias e exclusões sociais",CHS.2.03.01,edital,exato,
+Processo sóciohistórico de constituição da sociedade brasileira,"conflitos e negociações políticas na formação, consolidação e transformações da organização do Estado",CHS.2.03.02,edital,exato,
+Processo sóciohistórico de constituição da sociedade brasileira,dependência e desenvolvimento econômico,CHS.2.03.07,edital,exato,
+Processo sóciohistórico de constituição da sociedade brasileira,interesses sociais e práticas culturais na formação da identidade nacional,CHS.2.03.03,edital,exato,
+Processo sóciohistórico de constituição da sociedade brasileira,indústria cultural e sociedade de consumo,CHS.2.03.04,edital,exato,
+Processo sóciohistórico de constituição da sociedade brasileira,movimentos sociais e a organização de trabalhadores urbanos e rurais,CHS.2.03.05,edital,exato,
+Processo sóciohistórico de constituição da sociedade brasileira,"autoritarismo, resistência política e características e impasses da ordem democrática",CHS.2.03.06,edital,exato,
+Bases moleculares da vida,"ácidos nucleicos DNA e RNA, estrutura e funções",CNT.1.04.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Transformações energéticas nos seres vivos,respiração aeróbia (ou respiração celular) na mitocôndria,CNT.3.10.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Sistemas vitais dos animais e vegetais,"respiração e seus mecanismos, órgãos e tecidos envolvidos e captação e transporte de gases",CNT.4.06.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Sistemas vitais dos animais e vegetais,sistema nervoso,CNT.4.06.07,edital,manual,Equivalência definida na curadoria da hierarquia.
+Sistemas vitais dos animais e vegetais,vitaminas,CNT.4.06.12,edital,exato,
+Sistemas vitais dos animais e vegetais,hormônios,CNT.4.06.06,edital,manual,Equivalência definida na curadoria da hierarquia.
+Sistemas vitais dos animais e vegetais,polinização e dispersão de sementes,CNT.4.06.13,edital,exato,
+Células procariotas e eucariotas,características morfológicas e funcionais,CNT.4.03.03,edital,exato,
+Células procariotas e eucariotas,principais componentes químicos,CNT.4.03.04,edital,exato,
+Células procariotas e eucariotas,mecanismos e fases da divisão celular,CNT.4.03.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Células procariotas e eucariotas,sistema de biomembranas e mecanismos de transporte,CNT.4.03.05,edital,exato,
+Células procariotas e eucariotas,organelas,CNT.4.03.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Multicelularidade,"classificação, estrutura e funções dos tecidos animais e vegetais",CNT.4.07.01,edital,exato,
+Multicelularidade,desenvolvimento embrionário dos animais,CNT.4.07.02,edital,exato,
+Multicelularidade,germinação e dormência,CNT.4.07.03,edital,exato,
+Leis de Newton,movimento uniforme e uniformemente variado queda dos corpos com atrito e sem atrito,CNT.2.02.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Leis de Newton,movimento uniforme e uniformemente variado queda dos corpos com atrito e sem atrito,CNT.2.02.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Leis de Newton,movimento de projéteis,CNT.2.02.04,edital,exato,
+Leis de Newton,movimentos circulares,CNT.2.02.05,edital,exato,
+Leis de Newton,pêndulo simples,CNT.2.02.06,edital,exato,
+Leis de Newton,movimento dos planetas,CNT.2.02.07,edital,exato,
+Leis de Newton,oscilador harmônico simples,CNT.2.02.08,edital,exato,
+Leis de conservação,momentum linear,CNT.2.03.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Fenômenos elétricos e magnéticos,"geradores, transformadores e motores",CNT.2.06.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+Fenômenos elétricos e magnéticos,movimento de partículas em campos eletromagnéticos uniformes,CNT.2.06.06,edital,exato,
+Fenômenos ondulatórios,"ondas acústicas e eletromagnéticas: reflexão, refração, interferência, difração, polarização",CNT.2.06.07,edital,exato,
+Fenômenos ondulatórios,cordas vibrantes,CNT.2.06.08,edital,exato,
+Fenômenos ondulatórios,tubos sonoros,CNT.2.06.09,edital,exato,
+Fenômenos ondulatórios,"espectro eletromagnético, fontes de luz",CNT.2.06.10,edital,exato,
+Fenômenos ondulatórios,"aplicações em espelhos, em lentes e em instrumentos ópticos simples",CNT.2.06.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+Estrutura molecular da matéria,"interpretação microscópica da pressão, da temperatura e do calor",CNT.3.11.01,edital,exato,
+Estrutura molecular da matéria,comportamento dos gases,CNT.3.11.02,edital,exato,
+Estrutura molecular da matéria,equação de Clapeyron,CNT.3.11.03,edital,exato,
+Representações e conceitos espaciais fundamentais para a análise geográfica,"a relação espaço geográfico/ espaço social e os conceitos de território, região, fronteira, rede e lugar",CHS.1.01.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Representações e conceitos espaciais fundamentais para a análise geográfica,"representações gráficas do espaço e suas tecnologias, orientação espacial, simbologias dos mapas e sua interpretação e as escalas cartográfica e geográfica",CHS.1.01.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Representações e conceitos espaciais fundamentais para a análise geográfica,"forma da Terra, projeções cartográficas, coordenadas geográficas e o sistema de fusos horários",CHS.1.01.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+A relação sociedade-natureza,"os elementos físico-naturais do espaço geográfico e as suas dinâmicas, atores sociais, interferências econômicas e disputas políticas na apropriação e uso dos recursos naturais e das fontes de energia",CHS.1.02.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+A relação sociedade-natureza,"atividades econômicas, técnicas e sustentabilidade ambiental nas sociedades contemporâneas",CHS.1.02.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+A relação sociedade-natureza,interferências e impactos das sociedades sobre os elementos naturais,CHS.1.02.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+A relação sociedade-natureza,problemas ambientais urbanos,CHS.1.02.05,edital,exato,
+Expansão urbana no mundo e no Brasil,dimensões socioespaciais do fenômeno urbano,CHS.1.03.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Expansão urbana no mundo e no Brasil,"redes, hierarquias, territorializações, a organização espacial das cidades e as múltiplas formas da segregação socioespacial",CHS.1.03.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Dinâmica populacional no mundo e no Brasil,"migrações, causas, impactos socioculturais, econômicos e sobre a estrutura demográfica",CHS.1.04.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Dinâmica populacional no mundo e no Brasil,crescimento populacional e seus efeitos sobre a estrutura populacional,CHS.1.04.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Dinâmica populacional no mundo e no Brasil,teorias demográficas em diálogo com as transformações histórico-sociais,CHS.1.04.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre política, cidadania e cultura","identidade social e territorial, alteridade, etnia, raça, etnocentrismo, ideologia",CHS.2.01.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre política, cidadania e cultura","globalização, soberania, Estado e governo, processos de territorialização e as múltiplas territorialidades",CHS.2.01.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre política, cidadania e cultura","autoritarismo, resistência política, avanços e retrocessos da ordem democrática",CHS.2.03.06,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre política, cidadania e cultura",movimentos sociais e a organização política de trabalhadores urbanos e rurais,CHS.2.03.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+Organização e ação do Estado,"conceitos de nação, Estado-Nação, identidade nacional e nacionalismos",CHS.2.04.01,edital,exato,
+Organização e ação do Estado,diferentes configurações do Estado moderno territorial e a dimensão espacial da representação política e da organização político-administrativa,CHS.2.04.02,edital,exato,
+Organização e ação do Estado,políticas públicas de caráter nacional e regional e seu papel na estruturação do espaço geográfico,CHS.2.04.03,edital,exato,
+Relações internacionais no mundo contemporâneo,"principais atores do poder geopolítico global, suas práticas espaciais e o sistema internacional contemporâneo",CHS.2.02.06,edital,manual,Equivalência definida na curadoria da hierarquia.
+Relações internacionais no mundo contemporâneo,"os principais conflitos geopolíticos, étnicos e religiosos e suas inter-relações",CHS.2.02.08,edital,exato,
+Relações internacionais no mundo contemporâneo,"identidade regional, regionalismos e a relevância do poder local nos processos de fragmentação territorial",CHS.2.02.09,edital,exato,
+"Relações entre economia, trabalho e tecnologia","desenvolvimento socioespacial, dependência, capitalismo, socialismo",CHS.3.01.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre economia, trabalho e tecnologia","ciência, técnica, produtividade laboral, modernidade e globalização",CHS.3.01.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Agentes econômicos do capitalismo e a organização do espaço,modelos produtivos/padrões de consumo do capitalismo,CHS.3.02.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Agentes econômicos do capitalismo e a organização do espaço,as diferenças socioespaciais no mundo contemporâneo,CHS.3.02.05,edital,exato,
+Agentes econômicos do capitalismo e a organização do espaço,blocos regionais de comércio internacional,CHS.3.02.06,edital,exato,
+Agentes econômicos do capitalismo e a organização do espaço,"os agentes do capitalismo financeiro, os fluxos globais de capital e suas assimetrias",CHS.3.02.07,edital,exato,
+Os espaços da produção e da circulação de riquezas,"os fatores locacionais, as novas estratégias de organização da produção e as espacializações do processo de industrialização",CHS.3.04.01,edital,exato,
+Os espaços da produção e da circulação de riquezas,as múltiplas formas de organização da produção agrária e a modernização do campo no mundo e no Brasil,CHS.3.04.02,edital,exato,
+Os espaços da produção e da circulação de riquezas,"redes técnicas, fluxos de bens, as interações socioespaciais no capitalismo globalizado e os grandes tópicos regionais mundiais",CHS.3.02.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Relações de trabalho no mundo moderno,"relações trabalhistas, formação profissional e mercado de trabalho no mundo globalizado",CHS.3.03.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Relações de trabalho no mundo moderno,permanências e transformações nas relações de trabalho no campo brasileiro,CHS.3.03.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+Espaço e tempo nas Ciências Humanas,"as representações do tempo histórico - cronologias, calendários, periodizações",CHS.1.01.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Espaço e tempo nas Ciências Humanas,"as relações entre passado, presente e futuro e os conceitos de evolucionismo, providencialismo e presentismo",CHS.1.01.04,edital,exato,
+A relação sociedade-natureza e suas dinâmicas,"atividades econômicas, técnica e sustentabilidade ambiental na sociedade contemporânea",CHS.1.02.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+A relação sociedade-natureza e suas dinâmicas,movimentos sociais ambientalistas nas sociedades contemporâneas,CHS.1.02.06,edital,exato,
+Expansão urbana no mundo e no Brasil contemporâneo,dimensões sociológicas e econômicas do fenômeno urbano,CHS.1.03.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Expansão urbana no mundo e no Brasil contemporâneo,"crescimento urbano, hierarquizações sócio econômicas do território e direitos políticos, com ênfase no Brasil",CHS.1.03.04,edital,exato,
+"Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico",dimensões sociopolíticas e impactos culturais das transformações da composição demográfica na sociedade brasileira,CHS.1.04.04,edital,exato,
+"Relações entre política, cidadania e cultura","nação, nacionalismo, globalização",CHS.2.01.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre política, cidadania e cultura","soberania, democracia e representação política",CHS.2.01.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre política, cidadania e cultura",Estado e governo,CHS.2.01.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre política, cidadania e cultura",memória e patrimônio,CHS.2.01.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Relações internacionais no mundo contemporâneo,os processos de formação dos estados nacionais americanos no século XIX,CHS.2.02.10,edital,exato,
+Relações internacionais no mundo contemporâneo,imperialismo e neocolonialismo,CHS.2.02.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Relações internacionais no mundo contemporâneo,"impactos da expansão imperialista nas sociedades africanas, asiáticas e americanas",CHS.2.02.11,edital,exato,
+Relações internacionais no mundo contemporâneo,"as relações internacionais, políticas e econômicas na Primeira Guerra Mundial (1914-1918)",CHS.2.02.12,edital,exato,
+Relações internacionais no mundo contemporâneo,"as relações internacionais, políticas e econômicas na Segunda Guerra Mundial (1939-1945)",CHS.2.02.13,edital,exato,
+Relações internacionais no mundo contemporâneo,"fascismos e nacionalismos no período do entre-guerras, com ênfase nos casos da Alemanha e da Itália",CHS.2.02.14,edital,exato,
+Relações internacionais no mundo contemporâneo,"guerra fria, conceito e contextualização",CHS.2.02.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Relações internacionais no mundo contemporâneo,descolonização e anticolonialismo nos processos de independência afro-asiáticos,CHS.2.02.15,edital,exato,
+Relações internacionais no mundo contemporâneo,a construção de uma nova ordem geopolítica mundial,CHS.2.02.06,edital,manual,Equivalência definida na curadoria da hierarquia.
+Relações internacionais no mundo contemporâneo,"os ritmos e modalidades de inserção internacional de países da Ásia, da África e da América Latina",CHS.2.02.07,edital,similar,
+Relações internacionais no mundo contemporâneo,"as ditaduras civil- militares na América Latina, os movimentos de resistência e os processos de democratização",CHS.2.02.16,edital,exato,
+Processo sociohistórico de constituição da sociedade brasileira,particularidades sócio-históricas do processo de constituição e consolidação do Império do Brasil,CHS.2.03.08,edital,exato,
+Processo sociohistórico de constituição da sociedade brasileira,"conflitos e negociações políticas na formação, consolidação e transformações da organização do Estado republicano",CHS.2.03.02,edital,similar,
+Processo sociohistórico de constituição da sociedade brasileira,"relações entre Estado, capital e sociedade civil no Brasil urbano-industrial",CHS.2.03.09,edital,exato,
+Processo sociohistórico de constituição da sociedade brasileira,"autoritarismo, resistência política, características e impasses da ordem democrática",CHS.2.03.06,edital,similar,
+"Relações entre economia, trabalho e tecnologia",sustentabilidade e tecnologia,CHS.3.01.03,edital,exato,
+Agentes econômicos do capitalismo e a organização do espaço,"o processo histórico de industrialização, modelos produtivos/padrões de consumo do capitalismo",CHS.3.02.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Agentes econômicos do capitalismo e a organização do espaço,formação e consolidação do capitalismo nos Estados Unidos,CHS.3.02.08,edital,exato,
+Agentes econômicos do capitalismo e a organização do espaço,globalização e antiglobalização,CHS.3.02.09,edital,exato,
+Relações de trabalho no mundo moderno,"informação, a sociedade do conhecimento e seus impactos nas relações de trabalho",CHS.3.03.05,edital,exato,
+Tipologias textuais,descrição,LIN.1.01.01,edital,exato,
+Tipologias textuais,narração,LIN.1.01.02,edital,exato,
+Tipologias textuais,argumentação,LIN.1.01.03,edital,exato,
+Tipologias textuais,injunção,LIN.1.01.04,edital,exato,
+Métodos de argumentação,indução,LIN.1.06.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Métodos de argumentação,dedução,LIN.1.06.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Procedimentos de coesão e coerência,"substituição, designação, elipse, referenciação, repetição",LIN.1.08.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Procedimentos de coesão e coerência,"marcadores discursivos, conectores lógicos",LIN.1.08.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Procedimentos de coesão e coerência,relações endofóricas,LIN.1.08.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Procedimentos de coesão e coerência,"continuidade temática, progressão temática",LIN.1.03.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Relações semânticas,"sinonímia, antonímia, hiponímia, hiperonímia",LIN.1.09.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Relações semânticas,"ambiguidade, polissemia",LIN.1.09.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Elementos não verbais,pontuação,LIN.1.11.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+Polifonia e intertextualidade,"reformulação, paráfrase, paródia, alusão, citação",LIN.1.05.01,edital,similar,
+Polifonia e intertextualidade,estratégias de neutralidade,LIN.1.05.04,edital,exato,
+Procedimentos de coesão e coerência,progressão temática,LIN.1.03.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Procedimentos de coesão e coerência,informação dada e informação nova,LIN.1.08.06,edital,exato,
+Procedimentos de coesão e coerência,informação principal e informação secundária,LIN.1.08.07,edital,exato,
+Unidade e diversidade da língua portuguesa,registros de uso na oralidade e na escrita,LIN.1.12.01,edital,exato,
+Unidade e diversidade da língua portuguesa,"variação regional, variação social",LIN.1.12.02,edital,exato,
+Unidade e diversidade da língua portuguesa,norma padrão,LIN.1.12.03,edital,exato,
+Construção da narrativa,"enredo, narrador, personagens, tempo, espaço",LIN.2.04.06,edital,manual,Equivalência definida na curadoria da hierarquia.
+Construção da narrativa,"enredo, narrador, personagens, tempo, espaço",LIN.2.04.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Construção da narrativa,"enredo, narrador, personagens, tempo, espaço",LIN.2.04.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Construção da narrativa,"enredo, narrador, personagens, tempo, espaço",LIN.2.04.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Construção da narrativa,"aspectos temáticos e estilísticos em Niketche, de Paulina Chiziane",LIN.2.06.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Números naturais,critérios de divisibilidade,MAT.1.02.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Números naturais,decomposição em fatores primos,MAT.1.02.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Números reais,razões,MAT.1.04.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Números reais,proporções,MAT.1.04.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Números reais,regra de três,MAT.1.04.06,edital,manual,Equivalência definida na curadoria da hierarquia.
+Números reais,porcentagem,MAT.1.04.08,edital,manual,Equivalência definida na curadoria da hierarquia.
+Expressões algébricas,equações e inequações,MAT.2.01.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Expressões algébricas,equações e inequações,MAT.2.01.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+Sucessões,definidas por recorrências,MAT.2.03.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Juros,simples,MAT.2.03.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+Juros,compostos,MAT.2.03.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+Problemas de contagem,análise combinatória simples,MAT.2.04.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Problemas de contagem,análise combinatória com repetição de elementos,MAT.2.04.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Geometria analítica no R2,reta,MAT.2.07.01,edital,exato,
+Geometria analítica no R2,circunferência,MAT.2.07.02,edital,exato,
+Matrizes,determinantes de 2ª e de 3ª ordens,MAT.2.05.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Sistemas de equações,lineares,MAT.2.06.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Figuras no plano,relações trigonométricas,MAT.3.01.07,edital,similar,
+Círculo trigonométrico,representações,MAT.3.04.06,edital,exato,
+Círculo trigonométrico,linhas trigonométricas,MAT.3.04.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Círculo trigonométrico,"adição, subtração e duplicação de arcos",MAT.3.05.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Círculo trigonométrico,"adição, subtração e duplicação de arcos",MAT.3.05.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Círculo trigonométrico,lei dos senos e dos cossenos,MAT.3.04.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+Círculo trigonométrico,lei dos senos e dos cossenos,MAT.3.04.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+Figuras tridimensionais,"áreas e volumes de prismas, pirâmides, cilindros, cones e esferas",MAT.3.02.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+Medidas de tendência central,"médias aritmética, geométrica, harmônica",MAT.4.02.01,edital,similar,
+Gráficos e tabelas,análise,MAT.4.01.06,edital,manual,Equivalência definida na curadoria da hierarquia.
+Probabilidades e binômio de Newton,probabilidade de um evento,MAT.4.04.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Probabilidades e binômio de Newton,probabilidade condicional,MAT.4.04.04,edital,exato,
+Probabilidades e binômio de Newton,união e interseção de eventos,MAT.4.04.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Probabilidades e binômio de Newton,união e interseção de eventos,MAT.4.04.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Probabilidades e binômio de Newton,distribuição binomial,MAT.4.04.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+Radioatividade,desintegrações radioativas,CNT.1.05.01,edital,exato,
+Radioatividade,tempo de meia-vida,CNT.1.05.02,edital,exato,
+Radioatividade,fissão e fusão nuclear,CNT.1.05.03,edital,exato,
+Soluções,"solubilidade, unidades de concentração expressas em percentagem, em g.L-1e em quantidade de matéria",CNT.3.02.01,edital,similar,
+Entalpia e variação de entalpia,equação termoquímica,CNT.3.12.01,edital,exato,
+Entalpia e variação de entalpia,calor de formação,CNT.3.12.02,edital,exato,
+Entalpia e variação de entalpia,calor de combustão,CNT.3.12.03,edital,exato,
+Entalpia e variação de entalpia,energia de ligação,CNT.3.12.04,edital,exato,
+Entalpia e variação de entalpia,lei de Hess,CNT.3.12.05,edital,exato,
+Equilíbrio em sistemas homogêneos,constantes de equilíbrio em função das concentrações e das pressões parciais,CNT.3.08.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Equilíbrio em sistemas homogêneos,princípio de Le Chatelier,CNT.3.08.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Equilíbrio iônico em meio aquoso,ionização e dissociação,CNT.3.08.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Equilíbrio iônico em meio aquoso,constantes de acidez e de basicidade,CNT.3.08.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Equilíbrio iônico em meio aquoso,pH e pOH,CNT.3.08.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+O soneto camoniano,aspectos temáticos e estilísticos,LIN.2.06.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+O texto poético e seus elementos,sonoridade,LIN.2.05.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+O texto poético e seus elementos,metro,LIN.2.05.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+O texto poético e seus elementos,ritmo,LIN.2.05.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+O texto poético e seus elementos,rima,LIN.2.05.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+O texto poético e seus elementos,estrofe,LIN.2.01.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+O texto poético e seus elementos,formas fixas e formas livres,LIN.2.01.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Representações e conceitos espaciais fundamentais para a análise geográfica,"representações gráficas do espaço, orientação espacial, simbologias dos mapas e as escalas cartográfica e geográfica",CHS.1.01.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Representações e conceitos espaciais fundamentais para a análise geográfica,coordenadas geográficas e o sistema de fusos horários,CHS.1.01.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+A relação sociedade-natureza e suas dinâmicas,"fatores físicos, atores sociais, interferências econômicas e disputas políticas na apropriação e uso dos recursos naturais e das fontes de energia",CHS.1.02.02,edital,similar,
+A relação sociedade-natureza e suas dinâmicas,"atividades econômicas, técnicas e sustentabilidade ambiental nas sociedades contemporâneas",CHS.1.02.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+A relação sociedade-natureza e suas dinâmicas,interferências e impactos das sociedades sobre os elementos naturais,CHS.1.02.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+A relação sociedade-natureza e suas dinâmicas,problemas ambientais urbanos,CHS.1.02.05,edital,exato,
+Expansão urbana no mundo e no Brasil contemporâneo,dimensões socioespaciais do fenômeno urbano,CHS.1.03.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Expansão urbana no mundo e no Brasil contemporâneo,"redes, hierarquias, territorializações, a organização espacial das cidades e as múltiplas formas da segregação socioespacial",CHS.1.03.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Dinâmica populacional no mundo e no Brasil,migrações e seus impactos socioculturais,CHS.1.04.01,edital,exato,
+Dinâmica populacional no mundo e no Brasil,crescimento demográfico e seus efeitos na estrutura populacional,CHS.1.04.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Dinâmica populacional no mundo e no Brasil,teorias demográficas e transformações sociais,CHS.1.04.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre política, cidadania e cultura","globalização, soberania, Estado e governo, processos de territorialização e territorialidade",CHS.2.01.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre política, cidadania e cultura",movimentos sociais e a organização de trabalhadores urbanos e rurais,CHS.2.03.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+Organização e ação do Estado,diferentes configurações do Estado moderno territorial e a dimensão espacial da representação política e da organização político- administrativa,CHS.2.04.02,edital,similar,
+Relações internacionais no mundo contemporâneo,principais atores do poder geopolítico global e o sistema internacional contemporâneo,CHS.2.02.06,edital,manual,Equivalência definida na curadoria da hierarquia.
+Os espaços da produção e da circulação de riquezas,as formas de organização da produção agrária no mundo e a modernização do campo,CHS.3.04.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Os espaços da produção e da circulação de riquezas,"redes técnicas, fluxos de bens e as interações socioespaciais no capitalismo globalizado",CHS.3.02.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Relações internacionais no mundo contemporâneo,"as ditaduras civil-militares na América Latina, os movimentos de resistência e os processos de democratização",CHS.2.02.16,edital,similar,
+Elementos da narrativa,enredo,LIN.2.04.06,edital,exato,
+Representação de dados,"média aritmética, geométrica e harmônica",MAT.4.02.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Representação de dados,moda,MAT.4.02.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Representação de dados,mediana,MAT.4.02.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Representação de dados,variância e desvio padrão,MAT.4.03.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Representação de dados,variância e desvio padrão,MAT.4.03.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Representação de dados,tabulações,MAT.4.01.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Representação de dados,histogramas e gráficos de setores,MAT.4.01.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+Representação de dados,histogramas e gráficos de setores,MAT.4.01.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Sucessões,por recorrências,MAT.2.03.03,edital,exato,
+Sucessões,juros simples e compostos,MAT.2.03.04,edital,exato,
+Figuras tridimensionais,"paralelismo, perpendicularismo e projeções",MAT.3.03.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Figuras tridimensionais,"paralelismo, perpendicularismo e projeções",MAT.3.03.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Figuras tridimensionais,"paralelismo, perpendicularismo e projeções",MAT.3.03.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Geometria de posição,"paralelismo, perpendicularismo e projeções",MAT.3.03.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Geometria de posição,"paralelismo, perpendicularismo e projeções",MAT.3.03.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Geometria de posição,"paralelismo, perpendicularismo e projeções",MAT.3.03.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Análise de dados,"média aritmética, geométrica e harmônica",MAT.4.02.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Análise de dados,moda,MAT.4.02.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Análise de dados,mediana,MAT.4.02.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Análise de dados,variância e desvio padrão,MAT.4.03.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Análise de dados,variância e desvio padrão,MAT.4.03.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Análise de dados,cálculo de probabilidades,MAT.4.04.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Análise de dados,distribuição binomial de probabilidades,MAT.4.04.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+Fenômenos térmicos,termoquímica,CNT.3.09.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre política, cidadania e cultura",patrimônio e memória,CHS.2.01.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Sistema decimal,"adição, subtração, multiplicação, divisão",MAT.1.01.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Números reais,"adição, subtração, multiplicação, potenciação, radiciação",MAT.1.03.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Expressões algébricas,"adição, subtração, multiplicação, divisão, potenciação, radiciação",MAT.2.01.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Funções,seno e cosseno,MAT.2.02.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+Funções,tangente,MAT.2.02.04,edital,manual,Equivalência definida na curadoria da hierarquia.
+Sucessões,progressões aritméticas,MAT.2.03.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Sucessões,progressões geométricas,MAT.2.03.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Problemas de contagem,cálculo de probabilidades,MAT.4.04.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Matrizes,adição e subtração,MAT.2.05.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Matrizes,multiplicação,MAT.2.05.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Matrizes,multiplicação por um número real,MAT.2.05.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Figuras tridimensionais,poliedros,MAT.3.02.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Espaço e tempo nas Ciências Humanas,"a relação espaço geográfico/espaço social e os conceitos de território, região, fronteira e lugar",CHS.1.01.01,edital,similar,
+Espaço e tempo nas Ciências Humanas,"representações do espaço, linguagem cartográfica e o sistema de fusos horários",CHS.1.01.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+Espaço e tempo nas Ciências Humanas,"o fenômeno urbano, cidade e redes",CHS.1.03.02,edital,manual,Equivalência definida na curadoria da hierarquia.
+A relação sociedade-natureza e suas dinâmicas,"atores sociais, interesses econômicos e disputas políticas na apropriação dos recursos naturais e das fontes de energia",CHS.1.02.02,edital,similar,
+A relação sociedade-natureza e suas dinâmicas,"movimentos sociais, atividades econômicas, técnica e sustentabilidade ambiental na sociedade contemporânea",CHS.1.02.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Expansão urbana no mundo e no Brasil contemporâneo,"hierarquias, territorializações, formas espaciais e dinâmicas sociais da urbanização",CHS.1.03.02,edital,similar,
+"Dinâmica populacional no mundo e no Brasil, ao longo do processo histórico",crescimento demográfico e transformações sociais,CHS.1.04.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+"Relações entre política, cidadania e cultura","nação, nacionalismo, globalização, soberania, Estado",CHS.2.01.05,edital,manual,Equivalência definida na curadoria da hierarquia.
+Relações internacionais no mundo contemporâneo,"movimentos nacionalistas, rivalidades regionais e étnico-culturais, organização política na formação de Estados nacionais",CHS.2.02.03,edital,similar,
+Agentes econômicos do capitalismo e a organização do espaço,"industrialização, capitalismo e seus modelos produtivos",CHS.3.02.01,edital,manual,Equivalência definida na curadoria da hierarquia.
+Agentes econômicos do capitalismo e a organização do espaço,redes técnicas e as interações socioespaciais no capitalismo globalizado,CHS.3.02.03,edital,manual,Equivalência definida na curadoria da hierarquia.
+Agentes econômicos do capitalismo e a organização do espaço,Redes técnicas e as interaçõ es socioespaciais no capitalismo globalizado,CHS.3.02.03,comentario,similar,
+Expansão urbana no mundo e no Brasil contemporâneo,Processos espaços-temporais de formação da região metropolitana do Rio de Janeiro,CHS.1.03.03,comentario,similar,
+Expansão urbana no mundo e no Brasil contemporâneo,Processos espácio-temporais de formação da região metropolitana do Rio de Janeiro,CHS.1.03.03,comentario,similar,
+Expressões algébricas,Adição,MAT.2.01.01,comentario,similar,
+Fenômenos térmicos,"Temperatura, calor",CNT.3.09.01,comentario,similar,
+Figuras tridimensionais,Áreas e volumes de prismas,MAT.3.02.05,comentario,similar,
+Forma de articulação de ideias,"generalização, particularização",LIN.1.07.07,comentario,exato,
+Formas de articulação de ideias,Generalização,LIN.1.07.07,comentario,similar,
+Formas de articulações de ideias,Comparação,LIN.1.07.04,comentario,exato,
+Hidrostática,Lei se Stevin,CNT.2.05.04,comentario,similar,
+Integração entre seres vivos e meio ambiente,Ecossistemas,CNT.4.02.01,comentario,similar,
+Leis de Newton,Movimento uniforme e uniformemente acelerado,CNT.2.02.02,comentario,similar,
+Leis de conservação,"Energia cinética, forçapeso, trabalho, energia potencial, energia mecânica",CNT.2.03.01,comentario,similar,
+Números reais,Divisão,MAT.1.03.01,comentario,manual,"O comentário cita ""Divisão"" no item ""Números reais"": corresponde às operações com números reais, e não à divisão em partes proporcionais."
+Polifonia e intertextualidade,Pressuposição e subentendido,LIN.1.05.03,comentario,similar,
+Polifonia e intertextualidade,inferência,LIN.1.05.03,comentario,similar,
+Procedimentos de coesão e coerência,Condições de interpretabilidades,LIN.1.08.04,comentario,similar,
+Procedimentos de coesão e coerência,Dêixis,LIN.1.08.01,comentario,similar,
+Procedimentos de coesão e coerência,Relações entre partes do texto,LIN.1.08.05,comentario,similar,
+Procedimentos de coesão e coerência,Uso dos conectores,LIN.1.08.03,comentario,similar,
+Processo sócio histórico de construção da sociedade brasileira,"Conflitos e negociações políticas na formação, consolidação e transformações da organização do Estado",CHS.2.03.02,comentario,exato,
+Processo sócio-histórico de constituição da sociedade brasileira,"Autoritarismo, resistência política, características e impasses da ordem democrática",CHS.2.03.06,comentario,exato,
+Processo sócio-histórico de constituição da sociedade brasileira,"au­ toritarismo, resistência política e características e impasses da ordem democrática",CHS.2.03.06,comentario,similar,
+Recursos estilísticos,Figuração e imagens,LIN.2.05.04,comentario,similar,
+Recursos estilísticos,Seleção e combinação das palavras,LIN.2.05.01,comentario,similar,
+Recursos estilísticos,"formas dos vocábulos, formação de palavras",LIN.2.05.02,comentario,manual,"O comentário cita vários subitens do edital numa mesma linha. ""Formação de palavras"" é subitem de ""Relações semânticas""."
+Recursos estilísticos,"formas dos vocábulos, formação de palavras",LIN.1.09.03,comentario,manual,"O comentário cita vários subitens do edital numa mesma linha. ""Formação de palavras"" é subitem de ""Relações semânticas""."
+Relações de trabalho no mundo moderno,"Informalidade, marginalidade social e formação profissional na contemporaneidade",CHS.3.03.02,comentario,similar,
+Relações de trabalho no mundo moderno,"os conflitos sociais, as estruturas agrária e fundiária na modernização do campo",CHS.3.03.04,comentario,similar,
+Relações internacionais no mundo contemporâneo,"Globalizaçã o/fragmentaçã o territorial, política, social e cultural na contem­ poraneidade",CHS.2.02.05,comentario,similar,
+Relações internacionais no mundo contemporâneo,"Movimentos nacionalistas, rivalidades regionais e étnico-culturais, organiza­ ção política na formação de Estados Nacionais",CHS.2.02.03,comentario,similar,
+Relações internacionais no mundo contemporâneo,"Movimentos nacionalistas, rivalidades regionais e étnico-culturais, organização política na formação dos Estados nacionais",CHS.2.02.03,comentario,similar,
+Relações semânticas,Conhecimento lexical,LIN.1.09.03,comentario,similar,
+Relações semânticas,Formação de palavras,LIN.1.09.03,comentario,similar,
+Relações semânticas.,sinonímia.,LIN.1.09.01,comentario,similar,
+Sistemas vitais dos animais e vegetais,"Metabolismo de carboidratos, lipídeos e proteínas",CNT.4.06.05,comentario,similar,
+Soluções,"Unidades de concentração expressas em percentagem, g.L-1 e em quantidade de matéria",CNT.3.02.01,comentario,similar,
+Soluções,"Unidades de concentração expressas em percentagem, g.L–1 e em quanti­ dade de matéria",CNT.3.02.01,comentario,similar,
+a célula.,funções das estruturass e organelas.,CNT.4.03.01,comentario,similar,
+a célula.,funções de estruturas e organelas.,CNT.4.03.01,comentario,similar,
+a relação sociedade-natureza e suas dinâmicas.,"atores sociais, interferências econômicas e disputas políticas na apropria­ ção e uso dos recursos naturais e das fontes de energia.",CHS.1.02.02,comentario,similar,
+a relação sociedade-natureza e suas dinâmicas.,fundamentos dos processos físico-naturais e suas espacialidades.,CHS.1.02.01,comentario,similar,
+a relação sociedade-natureza e suas dinâmicas.,fundamentos dos processos físico-naturais e suas especificidades.,CHS.1.02.01,comentario,similar,
+a relação sociedade-natureza e suas dinâmicas.,interferências econômicas e disputas políticas na apropriação e uso dos recursos naturais e das fontes de energia.,CHS.1.02.02,comentario,similar,
+agentes econômicos do capitalismo e a organização do espaço,modelos produtivos/padrões de consumo do capitalismo e as configurações espaciais da produção contemporânea de bens,CHS.3.02.01,comentario,similar,
+agentes econômicos do capitalismo e a organização do espaço.,fluxos de pessoas e as interações socioespaciais no capitalismo globalizado.,CHS.3.02.03,comentario,similar,
+biodiversidade.,características gerais dos principais dos principais grupos de seres vivos.,CNT.4.01.01,comentario,similar,
+círculo trigonométrico.,linha trigonométricas.,MAT.3.04.01,comentario,similar,
+"dina mica populacional no mundo e no Brasil, ao longo do processo histo rico.",inter-relação entre dinâmica social e estrutura populacional.,CHS.1.04.03,comentario,exato,
+"dinâmica populacional no mundo e no Brasil, ao longo do processo histórico.",migrações e seus impactos econômicos socioculturais.,CHS.1.04.01,comentario,similar,
+doenças parasitárias.,ciclos de vida de parasitas.,CNT.4.05.01,comentario,similar,
+elementos da narrativa nas obras selecionadas.,construça o dos personagens.,LIN.2.04.01,comentario,similar,
+elementos da narrativa nas obras selecionadas.,epifania.,LIN.2.04.04,comentario,exato,
+elementos da narrativa.,"narrador, foco narrativa, índices narrativos.",LIN.2.04.02,comentario,similar,
+elementos da narrativa.,"narrador, foco narrativo, índice narrativo.",LIN.2.04.02,comentario,similar,
+elementos da narrativa.,"narrador, foco narrativo.",LIN.2.04.02,comentario,similar,
+elementos da narrativa.,índices narrativos.,LIN.2.04.02,comentario,similar,
+elementos das narrativas selecionadas.,construça o das personagens.,LIN.2.04.01,comentario,similar,
+elementos das narrativas selecionadas.,construça o dos personagens,LIN.2.04.01,comentario,similar,
+elementos das narrativas selecionadas.,metafiicção.,LIN.2.04.05,comentario,similar,
+elementos das narrativas selecionadas.,"narrador, foco narrativo, í ndices narrativos.",LIN.2.04.02,comentario,similar,
+elementos das narrativas selecionadas.,índices narrativos.,LIN.2.04.02,comentario,similar,
+elementos na o verbais.,sentidos da pontuaça o.,LIN.1.11.04,comentario,similar,
+elementos não verbais.,relação ente o verbal e o não verbal.,LIN.1.11.01,comentario,similar,
+elementos químicos.,isotopia.,CNT.1.02.01,comentario,similar,
+equilíbrio de corpos rígidos.,"centro de gravidade, momento de força, alavancas, roldanas simples, balçanças.",CNT.2.04.01,comentario,similar,
+espaço e tempo nas Ciências Humanas.,"os diferentes ritmos, percepções e concepções de tempo histórico, calen­ dários, cronologias e poder.",CHS.1.01.03,comentario,similar,
+espaço e tempo nas Ciências Humanas.,"os diferentes ritmos, percepções e concepções de tempo histórico.",CHS.1.01.03,comentario,similar,
+espaço e tempo nas Ciências Humanas.,"representações do espaço, orientação espacial, linguagem e escala cartográficas, coordenadas geográficas e o sistema de fusos horário.s",CHS.1.01.02,comentario,similar,
+espaço e tempo nas Ciências Humanas.,"representações do espaço, orientação espacial, linguagem e escala cartográficas.",CHS.1.01.02,comentario,similar,
+espaço e tempo nas Ciências Humanas.,"representações do espaço, orientação espacial, linguagem e escala car­ tográficas, coordenadas geográficas e o sistema de fusos horários.",CHS.1.01.02,comentario,similar,
+expansão urbana no mundo e no Brasil Contemporâneo.,processos espaciotemporais de formação da região metropolitana do Rio de Janeiro.,CHS.1.03.03,comentario,similar,
+expansão urbana no mundo e no Brasil contemporâneo.,"hierarquizações sócio econômicas do território e direitos políticos, com ênfase no Brasil.",CHS.1.03.04,comentario,similar,
+fenômenos elétricos e magnéticos.,"carga, corrente, potência, campo e potencial elétrico.",CNT.2.06.01,comentario,similar,
+fenômenos elétricos e magnéticos.,"resistores, leis de Ohm, circuitos elétricos.",CNT.2.06.02,comentario,similar,
+"fenômenos elétricos, magnéticos e ondulatórios.","carga, corrente, potência, campo e potencial elétricos",CNT.2.06.01,comentario,exato,
+"fenômenos elétricos, magnéticos e ondulatórios.",princípios básicos da ótica geométrica.,CNT.2.06.05,comentario,similar,
+fenômenos ondulatórios,"reflexão, refração, interferência, difração, polarização",CNT.2.06.07,comentario,similar,
+figura no plano,simetrias e homotetias,MAT.3.01.03,comentario,exato,
+figura no plano.,relações trigonométricas.,MAT.3.01.07,comentario,exato,
+figuras tridimensionais.,"volumes de prismas, pirâmides, cilindros, cones e esferas.",MAT.3.02.05,comentario,similar,
+formas de articualção de ideias.,"fato, opinião.",LIN.1.07.01,comentario,exato,
+formas de articulaça o de ideias.,comparaça o.,LIN.1.07.04,comentario,similar,
+formas de articulação de ideias .,"contra-argumentação, ênfase e opinião.",LIN.1.07.09,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+formas de articulação de ideias .,"contra-argumentação, ênfase e opinião.",LIN.1.07.08,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+formas de articulação de ideias .,"contra-argumentação, ênfase e opinião.",LIN.1.07.01,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+formas de articulação de ideias.,"causalidade, contra-argumentação.",LIN.1.07.02,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+formas de articulação de ideias.,"causalidade, contra-argumentação.",LIN.1.07.09,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+formas de articulação de ideias.,"fato, opinião, conclusão.",LIN.1.07.01,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+formas de articulação de ideias.,"fato, opinião, conclusão.",LIN.1.07.03,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+formas de articulação de ideias.,"fato, opnião",LIN.1.07.01,comentario,similar,
+formas de articulação de ideias.,ênfase.,LIN.1.07.08,comentario,similar,
+funções.,exponencial.,MAT.2.02.03,comentario,similar,
+grandezas diretamente e inversamente proporcionais.,porcentagem.,MAT.1.04.08,comentario,exato,
+grandezas diretamente ou inversamente proporcionais.,porcentagem.,MAT.1.04.08,comentario,exato,
+hidrostática.,princípio de Arquimides.,CNT.2.05.02,comentario,similar,
+integração entre os seres vivos e o ambiente.,poluição e desequilíbrio ecológico.,CNT.4.02.02,comentario,exato,
+integração entre os seres vivos e o meio ambiente.,poluição e desequilíbrio ecológico.,CNT.4.02.02,comentario,exato,
+integração entre seres vivos e meio ambiente.,desequilíbrio ecológico.,CNT.4.02.02,comentario,similar,
+internacionais no mundo contemporâneo.,"as ditaduras civil-militares na América Latina, os movimentos de resistência e os processos de democratização.",CHS.2.02.16,comentario,exato,
+literatura e sociedade.,contextos sócio-históricos de produção e recepção de textos.,LIN.2.02.01,comentario,similar,
+medidas de tendência central.,média aritmética.,MAT.4.02.01,comentario,similar,
+perpectivas enunciativas.,"quem enuncia, a quem enuncia, espaço, tempo.",LIN.1.04.01,comentario,exato,
+perspectivas enunciativas.,quem enuncia,LIN.1.04.01,comentario,similar,
+perspectivas enunciativas.,"quem enuncia, a quem enuncia",LIN.1.04.01,comentario,similar,
+perspectivas enunciativas.,tempo.,LIN.1.04.01,comentario,similar,
+polifonia e intertextualidade.,citação,LIN.1.05.01,comentario,similar,
+polifonia e intertextualidade.,"dia logo, discurso relatado.",LIN.1.05.02,comentario,similar,
+polifonia e intertextualidade.,discurso relatado,LIN.1.05.02,comentario,similar,
+polifonia e intertextualidade.,"inferência, pressuposição, subentendido.",LIN.1.05.03,comentario,similar,
+polifonia e intertextualidade.,paráfrase.,LIN.1.05.01,comentario,similar,
+polifonia e intertextualidade.,reformulação,LIN.1.05.01,comentario,similar,
+polifonia e intertextualidade.,"reformulação, paráfrase",LIN.1.05.01,comentario,similar,
+polifonia e intertextualidade.,subentendido.,LIN.1.05.03,comentario,similar,
+"polifonia, intertextualidade.",inferência,LIN.1.05.03,comentario,similar,
+"polifonia, intertextualidade.",pressuposição e subentendido.,LIN.1.05.03,comentario,similar,
+probabilidade.,probabilidade de intersecção de eventos.,MAT.4.04.03,comentario,similar,
+procedimento de coesão e coerência.,condições de interpretabilidade.,LIN.1.08.04,comentario,exato,
+procedimentos de coesa o e coere ncia.,relaço es entre as partes do texto.,LIN.1.08.05,comentario,similar,
+procedimentos de coesão e coerência,anáfora,LIN.1.08.01,comentario,similar,
+procedimentos de coesão e coerência .,elipse,LIN.1.08.02,comentario,similar,
+procedimentos de coesão e coerência.,"anáfora, catáfora",LIN.1.08.01,comentario,similar,
+procedimentos de coesão e coerência.,"anáfora, catáfora e dêixis",LIN.1.08.01,comentario,similar,
+procedimentos de coesão e coerência.,continuidade temática.,LIN.1.03.03,comentario,similar,
+procedimentos de coesão e coerência.,referenciação,LIN.1.08.02,comentario,similar,
+procedimentos de coesão e coerência.,substituição.,LIN.1.08.02,comentario,similar,
+processo soociohistórico de constituiçã o da sociedade brasileira.,movimentos sociais e a organizaçã o de trabalhadores urbanos e rurais.,CHS.2.03.05,comentario,similar,
+processo sócio-histórico de constituição da sociedade brasileira.,conflitos e negociações políticas na formação.,CHS.2.03.02,comentario,similar,
+processo sóciohistórico de constituição da sociedade brasileira.,movimentos sociais e organização de trabalhadores urbanos e rurais.,CHS.2.03.05,comentario,similar,
+processo sóciohistórico de constituição da sociedade brasileira;,"utoritarismo, resistência política e características e impasses da ordem democrática.",CHS.2.03.06,comentario,similar,
+proporcionalidade.,razões.,MAT.1.04.02,comentario,exato,
+recursos estilí sticos.,seleça o e combinaça o de palavras.,LIN.2.05.01,comentario,similar,
+recursos estilísticos.,fiigurações e imagens.,LIN.2.05.04,comentario,similar,
+relaço es de trabalho no mundo moderno.,"processos de produção, desenvolvimento técnico-científico e as formas de organização do trabalho.",CHS.3.03.01,comentario,exato,
+"relaço es entre economia, trabalho e tecnologia.","ciência, técnica, modernidade e globalização.",CHS.3.01.02,comentario,exato,
+"relaço es entre polí tica, cidadania e cultura.","ideologia, ciência, ética.",CHS.2.01.04,comentario,exato,
+relaço es internacionais no mundo contempora neo.,"imperialismo, neocolonialismo e guerra fria.",CHS.2.02.02,comentario,exato,
+relaço es internacionais no mundo contempora neo.,"movimentos nacionalistas, rivalidades regionais e e tnico-culturais, disputas territoriais e organizaça o polí tica na formaça o de Estados nacionais.",CHS.2.02.03,comentario,similar,
+relaço es sema nticas.,"meta fora, metoní mia, personificaça o, hipe rbole, antí tese, paradoxo, eufemismo, ironia.",LIN.1.09.04,comentario,similar,
+relaço es sema nticas.,"sinoní mia, antoní mia, ambiguidade, polissemia.",LIN.1.09.01,comentario,similar,
+relaçães semânticas.,"metáfora, metonímia, personificação, hipérbole, antítese, eufemismo, ironia.",LIN.1.09.04,comentario,exato,
+relações de trabalho no mundo moderno.,"os conflitos sociais, as estruturas agrária e fundiária e modernização no campo.",CHS.3.03.04,comentario,similar,
+"relações entre economia, trabalho e economia.","ciência, técnica, modernidade e globalização.",CHS.3.01.02,comentario,exato,
+"relações entre política, cidadania e cultura.","democracia e representação política, Estado e governo.",CHS.2.01.05,comentario,similar,
+"relações entre política, cidadania e cultura.","identidade, alteridade, etnia e raça, etnocentrismo, multiculturismo.",CHS.2.01.01,comentario,similar,
+"relações entre política, cidadania e cultura.","ideologia, ciência e ética.",CHS.2.01.04,comentario,similar,
+"relações entre política, cidadania e cultura.","nação, nacionalismo, globalização, soberania, democracia e representação política",CHS.2.01.05,comentario,similar,
+"relações entre política, cidadania e cultura.","nação, nacionalismo.",CHS.2.01.05,comentario,similar,
+"relações entre política, cidadania e cultura.",patrimônio,CHS.2.01.02,comentario,similar,
+"relações entre política, cidadania e cultura.",políticas de memória e questões identitárias.,CHS.2.01.02,comentario,similar,
+relações internacionais no mundo contemporâneo.,"lobalização/ fragmentação territorial, política, social e cultural na contemporaneidade.",CHS.2.02.05,comentario,similar,
+relações semânticas.,ambiguidade,LIN.1.09.01,comentario,similar,
+relações semânticas.,antítese.,LIN.1.09.04,comentario,similar,
+relações semânticas.,"conhecimento lexical, expressões idiomáticas",LIN.1.09.03,comentario,similar,
+relações semânticas.,eufemismo.,LIN.1.09.04,comentario,similar,
+relações semânticas.,expressões idiomáticas.,LIN.1.09.03,comentario,similar,
+relações semânticas.,ironia.,LIN.1.09.04,comentario,similar,
+relações semânticas.,metonímia.,LIN.1.09.04,comentario,similar,
+relações semânticas.,"metáfora, metonímia, personifiicação, hipérbole, antítese, paradoxo, eufemismo, ironia.",LIN.1.09.04,comentario,similar,
+relações semânticas.,metáfora.,LIN.1.09.04,comentario,similar,
+relações semânticas.,paradoxo.,LIN.1.09.04,comentario,similar,
+relações semânticas.,personificação.,LIN.1.09.04,comentario,similar,
+relações semânticas.,polissemia.,LIN.1.09.01,comentario,similar,
+relações semânticas.,"sinonímia, antonímia",LIN.1.09.01,comentario,similar,
+representaço es da realidade.,verossimilhança externa e interna.,LIN.2.03.02,comentario,exato,
+representações da realidade.,verossimilhança interna e externa.,LIN.2.03.02,comentario,similar,
+representações e conceitos espaciais fundamentais para a análise geográfica.,"representações gráficas do espaço, orientação espacial, coordenadas geográficas e o sistema de fusos horários.",CHS.1.01.02,comentario,similar,
+representações e conceitos espaciais fundamentais para a análise geográfica.,"representações gráficas do espaço, orientação espacial, simbologias dos mapas e as escalas cartográfica e geográfica, coordenadas geográficas e o sistema de fusos horários.",CHS.1.01.02,comentario,similar,
+sistemas vitais de animais e vegetais.,circulação.,CNT.4.06.03,comentario,exato,
+sistemas vitais de animais e vegetais.,funções dos hormônios no metabolismo.,CNT.4.06.06,comentario,exato,
+sistemas vitais de animais e vegetais.,"metabolismo de carboidratos, de lipídeos e de proteínas.",CNT.4.06.05,comentario,similar,
+sistemas vitais dos animais e vegetais.,,CNT.4.06,comentario,item,
+sistemas vitais dos animais e vegetais.,digestão e absorção de alimentos.,CNT.4.06.01,comentario,similar,
+sistemas vitais dos animais e vegetais.,"metabolismo de carboidratos, de lipídeos e de proteínas",CNT.4.06.05,comentario,similar,
+soluções.,misturas.,CNT.3.02.02,comentario,similar,
+sucessões.,definida por recorrência.,MAT.2.03.03,comentario,similar,
+sucessões.,geométrica.,MAT.2.03.02,comentario,similar,
+sucessões.,por recorrência.,MAT.2.03.03,comentario,similar,
+uso do verbo.,"tempo, modo, aspecto, voz.",LIN.1.10.01,comentario,exato,
+usos do verbo.,formas afirmativa e negativa.,LIN.1.10.02,comentario,similar,
+usos do verbo.,modo.,LIN.1.10.01,comentario,similar,
+usos do verbo.,"tempo, modo, aspecto",LIN.1.10.01,comentario,similar,
+usos do verbo.,voz.,LIN.1.10.01,comentario,similar,
+Compreensão dos elementos não verbais,Imagens,LIN.1.11.02,comentario,manual,"Variante de redação do item ""Elementos não verbais""."
+Compreensão dos elementos não verbais,recursos gráficos e tipográficos,LIN.1.11.03,comentario,manual,"Variante de redação do item ""Elementos não verbais""."
+Figuras no plano,Circunferências e círculos,MAT.3.01.04,comentario,manual,Circunferências e círculos estão em dois subitens do edital de 2027.
+Figuras no plano,Circunferências e círculos,MAT.3.01.05,comentario,manual,Circunferências e círculos estão em dois subitens do edital de 2027.
+Figuras no plano,"Polígono, circunferências e círculos",MAT.3.01.04,comentario,manual,"Texto dos editais até 2026, dividido em dois subitens em 2027."
+Figuras no plano,"Polígono, circunferências e círculos",MAT.3.01.05,comentario,manual,"Texto dos editais até 2026, dividido em dois subitens em 2027."
+Integração meio ambiente/seres vivos,"Ecossistemas, cadeia alimentar, ciclos biogeoquímicos",CNT.4.02.01,comentario,manual,"Variante de redação do item ""Integração entre seres vivos e meio ambiente""."
+Integração meio ambiente/seres vivos,poluição e desequilí­ brio ecológico,CNT.4.02.02,comentario,manual,"Variante de redação do item ""Integração entre seres vivos e meio ambiente""."
+Média aritmética,Progressões aritméticas,MAT.4.02.01,comentario,manual,"O comentário cita o item ""Média aritmética"" com o subitem ""Progressões aritméticas""; o objetivo é calcular a média aritmética de termos de uma sequência (decisão herdada da versão anterior)."
+Procedimentos de coesão e coerência,"Relações entre partes do texto, uso de conectores, condições de interpretabilidade",LIN.1.08.05,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+Procedimentos de coesão e coerência,"Relações entre partes do texto, uso de conectores, condições de interpretabilidade",LIN.1.08.03,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+Procedimentos de coesão e coerência,"Relações entre partes do texto, uso de conectores, condições de interpretabilidade",LIN.1.08.04,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+"Relações entre política, cidadania e cultura","Ideologia, ciência, ética, nação, nacionalismo, globalização, soberania, Estado",CHS.2.01.04,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+"Relações entre política, cidadania e cultura","Ideologia, ciência, ética, nação, nacionalismo, globalização, soberania, Estado",CHS.2.01.05,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+Relações semânticas,"Conhecimento lexical, formação de palavras",LIN.1.09.03,comentario,manual,Variante de redação do subitem do edital.
+Relações semânticas,Relação entre o verbal e o não verbal,LIN.1.11.01,comentario,manual,O comentário cita o subitem em outro item; vale o subitem do edital.
+Relações semânticas,"Sinonímia, expressões idiomáticas",LIN.1.09.01,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+Relações semânticas,"Sinonímia, expressões idiomáticas",LIN.1.09.03,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+Tipologias,Narração e argumentação,LIN.1.01.02,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+Tipologias,Narração e argumentação,LIN.1.01.03,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+a célula.,"metabolismo de carboidratos, de lipídeos e proteínas.",CNT.4.06.05,comentario,manual,"O comentário cita o subitem em outro item; vale o subitem do edital. No edital, o subitem é de ""Sistemas vitais dos animais e vegetais""."
+a relação sociedade-natureza e suas dinâmicas.,fundamentos dos processos físicos-naturais relevantes para a compreensão do espaço geográfico.,CHS.1.02.01,comentario,manual,"O comentário estende o texto do subitem ""fundamentos dos processos físicos-naturais e suas especificidades""."
+arcos e ângulos.,medida do arco.,MAT.3.01.04,comentario,manual,"O item ""arcos e ângulos"" não existe no edital; a questão pede o comprimento de um arco de circunferência, que está em ""Figuras no plano › polígonos, circunferências e arcos em radianos""."
+as bases da genética.,"código genético, hereditariedade e doenças hereditárias.",CNT.4.04.02,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+as bases da genética.,"código genético, hereditariedade e doenças hereditárias.",CNT.4.04.04,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+doenças parasitárias.,ciclo de vida de parasitas.,CNT.4.05.01,comentario,manual,Variante de redação do subitem do edital.
+elementos químicos.,ligações químicas,CNT.1.03.01,comentario,manual,"O comentário cita o subitem em outro item; vale o subitem do edital. No edital, o subitem é de ""Íons e moléculas""."
+espaço e tempo nas Ciências Humanas.,"os diferentes ritmos, percepções eeseoncoesco̧ões eeeseeespcneis eńrico.",CHS.1.01.03,comentario,manual,"Texto do subitem embaralhado na extração do PDF; corresponde a ""os diferentes ritmos, percepções e concepções de tempo histórico""."
+expansão urbana no mundo e no Brasil contemporâneo.,"processos espaço-temporais de formação de aglomerações urbanas em diferentes escalas, com destaque para a região metropolitana do Rio de Janeiro.",CHS.1.03.03,comentario,manual,"O comentário fala em ""formação de aglomerações urbanas""; o subitem do edital é ""processos espaço-temporais de formação da região metropolitana do Rio de Janeiro""."
+figura no plano,áreas,MAT.3.01.08,comentario,manual,Variante de redação do subitem do edital.
+figuras no plano.,perímetro.,MAT.3.01.08,comentario,manual,Variante de redação do subitem do edital.
+figuras no plano.,áreas.,MAT.3.01.08,comentario,manual,Variante de redação do subitem do edital.
+figuras no plano.,ângulos.,MAT.3.01.01,comentario,manual,Variante de redação do subitem do edital.
+figuras tridimensionais.,volume da pirâmide.,MAT.3.02.05,comentario,manual,Variante de redação do subitem do edital.
+figuras tridimensionais.,áreas de cilindros.,MAT.3.02.05,comentario,manual,Variante de redação do subitem do edital.
+figuras tridimensionais.,áreas e volumes de cones.,MAT.3.02.05,comentario,manual,Variante de redação do subitem do edital.
+figuras tridimensionais.,áreas e volumes de pirâmides.,MAT.3.02.05,comentario,manual,Variante de redação do subitem do edital.
+formas de articulação de ideias.,"comparação, generalização.",LIN.1.07.04,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+formas de articulação de ideias.,"comparação, generalização.",LIN.1.07.07,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+funções.,função quadrática.,MAT.2.02.02,comentario,manual,Variante de redação do subitem do edital.
+grandezas proporcionais.,porcentagem.,MAT.1.04.08,comentario,manual,"Variante de redação do item ""Grandezas diretamente ou inversamente proporcionais"" (2024-2025), hoje ""Proporcionalidade""."
+leis de Newton.,a matéria em equilíbrio e em movimento.,CNT.2.02,comentario,manual,"O comentário escreve o nome do eixo no campo de subitem; a questão é ligada só ao item ""Leis de Newton""."
+leis de Newton.,movimento uniforme.,CNT.2.02.02,comentario,manual,Variante de redação do subitem do edital.
+medidas de tendência central.,"moda, média aritmética simples.",MAT.4.02.02,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+medidas de tendência central.,"moda, média aritmética simples.",MAT.4.02.01,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+perspectivas enunciativas.,modalidade.,LIN.1.04.03,comentario,manual,"""Modalidade"" corresponde ao subitem ""modalização""."
+polifonia e interpretabilidade.,"inferência, pressuposição e subentendido.",LIN.1.05.03,comentario,manual,"Variante de redação do item ""Polifonia e intertextualidade""."
+polifonia e interpretabilidade.,"reformulação, paráfrase, paródia, citação",LIN.1.05.01,comentario,manual,"Variante de redação do item ""Polifonia e intertextualidade""."
+procedimentos de coerência e coesão.,condições de interpretabilidade.,LIN.1.08.04,comentario,manual,Variante de redação do subitem do edital.
+procedimentos de coerência e coesão.,relações entre as partes do texto.,LIN.1.08.05,comentario,manual,Variante de redação do subitem do edital.
+procedimentos de coesão e coerência.,"anáfora, substituição.",LIN.1.08.01,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+procedimentos de coesão e coerência.,"anáfora, substituição.",LIN.1.08.02,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+procedimentos de coesão e coerência.,conhecimento lexical.,LIN.1.09.03,comentario,manual,"O comentário cita o subitem em outro item; vale o subitem do edital. No edital, o subitem é de ""Relações semânticas""."
+procedimentos de coesão e coerência.,elipses,LIN.1.08.02,comentario,manual,Variante de redação do subitem do edital.
+procedimentos de coesão e coerência.,polissemia,LIN.1.09.01,comentario,manual,"O comentário cita o subitem em outro item; vale o subitem do edital. No edital, o subitem é de ""Relações semânticas""."
+procedimentos de coesão e coerência.,"substituição, referenciação.",LIN.1.08.02,comentario,manual,"No Exame Único, ""referenciação"" está no mesmo subitem de ""substituição, designação, elipse""."
+processo so cio histo rico de constituiça o da sociedade brasileira.,consolidaça o e transformaço es da organizaça o do Estado.,CHS.2.03.02,comentario,manual,"Trecho do subitem ""conflitos e negociações políticas na formação, consolidação e transformações da organização do Estado""."
+processo sócio-histórico de constituição da sociedade brasileira.,políticas territoriais do Estado e desenvolvimento regional.,CHS.2.03,comentario,manual,O subitem citado não existe no conteúdo programático; a questão é ligada só ao item citado (decisão herdada da versão anterior).
+"relações entre cidadania, política e cultura.","identidade, alteridade, etnia, raça, etnocentrismo, multiculturalismo",CHS.2.01.01,comentario,manual,"Variante de redação do item ""Relações entre política, cidadania e cultura""."
+"relações entre cidadania, política e cultura.","ideologia, ciência, ética.",CHS.2.01.04,comentario,manual,"Variante de redação do item ""Relações entre política, cidadania e cultura""."
+relações internacionais no mundo contemporâneo.,disputas territoriais e organização política na formação dos estados nacionais.,CHS.2.02.03,comentario,manual,"Trecho do subitem ""movimentos nacionalistas, rivalidades regionais e étnico-culturais, disputas territoriais e organização política na formação de Estados nacionais""."
+relações semânticas.,"eufemismo, personificação.",LIN.1.09.04,comentario,manual,Variante de redação do subitem do edital.
+relações semânticas.,"formação de palavras, metáfora.",LIN.1.09.03,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+relações semânticas.,"formação de palavras, metáfora.",LIN.1.09.04,comentario,manual,O comentário cita vários subitens do edital numa mesma linha.
+representação da realidade.,efeito de realidade.,LIN.2.03.01,comentario,manual,Variante de redação do subitem do edital.
+representação de dados.,histogramas e gráficos de vetores.,MAT.4.01.04,comentario,manual,"""Gráficos de vetores"" é erro de digitação de ""gráficos de setores"" (texto do edital da época)."
+representação de dados.,histogramas e gráficos de vetores.,MAT.4.01.03,comentario,manual,"""Gráficos de vetores"" é erro de digitação de ""gráficos de setores"" (texto do edital da época)."
+sinonímia.,uso de conectores.,LIN.1.09.01,comentario,manual,"O comentário escreve ""sinonímia"" (subitem de ""Relações semânticas"") no campo de item e ""uso de conectores"" no de subitem."
+sinonímia.,uso de conectores.,LIN.1.08.03,comentario,manual,"O comentário escreve ""sinonímia"" (subitem de ""Relações semânticas"") no campo de item e ""uso de conectores"" no de subitem."
+sistemas de equações.,linear.,MAT.2.06.01,comentario,manual,Variante de redação do subitem do edital.
+soluções. −1 e em,diluição e misturas. −1.,CNT.3.02.02,comentario,manual,"Texto quebrado pelo expoente de ""g.L-1"" na extração do PDF."
+soluções. −1 e em,"unidades de concentração expressas em percentagem, em g.L quantidade de matéria",CNT.3.02.01,comentario,manual,"Texto quebrado pelo expoente de ""g.L-1"" na extração do PDF."
+sucessões.,juros compostos.,MAT.2.03.04,comentario,manual,Variante de redação do subitem do edital.
+sucessões.,progressão artmética.,MAT.2.03.01,comentario,manual,Variante de redação do subitem do edital.
+sólidos geométricos.,volume de prisma.,MAT.3.02.05,comentario,manual,"O item ""sólidos geométricos"" corresponde a ""Figuras tridimensionais""."
+usos do verbo.,forma interrogativa.,LIN.1.10.02,comentario,manual,Variante de redação do subitem do edital.
+usos do verbo.,"formas afirmartiva, interrogativa.",LIN.1.10.02,comentario,manual,Variante de redação do subitem do edital.

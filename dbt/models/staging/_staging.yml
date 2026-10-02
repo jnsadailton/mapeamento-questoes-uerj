@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: stg_gabarito
+    description: Gabarito oficial, com o ID da questão (AAAA-N-NN, com sufixo de idioma na língua estrangeira).
+    columns:
+      - name: id_questao
+        data_tests: [unique, not_null]
+  - name: stg_comentario
+    description: Comentários do gabarito comentado ligados a uma questão (sem o comentário da Redação de 2021-1).
+    columns:
+      - name: id_questao
+        data_tests: [unique, not_null]
+  - name: stg_classificacao
+    description: Classificações (eixo, item, subitem) como estão no gabarito comentado.
+  - name: stg_conteudo_programatico
+    description: Subitens do anexo de conteúdos do edital de cada exame, como estão no PDF.
+  - name: stg_fontes
+    description: Manifesto dos PDFs com a fonte de onde cada um veio na última ingestão.
+    columns:
+      - name: url_oficial
+        data_tests: [not_null]

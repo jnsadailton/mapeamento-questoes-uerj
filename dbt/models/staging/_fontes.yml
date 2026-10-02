@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: Tabelas extraídas dos PDFs por `python -m uerj.extracao` (camada bronze, Parquet).
+    meta:
+      external_location: "../data/bronze/{name}.parquet"
+    tables:
+      - name: gabarito
+        description: Uma linha por questão e idioma, com a resposta do gabarito oficial e a data de aplicação.
+      - name: comentario
+        description: Uma linha por comentário do gabarito comentado (percentual de acertos, nível, objetivo, texto).
+      - name: classificacao
+        description: Uma linha por classificação (eixo, item, subitem) citada num comentário, como está no PDF.
+      - name: conteudo_programatico
+        description: Uma linha por subitem do anexo de conteúdos do edital de cada exame.
+
+  - name: raw
+    description: Arquivos gravados pela ingestão (`python -m uerj.ingestao`).
+    meta:
+      external_location: "read_csv('../data/raw/{name}.csv', header = true, all_varchar = true)"
+    tables:
+      - name: fontes
+        description: Manifesto dos PDFs (fontes/fontes.yml) em CSV, com as URLs oficiais e do Wayback Machine.
+      - name: proveniencia
+        description: De qual fonte (UERJ, Wayback Machine ou cópia do repositório) veio cada PDF na última ingestão.
