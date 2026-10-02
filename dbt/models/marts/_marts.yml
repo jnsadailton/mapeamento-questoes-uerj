@@ -70,7 +70,10 @@ models:
               arguments:
                 values: ["A", "B", "C", "D", "ANULADA"]
       - name: percentual_acertos
-        description: Percentual de acertos publicado no gabarito comentado (não existe em 2021, 2024-2 e 2027-2).
+        description: >
+          Percentual de acertos publicado no gabarito comentado. Ausente quando o próprio PDF não traz o dado: 2021
+          (o comentado não tem o campo), 2024-2 (campo em branco), 2027-2, as anuladas e algumas questões isoladas
+          (2020-2 e 2022-1). É uma limitação da fonte, não da extração.
       - name: nivel
         description: Nível de dificuldade do gabarito comentado (facil, medio, dificil).
         data_tests:
@@ -127,6 +130,9 @@ models:
   - name: mart_dificuldade
     description: Percentual de acertos médio, mediano, mínimo e máximo por item e subitem.
   - name: mart_lacunas
-    description: Subitens do edital vigente com quantas vezes e quando caíram; `nunca_caiu` marca as lacunas.
+    description: >
+      Subitens do edital vigente com quantas vezes e quando caíram; `nunca_caiu` marca as lacunas. As redações antigas
+      já estão ligadas ao subitem atual equivalente. `qtd_exames_no_edital` e `primeiro_ano_no_edital` mostram há quanto
+      tempo o subitem está no programa.
   - name: pendencias
     description: Textos de edital ou comentário sem ligação no dicionário. Precisa estar vazio.
