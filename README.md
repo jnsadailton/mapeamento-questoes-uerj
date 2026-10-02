@@ -69,8 +69,19 @@ Decisões de modelagem:
 - **Disciplina:** Ciências da Natureza separada em Física, Química e Biologia (pelo item), Linguagens em Língua
   Portuguesa, Literatura e Língua Estrangeira. Ciências Humanas fica como área única, porque os editais tratam
   Geografia e História de forma integrada (quase todo item aparece nas duas).
-- **Contagem:** nos marts, a unidade é o número da questão no exame. As três versões de língua estrangeira ocupam o
-  mesmo número e contam uma vez; uma questão com várias classificações conta para cada conteúdo.
+- **Língua estrangeira:** as versões em espanhol, francês e inglês são questões distintas em `fct_questao` e
+  `fct_classificacao`, cada uma com gabarito, classificação e percentual de acertos próprios. Na **incidência**
+  (`mart_incidencia`), a unidade é o número da questão no exame: se duas versões caem no mesmo conteúdo, ele conta uma
+  vez (o candidato responde só um idioma, e contar as três daria peso triplo ao bloco); se caem em conteúdos diferentes,
+  cada conteúdo conta. Nenhuma versão é descartada. Na **dificuldade** (`mart_dificuldade`), cada versão é um ponto,
+  porque cada uma tem o próprio percentual. Uma questão com várias classificações conta para cada conteúdo.
+- **Percentual de acertos:** existe para 1.248 das 1.482 versões de questão. A falta é uma limitação dos gabaritos
+  comentados, não da extração. O gabarito comentado de 2021 existe, mas não tem o campo (nem o nível de dificuldade);
+  o de 2024-2 traz o campo em branco; o de 2027-2 não o traz; e ele falta nas anuladas e em algumas questões de 2020-2
+  e 2022-1.
+- **Lacunas:** um subitem do edital vigente que nenhuma questão tocou desde 2016. As redações antigas de editais e
+  comentários já chegam ligadas ao subitem atual equivalente, e o modelo mostra há quantos exames o subitem está no
+  edital (alguns entraram só em 2024 ou 2027).
 
 Testes do dbt: 60 questões por exame, anuladas exatamente as oficiais, toda questão não anulada classificada,
 percentual entre 0 e 100 (e ausente onde o PDF não o publica), chaves únicas e estrangeiras, e nenhuma pendência.
