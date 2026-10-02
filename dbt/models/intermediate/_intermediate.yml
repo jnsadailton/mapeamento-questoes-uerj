@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: int_classificacao_curada
+    description: >
+      Classificações depois da curadoria: as extraídas, com o eixo completado por seeds/eixos_atribuidos, e as de
+      seeds/correcoes, que substituem todas as extraídas das questões listadas ali.
+  - name: int_classificacao_partes
+    description: Uma linha por parte do subitem (o campo pode citar vários subitens separados por ";").
+  - name: int_dicionario
+    description: Dicionário de conteúdo com as chaves normalizadas pela macro `normalizar_texto`.
+  - name: int_classificacao_ligada
+    description: Partes das classificações ligadas à hierarquia canônica (id_conteudo nulo vira pendência).
+  - name: int_programa_ligado
+    description: Subitens do edital de cada exame ligados à hierarquia canônica.

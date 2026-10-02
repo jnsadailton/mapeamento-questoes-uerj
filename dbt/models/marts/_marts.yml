@@ -1,0 +1,132 @@
+version: 2
+
+models:
+  - name: dim_exame
+    description: Um exame por linha (21 exames de 2016 a 2027). O ano é o do vestibular, não o da aplicação.
+    columns:
+      - name: id_exame
+        description: "Identificador AAAA-N: ano do vestibular e número do exame (o Exame Único usa -1)."
+        data_tests: [unique, not_null]
+      - name: tipo
+        description: Qualificação (2016–2020 e 2024–2027) ou Único (2021–2023).
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["Qualificação", "Único"]
+      - name: data_aplicacao
+        description: Data da prova, lida do gabarito oficial.
+        data_tests: [not_null]
+      - name: url_prova
+        description: Link para o PDF oficial da prova no site da UERJ.
+        data_tests: [not_null]
+      - name: documentos_fora_do_site_oficial
+        description: Quantos dos 4 PDFs do exame não vieram do site da UERJ na última ingestão (Wayback ou cópia).
+
+  - name: dim_conteudo
+    description: >
+      Hierarquia canônica de conteúdo (Área › Eixo › Item › Subitem), com uma linha por item e uma por subitem.
+      Construída na curadoria a partir do edital de 2027; itens e subitens de editais anteriores sem equivalente
+      atual ficam com `vigente = false`. Os textos de cada edital e de cada comentário apontam para cá pelo
+      dicionário (seeds/dicionario_conteudo.csv).
+    columns:
+      - name: id_conteudo
+        description: ID do item (AREA.E.II) ou do subitem (AREA.E.II.SS).
+        data_tests: [unique, not_null]
+      - name: nivel
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["item", "subitem"]
+      - name: id_area
+        description: LIN, MAT, CNT (Ciências da Natureza) ou CHS (Ciências Humanas).
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["LIN", "MAT", "CNT", "CHS"]
+      - name: disciplina
+        description: >
+          Física, Química ou Biologia em Ciências da Natureza; Língua Portuguesa (Construção do texto) ou Literatura
+          (Aspectos literários) em Linguagens; Matemática; Ciências Humanas fica como área única, porque os editais
+          não separam Geografia de História. Língua Estrangeira é atribuída por questão, em fct_classificacao.
+        data_tests: [not_null]
+
+  - name: fct_questao
+    description: Uma linha por questão e idioma. No bloco de língua estrangeira, cada idioma é uma questão.
+    columns:
+      - name: id_questao
+        description: "AAAA-N-NN, com sufixo -ES, -FR ou -EN no bloco de língua estrangeira."
+        data_tests: [unique, not_null]
+      - name: id_exame
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_exame')
+                field: id_exame
+      - name: resposta
+        description: Resposta do gabarito oficial (A a D) ou ANULADA.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["A", "B", "C", "D", "ANULADA"]
+      - name: percentual_acertos
+        description: Percentual de acertos publicado no gabarito comentado (não existe em 2021, 2024-2 e 2027-2).
+      - name: nivel
+        description: Nível de dificuldade do gabarito comentado (facil, medio, dificil).
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["facil", "medio", "dificil"]
+      - name: nivel_estimado
+        description: Verdadeiro quando a questão não tem comentário oficial e o nível foi estimado pelo projeto.
+      - name: observacoes
+        description: Adendos públicos (exibidos no site) sobre o que o projeto completou ou deduziu na classificação.
+
+  - name: fct_classificacao
+    description: >
+      Questão × conteúdo (N:N): uma linha por subitem (ou só item) ligado a cada versão de questão. Inclui as
+      classificações dos gabaritos comentados e as de seeds/correcoes, com os adendos públicos.
+    data_tests:
+      - combinacao_unica:
+          arguments:
+            columns: [id_questao, id_conteudo]
+    columns:
+      - name: id_questao
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('fct_questao')
+                field: id_questao
+      - name: id_conteudo
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_conteudo')
+                field: id_conteudo
+      - name: disciplina
+        data_tests: [not_null]
+      - name: observacao
+        description: Adendo público quando o projeto completou, deduziu ou estimou a classificação.
+
+  - name: bridge_programa_ano
+    description: Em que exames cada subitem canônico consta do edital.
+    columns:
+      - name: id_subitem
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('dim_conteudo')
+                field: id_conteudo
+
+  - name: mart_incidencia
+    description: >
+      Quantas questões de cada exame tocaram cada conteúdo, nos níveis área, eixo, item e subitem. A unidade é o
+      número da questão: as três versões de língua estrangeira contam uma vez.
+  - name: mart_dificuldade
+    description: Percentual de acertos médio, mediano, mínimo e máximo por item e subitem.
+  - name: mart_lacunas
+    description: Subitens do edital vigente com quantas vezes e quando caíram; `nunca_caiu` marca as lacunas.
+  - name: pendencias
+    description: Textos de edital ou comentário sem ligação no dicionário. Precisa estar vazio.

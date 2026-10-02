@@ -1,0 +1,56 @@
+version: 2
+
+seeds:
+  - name: conteudo_base
+    description: >
+      Hierarquia canônica (Área › Eixo › Item › Subitem), uma linha por subitem. Base: edital de 2027; itens e
+      subitens de editais anteriores sem equivalente ficam com vigente = false. Os IDs são estáveis: conteúdo novo
+      recebe o próximo número livre do item.
+    columns:
+      - name: id_subitem
+        data_tests: [unique, not_null]
+      - name: subitem
+        data_tests: [not_null]
+
+  - name: dicionario_conteudo
+    description: >
+      Equivalências: cada texto (item, subitem) visto num edital ou num comentário aponta para um ou mais conteúdos
+      canônicos. `metodo`: exato (mesmo texto normalizado), similar (variação de redação ou erro de digitação, ligada
+      automaticamente), item (só o item) ou manual (decisão de curadoria, com justificativa).
+    columns:
+      - name: id_conteudo
+        data_tests: [not_null]
+      - name: metodo
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["exato", "similar", "item", "manual"]
+      - name: justificativa
+        description: Obrigatória quando o método é manual.
+        data_tests:
+          - not_null:
+              config:
+                where: "metodo = 'manual'"
+
+  - name: correcoes
+    description: >
+      Classificações que substituem as extraídas de uma questão: transcrições lidas da imagem da página,
+      classificação manual (questão sem comentário) e complementos (eixo, item ou subitem ausente ou trocado no PDF).
+      `observacao` é o adendo público exibido no site; `justificativa` é a explicação técnica.
+    columns:
+      - name: tipo
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["transcricao", "classificacao_manual", "complemento"]
+      - name: justificativa
+        data_tests: [not_null]
+
+  - name: eixos_atribuidos
+    description: >
+      Eixo atribuído pelo edital do próprio exame quando o comentário não informa o eixo (quase todo o Exame Único).
+    columns:
+      - name: eixo
+        data_tests: [not_null]
+      - name: observacao
+        data_tests: [not_null]

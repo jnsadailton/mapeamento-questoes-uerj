@@ -1,9 +1,13 @@
 """Testes dos seeds de curadoria (dbt/seeds/) contra a saída dos parsers."""
 import csv
+import re
 from collections import defaultdict
 
+import duckdb
 import pytest
 
+from uerj.curadoria import normalizar
+from uerj.curadoria.__main__ import sugerir
 from uerj.ingestao.manifesto import EXAMES, RAIZ
 
 SEEDS = RAIZ / 'dbt' / 'seeds'
@@ -82,3 +86,23 @@ def test_correcao_nao_aponta_para_questao_inexistente(bronze, correcoes):
         existentes[exame] = {chave(exame, g['questao'], g['idioma'])[1:] for g in bronze[exame]['gabarito']}
     for r in correcoes:
         assert chave(r['exame'], r['questao'], r['idioma'])[1:] in existentes[r['exame']], r
+
+
+def test_normalizacao_python_igual_a_macro_do_dbt():
+    """As chaves do dicionário são calculadas no dbt; a curadoria em Python precisa chegar ao mesmo texto."""
+    macro = (RAIZ / 'dbt' / 'macros' / 'normalizar_texto.sql').read_text(encoding='utf-8')
+    corpo = re.search(r'macro normalizar_texto\(coluna\) -%\}(.*?)\{%- endmacro', macro, re.S)[1]
+    textos = sorted({t for r in ler('dicionario_conteudo.csv') for t in (r['item_texto'], r['subitem_texto'])})
+    textos += ['uniforme- mente variado', 'Ação, Reação!', 'força-peso', '']
+    con = duckdb.connect()
+    con.execute('create table t (texto varchar)')
+    con.executemany('insert into t values (?)', [[t] for t in textos])
+    sql = dict(con.sql(f"select texto, {corpo.replace('{{ coluna }}', 'texto')} from t").fetchall())
+    diferentes = [t for t in textos if sql[t] != normalizar(t)]
+    assert diferentes == []
+
+
+def test_sugestao_para_texto_novo():
+    base = ler('conteudo_base.csv')
+    s = next(sugerir([('Procedimentos de coesão e coerência', 'anáforas')], base, ler('dicionario_conteudo.csv')))
+    assert s['id_conteudo'] == next(b['id_subitem'] for b in base if b['subitem'] == 'anáfora, catáfora, dêixis')
