@@ -1,7 +1,7 @@
 {#
   Chave de comparação de textos de eixo, item e subitem: minúsculas, sem acento, sem pontuação e com as palavras
-  partidas por quebra de linha emendadas ("uniforme- mente" -> "uniformemente"). É a mesma regra da função `n` usada
-  na curadoria em Python (src/uerj/curadoria), para que as chaves do dicionário casem.
+  partidas por quebra de linha emendadas ("uniforme- mente" -> "uniformemente"). É a mesma regra da função `normalizar`
+  de src/uerj/curadoria, para que as chaves do dicionário casem (tests/test_curadoria.py confere as duas).
 #}
 {% macro normalizar_texto(coluna) -%}
 trim(regexp_replace(

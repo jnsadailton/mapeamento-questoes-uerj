@@ -89,6 +89,16 @@ def test_percentual_de_acertos(bronze, exame):
         assert len(percentuais) >= len(com) - {'2022-1': 12, '2026-2': 3}.get(exame, 2)
 
 
+def test_nivel_de_dificuldade(bronze):
+    """Todo comentário com percentual traz o nível, menos os casos em que o PDF não traz o campo ou o deixa vazio."""
+    sem_nivel = {(e, c['questao'], c['idioma']) for e in EXAMES for c in bronze[e]['comentario']
+                 if c['percentual_acertos'] is not None and c['nivel'] is None}
+    assert sem_nivel == {
+        ('2017-1', 50, None), ('2020-2', 5, None), ('2020-2', 20, None), ('2020-2', 24, 'EN'), ('2022-1', 34, None),
+        ('2022-1', 39, None), ('2022-1', 54, None), ('2023-1', 24, None), ('2023-1', 41, None), ('2024-1', 24, 'FR'),
+        ('2024-1', 45, None), ('2026-2', 23, 'ES'), ('2026-2', 60, None), ('2027-1', 27, 'FR')}
+
+
 def test_comentado_casos_especiais(bronze):
     def comentario(exame, questao, idioma=None):
         return next(c for c in bronze[exame]['comentario'] if chave(c) == (questao, idioma))
@@ -122,6 +132,12 @@ def test_comentado_casos_especiais(bronze):
     # texto da questão seguinte não vaza para o fim do comentário
     assert comentario('2024-1', 11)['texto'].endswith('Nível de dificuldade: fácil.')
     assert comentario('2024-1', 11)['nivel'] == 'facil'
+    # 2026: ligadura "ϐ" (só o "f") e acentos desenhados à parte, que saem como espaço de largura zero
+    assert comentario('2026-1', 9)['nivel'] == 'medio'
+    assert 'referência produz um efeito de polissemia, isto é, de múltiplo sentido' in comentario('2026-1', 2)['texto']
+    assert 'último quadrinho – é o amor' in comentario('2026-1', 9)['texto']
+    assert not any('fii' in c['texto'] or 'Ní vel' in c['texto']
+                   for e in ('2026-1', '2026-2') for c in bronze[e]['comentario'])
 
 
 # --- conteúdo programático ------------------------------------------------------------------------------------------
