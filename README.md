@@ -3,7 +3,10 @@
 Site público e gratuito que mostra o que caiu nas provas objetivas do Vestibular Estadual da UERJ desde 2016, por ano,
 exame, área, eixo, item e subitem do programa.
 
-> Projeto em construção. Esta página será completada quando o site estiver no ar.
+**Site: https://jnsadailton.github.io/mapeamento-questoes-uerj/**
+
+Atualizado a cada push na `main` pelo GitHub Actions ([`.github/workflows/site.yml`](.github/workflows/site.yml)):
+ingestão, testes, extração, `dbt build`, build do Evidence e publicação no GitHub Pages.
 
 ## Pipeline
 
