@@ -1,0 +1,78 @@
+# Pipeline completo e publicação do site no GitHub Pages.
+#
+# ingestão (UERJ → Wayback → cópia do repositório) → testes dos parsers → extração → dbt build (modelos + testes de
+# dados) → fontes do Evidence → build do site estático → GitHub Pages.
+
+name: Site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Python e dependências (uv)
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+          enable-cache: true
+
+      - run: uv sync --locked
+
+      - name: Testes dos parsers
+        run: uv run pytest -q
+
+      - name: Ingestão dos PDFs
+        run: uv run python -m uerj.ingestao
+
+      - name: Extração (camada bronze)
+        run: uv run python -m uerj.extracao
+
+      - name: dbt build (modelos e testes de dados)
+        working-directory: dbt
+        run: |
+          mkdir -p ../data/warehouse
+          uv run dbt build --profiles-dir .
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Site
+        working-directory: site
+        run: |
+          npm ci
+          npm run sources
+          npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
