@@ -11,6 +11,11 @@ models:
     columns:
       - name: id_questao
         data_tests: [unique, not_null]
+  - name: stg_prova
+    description: Página de cada questão (e idioma) no caderno de prova, para o link abrir o PDF na questão.
+    columns:
+      - name: id_questao
+        data_tests: [unique, not_null]
   - name: stg_classificacao
     description: Classificações (eixo, item, subitem) como estão no gabarito comentado.
   - name: stg_conteudo_programatico

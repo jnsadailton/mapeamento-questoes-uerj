@@ -1,5 +1,7 @@
 import csv
 import hashlib
+import ssl
+from urllib.error import URLError
 
 import pytest
 
@@ -55,6 +57,29 @@ def test_cai_para_wayback_quando_uerj_fora_do_ar(doc, raiz, tmp_path):
     p = obter(doc, tmp_path / 'raw', baixar=b, raiz=raiz)
     assert p.fonte == 'wayback' and p.url == doc.url_wayback
     assert 'uerj: falhou' in p.avisos
+
+
+def test_certificado_vencido_da_uerj_vale_se_o_sha256_confere(doc, raiz, tmp_path):
+    vencido = ssl.SSLCertVerificationError('certificate has expired')
+    vencido.verify_code = 10
+    chamadas = []
+
+    def baixar(url, verificar=True):
+        chamadas.append((url, verificar))
+        if verificar:
+            raise URLError(vencido)
+        return CONTEUDO
+    p = obter(doc, tmp_path / 'raw', baixar=baixar, raiz=raiz)
+    assert p.fonte == 'uerj' and 'certificado SSL do servidor vencido' in p.avisos
+    assert chamadas == [(doc.url_oficial, True), (doc.url_oficial, False)]
+
+
+def test_outro_erro_de_certificado_nao_e_ignorado(doc, raiz, tmp_path):
+    invalido = ssl.SSLCertVerificationError('self-signed certificate')
+    invalido.verify_code = 18
+    b = baixador({doc.url_oficial: URLError(invalido), doc.url_wayback: CONTEUDO})
+    p = obter(doc, tmp_path / 'raw', baixar=b, raiz=raiz)
+    assert p.fonte == 'wayback'
 
 
 def test_hash_diferente_nao_substitui_em_silencio(doc, raiz, tmp_path):

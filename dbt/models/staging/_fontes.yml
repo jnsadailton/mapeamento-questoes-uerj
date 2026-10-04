@@ -14,6 +14,8 @@ sources:
         description: Uma linha por classificação (eixo, item, subitem) citada num comentário, como está no PDF.
       - name: conteudo_programatico
         description: Uma linha por subitem do anexo de conteúdos do edital de cada exame.
+      - name: prova
+        description: Uma linha por questão e idioma, com a página do caderno de prova em que a questão começa.
 
   - name: raw
     description: Arquivos gravados pela ingestão (`python -m uerj.ingestao`).

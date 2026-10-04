@@ -84,6 +84,9 @@ models:
         description: Verdadeiro quando a questão não tem comentário oficial e o nível foi estimado pelo projeto.
       - name: observacoes
         description: Adendos públicos (exibidos no site) sobre o que o projeto completou ou deduziu na classificação.
+      - name: pagina_prova
+        description: Página do caderno de prova em que a questão começa (o site abre o PDF nela).
+        data_tests: [not_null]
 
   - name: fct_classificacao
     description: >

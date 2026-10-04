@@ -10,7 +10,7 @@ import pyarrow.parquet as pq
 
 from ..ingestao import manifesto
 from ..ingestao.obter import DESTINO as RAW
-from . import comentado, conteudo, gabarito
+from . import comentado, conteudo, gabarito, prova
 
 BRONZE = manifesto.RAIZ / 'data' / 'bronze'
 
@@ -26,21 +26,24 @@ ESQUEMAS = {
     'conteudo_programatico': pa.schema([('exame', texto), ('area', texto), ('eixo', texto), ('item', texto),
                                         ('subitem', texto), ('ordem_item', inteiro), ('ordem_subitem', inteiro),
                                         ('pagina', inteiro)]),
+    'prova': pa.schema([('exame', texto), ('questao', inteiro), ('idioma', texto), ('pagina', inteiro)]),
 }
 
 
 def extrair_exame(exame, raw=RAW):
-    """Roda os três parsers de um exame e devolve {tabela: [linhas]}."""
+    """Roda os parsers de um exame e devolve {tabela: [linhas]}."""
     pasta = Path(raw) / exame
     data, gab = gabarito.ler(pasta / f'{exame}_gabarito.pdf')
     com, cla = comentado.ler(pasta / f'{exame}_gabarito_comentado.pdf')
     cont = conteudo.ler(pasta / f'{exame}_conteudo_programatico.pdf')
+    pro = prova.ler(pasta / f'{exame}_prova.pdf')
     data = date.fromisoformat(data) if data else None
     return {
         'gabarito': [dict(exame=exame, data_aplicacao=data, **g) for g in gab],
         'comentario': [dict(exame=exame, **c) for c in com],
         'classificacao': [dict(exame=exame, **c) for c in cla],
         'conteudo_programatico': [dict(exame=exame, **c) for c in cont],
+        'prova': [dict(exame=exame, **p) for p in pro],
     }
 
 

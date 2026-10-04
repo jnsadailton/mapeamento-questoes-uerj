@@ -37,12 +37,14 @@ select
     c.objetivo,
     c.gabarito_no_comentario,
     c.pagina as pagina_gabarito_comentado,
+    pr.pagina as pagina_prova,
     p.id_area,
     p.disciplina,
     coalesce(p.qtd_classificacoes, 0) as qtd_classificacoes,
     o.observacoes
 from {{ ref('stg_gabarito') }} as g
 left join {{ ref('stg_comentario') }} as c using (id_questao)
+left join {{ ref('stg_prova') }} as pr using (id_questao)
 left join correcao as cr using (id_questao)
 left join principal as p using (id_questao)
 left join observacoes as o using (id_questao)

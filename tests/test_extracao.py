@@ -169,3 +169,21 @@ def test_conteudo_subitens_separados_por_ponto_e_virgula(bronze):
     subitens = [c['subitem'] for c in bronze['2016-1']['conteudo_programatico']
                 if c['item'] == 'Perspectivas enunciativas']
     assert subitens == ['quem enuncia, a quem enuncia, espaço, tempo', 'vozes', 'modalização']
+
+
+# --- prova ----------------------------------------------------------------------------------------------------------
+
+@pytest.mark.parametrize('exame', EXAMES)
+def test_prova_tem_a_pagina_de_cada_questao_do_gabarito(bronze, exame):
+    pro = bronze[exame]['prova']
+    assert Counter(chave(p) for p in pro) == Counter(chave(g) for g in bronze[exame]['gabarito'])
+    paginas = [p['pagina'] for p in pro]
+    assert paginas == sorted(paginas) and paginas[0] > 1  # na ordem do caderno, depois da capa
+
+
+def test_prova_paginas_conferidas(bronze):
+    def pagina(exame, questao, idioma=None):
+        return next(p['pagina'] for p in bronze[exame]['prova'] if chave(p) == (questao, idioma))
+    assert pagina('2027-1', 1) == 4
+    assert pagina('2027-1', 5) == 5
+    assert pagina('2024-1', 1) > 1  # a capa traz o número do exame no mesmo corpo da questão
