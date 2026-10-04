@@ -129,3 +129,8 @@ uma captura do Wayback Machine e a cópia versionada em `fontes/pdfs/`, e usa a 
 idêntico. A fonte de cada arquivo fica registrada em `data/raw/proveniencia.csv`.
 
 Sem internet, `uv run python -m uerj.ingestao --somente-repositorio` usa só a cópia versionada.
+
+## Créditos
+
+Criado por **Adailton Nascimento**. O desenvolvimento contou com o apoio do
+[Claude Code](https://claude.com/claude-code), assistente de programação da Anthropic.
