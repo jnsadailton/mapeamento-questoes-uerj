@@ -136,3 +136,60 @@ models:
       tempo o subitem está no programa.
   - name: pendencias
     description: Textos de edital ou comentário sem ligação no dicionário. Precisa estar vazio.
+
+  - name: dim_documento
+    description: >
+      Os PDFs de cada exame (prova, gabarito, conteúdo programático e gabarito comentado) com a URL oficial, a captura
+      do Wayback Machine e a fonte usada na última ingestão (uerj, wayback ou repositorio).
+    data_tests:
+      - combinacao_unica:
+          arguments:
+            columns: [id_exame, tipo]
+    columns:
+      - name: id_exame
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_exame')
+                field: id_exame
+      - name: tipo
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["prova", "gabarito", "conteudo_programatico", "gabarito_comentado"]
+      - name: fonte_ultima_ingestao
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["uerj", "wayback", "repositorio"]
+
+  - name: mart_recorrencia
+    description: >
+      Recorrência de cada item e subitem nos 21 exames. Os intervalos são medidos em exames (2016-1 = 1, 2027-2 = 21);
+      as taxas usam como denominador os exames em que o conteúdo estava no edital. `regularidade` é a fração desses
+      exames em que o conteúdo caiu; `indice_atraso` divide os exames desde a última cobrança pelo intervalo médio
+      (só com 3 cobranças ou mais); `tendencia` compara a taxa dos 6 últimos exames com a dos anteriores;
+      `sumido_que_volta` marca conteúdos do edital vigente que caíram 3 vezes ou mais e estão sem cair há pelo menos
+      1,5 vez o intervalo médio (e no mínimo 2 exames). É um indicador descritivo, não uma previsão.
+    data_tests:
+      - combinacao_unica:
+          arguments:
+            columns: [nivel, id_conteudo]
+    columns:
+      - name: id_conteudo
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_conteudo')
+                field: id_conteudo
+      - name: regularidade
+        data_tests:
+          - not_null
+      - name: tendencia
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["em alta", "em baixa", "estável", "sem histórico"]

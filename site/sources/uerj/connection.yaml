@@ -1,0 +1,5 @@
+# Warehouse gerado pelo dbt (data/warehouse/uerj.duckdb), relativo a esta pasta.
+name: uerj
+type: duckdb
+options:
+  filename: ../../../data/warehouse/uerj.duckdb

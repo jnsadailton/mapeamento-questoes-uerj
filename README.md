@@ -25,6 +25,9 @@ uv run python -m uerj.extracao          # extrai os PDFs para data/bronze/ (Parq
 cd dbt
 uv run dbt build --profiles-dir .       # modelos e testes em data/warehouse/uerj.duckdb
 uv run dbt docs generate --profiles-dir . && uv run dbt docs serve --profiles-dir .
+cd ../site                              # requer Node.js 20+
+npm ci
+npm run sources && npm run build        # site estático em site/build/
 ```
 
 ## Extração (camada bronze)
@@ -85,6 +88,25 @@ Decisões de modelagem:
 
 Testes do dbt: 60 questões por exame, anuladas exatamente as oficiais, toda questão não anulada classificada,
 percentual entre 0 e 100 (e ausente onde o PDF não o publica), chaves únicas e estrangeiras, e nenhuma pendência.
+
+## Site (Evidence)
+
+Site estático feito com [Evidence](https://legacy-docs.evidence.dev/) (versão open source): páginas em Markdown + SQL,
+com os filtros rodando no navegador (DuckDB-WASM). Criado por **Adailton Nascimento**.
+
+| Página | O que mostra |
+|---|---|
+| Início | números gerais e destaques: o que mais cai, o que está em alta e o que sumiu mas costuma voltar |
+| O que mais cai | filtros de vestibular, exame e disciplina (vários ao mesmo tempo); ranking de eixos, itens ou subitens, concentração, mapa da prova e links dos PDFs selecionados |
+| Tendências | regularidade, em alta e em baixa (2025–2027 contra os anos anteriores) e sumidos que costumam voltar |
+| Histórico por conteúdo | mapas de calor conteúdo × exame, do eixo ao subitem |
+| Dificuldade | prioridade de estudo (questões × taxa de erro), frequência × acertos e as questões mais difíceis |
+| Lacunas | o que está no edital de 2027 e nunca caiu |
+| Questões | todas as questões, com classificação e link para o PDF oficial |
+
+Os indicadores de recorrência vêm do modelo `mart_recorrencia` e são descritivos: não preveem a próxima prova. A paleta
+de cores (com a validação para daltonismo) está em [`docs/paleta-de-cores.md`](docs/paleta-de-cores.md). O logo da
+UERJ é o arquivo oficial do kit de marca da universidade e identifica a fonte dos dados; o projeto é independente.
 
 ## Fontes
 

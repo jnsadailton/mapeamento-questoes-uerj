@@ -1,0 +1,71 @@
+appearance:
+  default: system
+  switcher: true
+
+deployment:
+  # GitHub Pages serve o site em https://<usuário>.github.io/mapeamento-questoes-uerj/
+  basePath: /mapeamento-questoes-uerj
+
+# Cores documentadas e validadas em docs/paleta-de-cores.md. Mude lá e aqui juntos.
+theme:
+  colorPalettes:
+    default:
+      light: ["#0072CE", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#4a3aa7", "#e34948"]
+      dark: ["#3987e5", "#d95926", "#199e70", "#c98500", "#d55181", "#008300", "#9085e9", "#e66767"]
+  colorScales:
+    default:
+      light: ["#d6e8f8", "#00427a"]
+      dark: ["#0d2a47", "#9cc8f0"]
+  colors:
+    primary:
+      light: "#0072CE"
+      dark: "#4da3ff"
+    primary-content:
+      light: "#ffffff"
+      dark: "#0f141a"
+    accent:
+      light: "#AD841F"
+      dark: "#d4a93a"
+    base:
+      light: "#fbfbf9"
+      dark: "#0f141a"
+    base-heading:
+      light: "#0f1b2d"
+      dark: "#f3f6fa"
+    base-content:
+      light: "#2b3440"
+      dark: "#d7dee8"
+    base-content-muted:
+      light: "#5f6b7a"
+      dark: "#9aa7b6"
+    info:
+      light: "#0072CE"
+      dark: "#4da3ff"
+    positive:
+      light: "#0ca30c"
+      dark: "#0ca30c"
+    warning:
+      light: "#fab219"
+      dark: "#fab219"
+    negative:
+      light: "#d03b3b"
+      dark: "#e66767"
+    # Uma cor fixa por área (gráficos usam seriesColors com estes nomes)
+    area-lin:
+      light: "#0072CE"
+      dark: "#3987e5"
+    area-mat:
+      light: "#eb6834"
+      dark: "#d95926"
+    area-cnt:
+      light: "#1baf7a"
+      dark: "#199e70"
+    area-chs:
+      light: "#eda100"
+      dark: "#c98500"
+
+plugins:
+  components:
+    "@evidence-dev/core-components": {}
+  datasources:
+    "@evidence-dev/duckdb": {}
