@@ -1,7 +1,7 @@
 ---
 title: Sobre
 description: De onde vêm os dados, como as questões são classificadas e quais são as limitações.
-sidebar_position: 8
+sidebar_position: 9
 ---
 
 O **Mapa das Questões UERJ** foi criado por **Adailton Nascimento**, como projeto independente, público e gratuito. Não
@@ -18,8 +18,8 @@ simulados.
 ## Como os dados são produzidos
 
 <pre class="diagrama">PDFs oficiais ──► Ingestão ──► Extração ──► Transformação ──► Este site
-(UERJ, Wayback     (Python,     (PyMuPDF,    (dbt + DuckDB,      (Evidence,
- Machine)           sha256)      Parquet)     testes de dados)    estático)</pre>
+(UERJ, Wayback     (Python)     (PyMuPDF,    (dbt + DuckDB,      (Evidence,
+ Machine)                        Parquet)     testes de dados)    estático)</pre>
 
 <style>
   .diagrama { font-size: 0.8rem; line-height: 1.4; overflow-x: auto; padding: 0.75rem 1rem; border-radius: 6px;
@@ -27,8 +27,8 @@ simulados.
 </style>
 
 1. **Ingestão.** Para cada exame, quatro PDFs: prova, gabarito, conteúdo programático do edital e gabarito comentado.
-   Cada arquivo é conferido pelo sha256. Se o site da UERJ estiver fora do ar, o arquivo vem de uma captura do Wayback
-   Machine ou da cópia guardada no repositório.
+   Cada arquivo é conferido para garantir que é idêntico ao original publicado pela UERJ. Se o site da UERJ estiver
+   fora do ar, o arquivo vem de uma captura do Wayback Machine ou da cópia guardada no repositório.
 2. **Extração.** O texto dos PDFs é lido com a posição na página, porque nos gabaritos comentados a ordem do texto vem
    embaralhada. Cada comentário é ligado ao rótulo "QUESTÃO NN" pela posição.
 3. **Transformação.** Os editais mudam a redação dos conteúdos de um ano para outro. Para comparar os anos, todo texto
@@ -130,7 +130,7 @@ order by d.id_exame, d.tipo
 ```
 
 Os documentos abaixo não estavam disponíveis no site da UERJ na última atualização (o endereço antigo saiu do ar ou o
-arquivo foi removido) e vieram de uma cópia idêntica, conferida pelo sha256:
+arquivo foi removido) e vieram de uma cópia idêntica ao original:
 
 <DataTable data={fora_do_site} rows=20 emptySet=pass emptyMessage="Todos os documentos vieram do site da UERJ.">
   <Column id=id_exame title="Exame" />
@@ -141,4 +141,7 @@ arquivo foi removido) e vieram de uma cópia idêntica, conferida pelo sha256:
 
 - Provas e gabaritos: [vestibular.uerj.br](https://www.vestibular.uerj.br/)
 - Gabaritos comentados: [revista.vestibular.uerj.br](https://www.revista.vestibular.uerj.br/questao/)
-- Conteúdo programático: anexos dos editais de cada vestibular
+- Conteúdo programático: anexos dos editais de cada vestibular. Os de 2016 a 2018 ficam no servidor antigo da UERJ
+  (sistema.vestibular.uerj.br), que ainda entrega os arquivos originais, mas com o certificado de segurança vencido; o
+  navegador pode mostrar um aviso ao abrir esses links. O projeto confere se cada arquivo é idêntico ao original.
+- O [Programa](/programa) lista todas as áreas, eixos, itens e subitens, com as redações dos editais antigos.

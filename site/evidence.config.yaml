@@ -22,22 +22,23 @@ theme:
       dark: "#4da3ff"
     primary-content:
       light: "#ffffff"
-      dark: "#0f141a"
+      dark: "#0d1b2a"
     accent:
       light: "#AD841F"
       dark: "#d4a93a"
+    # papel e tinta do caderno de prova (#231F20 é a cor do texto nos PDFs); no escuro, marinho derivado do azul UERJ
     base:
       light: "#fbfbf9"
-      dark: "#0f141a"
+      dark: "#0d1b2a"
     base-heading:
-      light: "#0f1b2d"
-      dark: "#f3f6fa"
+      light: "#231f20"
+      dark: "#f4f6f9"
     base-content:
-      light: "#2b3440"
-      dark: "#d7dee8"
+      light: "#3a3638"
+      dark: "#dce3ec"
     base-content-muted:
-      light: "#5f6b7a"
-      dark: "#9aa7b6"
+      light: "#6b6567"
+      dark: "#9fb0c3"
     info:
       light: "#0072CE"
       dark: "#4da3ff"
@@ -63,6 +64,21 @@ theme:
     area-chs:
       light: "#eda100"
       dark: "#c98500"
+
+    # Eixos dentro de uma área (gráfico de dispersão da Dificuldade): sempre junto com o formato do ponto
+    # (círculo, quadrado, triângulo, losango), ver docs/paleta-de-cores.md
+    eixo-1:
+      light: "#0072CE"
+      dark: "#3987e5"
+    eixo-2:
+      light: "#E0A800"
+      dark: "#d4a017"
+    eixo-3:
+      light: "#C2410C"
+      dark: "#c9531f"
+    eixo-4:
+      light: "#3FA9F5"
+      dark: "#6cc0f7"
 
 plugins:
   components:

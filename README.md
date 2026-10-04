@@ -38,6 +38,7 @@ npm run sources && npm run build        # site estático em site/build/
 | `comentario` | comentário | gabarito comentado (percentual de acertos, nível, objetivo, texto) |
 | `classificacao` | classificação de uma questão | gabarito comentado (eixo, item e subitem do programa) |
 | `conteudo_programatico` | subitem do edital | anexo de conteúdos do edital (área, eixo, item, subitem) |
+| `prova` | questão e idioma | caderno de prova (página em que a questão começa, para o site abrir o PDF nela) |
 
 Os PDFs mudam de layout ao longo dos anos. Os gabaritos são lidos pela posição das palavras na página, e nos
 gabaritos comentados cada comentário é ligado ao rótulo da questão pela posição, porque a ordem do texto extraído é
@@ -97,16 +98,25 @@ com os filtros rodando no navegador (DuckDB-WASM). Criado por **Adailton Nascime
 | Página | O que mostra |
 |---|---|
 | Início | números gerais e destaques: o que mais cai, o que está em alta e o que sumiu mas costuma voltar |
-| O que mais cai | filtros de vestibular, exame e disciplina (vários ao mesmo tempo); ranking de eixos, itens ou subitens, concentração, mapa da prova e links dos PDFs selecionados |
-| Tendências | regularidade, em alta e em baixa (2025–2027 contra os anos anteriores) e sumidos que costumam voltar |
-| Histórico por conteúdo | mapas de calor conteúdo × exame, do eixo ao subitem |
-| Dificuldade | prioridade de estudo (questões × taxa de erro), frequência × acertos e as questões mais difíceis |
+| Programa | o dicionário completo do programa (área › eixo › item › subitem), com busca e as redações dos editais antigos |
+| O que mais cai | filtros em cascata (vestibular, exame, área › disciplina › eixo › item, vários ao mesmo tempo); rankings de eixos, itens e subitens, concentração, links dos PDFs selecionados e a lista das questões da seleção |
+| Tendências | regularidade, em alta e em baixa (2025–2027 contra os anos anteriores) e sumidos que costumam voltar, com filtros área › disciplina › eixo |
+| Histórico por conteúdo | escolha guiada área › eixo › item; mapas de calor conteúdo × exame, do eixo ao subitem, e as questões do item |
+| Dificuldade | filtros área › eixo › item; prioridade de estudo (questões × taxa de erro); frequência × acertos com a faixa de prioridade, que detalha de item para subitem, e a lista do que está nela; as questões mais difíceis |
 | Lacunas | o que está no edital de 2027 e nunca caiu |
-| Questões | todas as questões, com classificação e link para o PDF oficial |
+| Banco de questões | todas as questões, com filtros em cascata, classificação e links para a prova e o gabarito comentado, abertos na página da questão |
+
+Os filtros de seleção múltipla são um componente próprio ([`site/components/Filtro.svelte`](site/components/Filtro.svelte)):
+cada nível só oferece o que existe dentro do que está marcado acima (ex.: com só Linguagens, a disciplina oferece
+Língua Portuguesa, Literatura e Língua Estrangeira).
 
 Os indicadores de recorrência vêm do modelo `mart_recorrencia` e são descritivos: não preveem a próxima prova. A paleta
 de cores (com a validação para daltonismo) está em [`docs/paleta-de-cores.md`](docs/paleta-de-cores.md). O logo da
 UERJ é o arquivo oficial do kit de marca da universidade e identifica a fonte dos dados; o projeto é independente.
+
+O Evidence 40 não tem tradução e compara o endereço das páginas sem o `basePath`. O script
+[`site/scripts/traduzir-componentes.mjs`](site/scripts/traduzir-componentes.mjs), que roda sozinho depois do `npm ci`,
+traduz os textos fixos dos componentes ("Select all", "Search"...) e corrige o menu lateral para marcar a página atual.
 
 ## Fontes
 

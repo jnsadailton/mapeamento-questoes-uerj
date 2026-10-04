@@ -1,5 +1,5 @@
 -- Uma linha por questão e idioma (no bloco de língua estrangeira, cada idioma é uma versão da questão), com a
--- classificação em texto e o link para a página do gabarito comentado.
+-- classificação em texto e os links para a página da questão na prova e no gabarito comentado.
 with conteudos as (
     select
         c.id_questao,
@@ -33,7 +33,7 @@ select
     c.classificacao,
     c.eixos,
     q.observacoes,
-    e.url_prova,
+    e.url_prova || '#page=' || q.pagina_prova as url_prova,
     e.url_gabarito_comentado || coalesce('#page=' || q.pagina_gabarito_comentado, '') as url_comentario
 from fct_questao as q
 inner join dim_exame as e using (id_exame)

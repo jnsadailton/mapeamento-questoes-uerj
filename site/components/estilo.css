@@ -1,0 +1,158 @@
+/*
+ * Estilo global do site, importado em pages/+layout.svelte.
+ *
+ * A identidade vem do próprio caderno de prova da UERJ: títulos e números grandes numa serifa da família da Minion
+ * (Crimson Pro), texto e interface numa sem serifa geométrica na linha da Avenir (Figtree), tinta #231F20 sobre papel.
+ * O menu lateral é uma lista numerada, na ordem sugerida de uso do site.
+ * Cores em evidence.config.yaml e docs/paleta-de-cores.md.
+ */
+
+:root {
+	--fonte-titulo: 'Crimson Pro Variable', 'Iowan Old Style', Georgia, serif;
+	--fonte-texto: 'Figtree Variable', 'Avenir Next', 'Segoe UI', system-ui, sans-serif;
+}
+
+html,
+body {
+	font-family: var(--fonte-texto);
+	font-feature-settings: 'kern', 'liga';
+}
+
+/* o template do Evidence impede selecionar texto; aqui o estudante precisa copiar nomes de conteúdos */
+body {
+	-webkit-user-select: text;
+	user-select: text;
+}
+
+.font-sans {
+	font-family: var(--fonte-texto);
+}
+
+/* ---- títulos ------------------------------------------------------------------------------------------------- */
+
+h1.markdown,
+h1.title,
+h2.markdown {
+	font-family: var(--fonte-titulo);
+	letter-spacing: 0;
+	color: hsl(var(--twc-base-heading));
+}
+
+h1.markdown,
+h1.title {
+	font-size: 2.35rem;
+	line-height: 1.1;
+	font-weight: 600;
+	margin-top: 0.5rem;
+	margin-bottom: 0.75rem;
+}
+
+h2.markdown {
+	font-size: 1.65rem;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-top: 2.75rem;
+	margin-bottom: 0.5rem;
+}
+
+h3.markdown {
+	font-size: 1.05rem;
+	font-weight: 650;
+	margin-top: 1.5rem;
+}
+
+/* ---- texto corrido: linhas curtas ---------------------------------------------------------------------------- */
+
+p.markdown,
+ul.markdown,
+ol.markdown {
+	max-width: 72ch;
+	line-height: 1.6;
+}
+
+article a.markdown,
+a.markdown {
+	color: hsl(var(--twc-primary));
+	text-underline-offset: 0.18em;
+}
+
+/* ---- indicadores (BigValue com valueClass="valor") ------------------------------------------------------------ */
+
+.valor {
+	font-family: var(--fonte-titulo);
+	font-size: 2.6rem !important;
+	line-height: 1 !important;
+	font-weight: 600 !important;
+	font-variant-numeric: lining-nums tabular-nums;
+	color: hsl(var(--twc-base-heading));
+	margin-top: 0.4rem !important;
+}
+
+/* ---- menu lateral: lista numerada, na ordem sugerida de uso ------------------------------------------------- */
+
+aside,
+#mobileScrollable {
+	counter-reset: pagina;
+}
+
+aside a[href],
+#mobileScrollable a[href] {
+	counter-increment: pagina;
+	display: flex !important;
+	align-items: baseline;
+	gap: 0.55rem;
+	margin: 0 0 1px -0.55rem;
+	padding: 0.3rem 0.55rem !important;
+	border-radius: 6px;
+	box-shadow: none !important;
+	transition: background-color 120ms ease;
+}
+
+aside a[href]::before,
+#mobileScrollable a[href]::before {
+	content: counter(pagina) '.';
+	flex: none;
+	min-width: 1.1rem;
+	font-family: var(--fonte-titulo);
+	font-size: 1.05rem;
+	font-weight: 600;
+	font-variant-numeric: lining-nums tabular-nums;
+	color: hsl(var(--twc-base-content-muted));
+}
+
+aside a[href]:hover,
+#mobileScrollable a[href]:hover {
+	background: hsl(var(--twc-primary) / 0.07);
+	color: hsl(var(--twc-base-heading)) !important;
+}
+
+/* página aberta: fundo azul claro e número azul, sem marcador de "opção escolhida" */
+aside a[href].text-primary,
+#mobileScrollable a[href].text-primary {
+	background: hsl(var(--twc-primary) / 0.12);
+	color: hsl(var(--twc-base-heading)) !important;
+}
+
+aside a[href].text-primary::before,
+#mobileScrollable a[href].text-primary::before {
+	color: hsl(var(--twc-primary));
+}
+
+@media (prefers-reduced-motion: reduce) {
+	aside a[href],
+	#mobileScrollable a[href] {
+		transition: none;
+	}
+}
+
+/* ---- foco visível em tudo que é clicável ---------------------------------------------------------------------- */
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+	outline: 2px solid hsl(var(--twc-primary));
+	outline-offset: 2px;
+	border-radius: 4px;
+}

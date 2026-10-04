@@ -1,6 +1,8 @@
 <script>
-	import '@evidence-dev/tailwind/fonts.css';
+	import '@fontsource-variable/crimson-pro';
+	import '@fontsource-variable/figtree';
 	import '../app.css';
+	import '$lib/estilo.css';
 	import { EvidenceDefaultLayout } from '@evidence-dev/core-components';
 	import { addBasePath } from '@evidence-dev/sdk/utils/svelte';
 	export let data;
@@ -12,6 +14,7 @@
 	homePageName="Início"
 	maxWidth={1180}
 	hideTOC={true}
+	hideBreadcrumbs={true}
 	neverShowQueries={true}
 	builtWithEvidence={false}
 	githubRepo="https://github.com/jnsadailton/mapeamento-questoes-uerj"
@@ -43,7 +46,7 @@
 		align-items: flex-start;
 		margin-top: 3rem;
 		padding-top: 1.25rem;
-		border-top: 2px solid hsl(var(--twc-accent) / 0.6);
+		border-top: 2px solid hsl(var(--twc-accent));
 		font-size: 0.85rem;
 		color: hsl(var(--twc-base-content-muted));
 	}
