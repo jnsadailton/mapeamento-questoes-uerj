@@ -75,6 +75,9 @@
 	</button>
 	{#if aberto}
 		<div class="painel" id={id} role="group" aria-label={titulo} bind:this={painel} style={'left: ' + deslocamento + 'px'}>
+			{#if opcoes.length > 1}
+				<p class="dica">Marque quantos quiser, ou use <span class="exemplo-apenas">apenas</span> para ficar só com um.</p>
+			{/if}
 			{#if opcoes.length > 8}
 				<input class="busca" type="search" placeholder="Buscar" bind:value={busca} aria-label={'Buscar em ' + titulo} />
 			{/if}
@@ -85,7 +88,13 @@
 							<input type="checkbox" checked={marcados.has(o.valor)} on:change={() => alternar(o.valor)} />
 							<span>{o.rotulo}</span>
 						</label>
-						<button type="button" class="so" on:click={() => so(o.valor)} title={'Mostrar só ' + o.rotulo}>só este</button>
+						<button
+							type="button"
+							class="so"
+							on:click={() => so(o.valor)}
+							title={'Desmarcar os outros e ficar só com ' + o.rotulo}
+							aria-label={'Selecionar apenas ' + o.rotulo}>apenas</button
+						>
 					</li>
 				{:else}
 					<li class="vazio">Nada encontrado.</li>
@@ -199,15 +208,35 @@
 		margin-top: 0.15rem;
 		accent-color: hsl(var(--twc-primary));
 	}
-	.so {
+	.dica {
+		margin: 0.1rem 0.3rem 0.4rem;
+		font-size: 0.78rem;
+		line-height: 1.4;
+		color: hsl(var(--twc-base-content-muted));
+	}
+	.so,
+	.exemplo-apenas {
 		flex: none;
-		visibility: hidden;
-		padding: 0.15rem 0.4rem;
-		border-radius: 4px;
-		font-size: 0.75rem;
+		padding: 0.1rem 0.5rem;
+		border: 1px solid hsl(var(--twc-primary) / 0.5);
+		border-radius: 999px;
+		font-size: 0.72rem;
 		font-weight: 600;
 		color: hsl(var(--twc-primary));
-		background: transparent;
+		background: hsl(var(--twc-base-100));
+	}
+	.exemplo-apenas {
+		display: inline-block;
+		padding: 0 0.4rem;
+		line-height: 1.35;
+	}
+	.so {
+		visibility: hidden;
+		margin-right: 0.2rem;
+	}
+	.so:hover {
+		background: hsl(var(--twc-primary));
+		color: hsl(var(--twc-primary-content));
 	}
 	li:hover .so,
 	.so:focus-visible {
