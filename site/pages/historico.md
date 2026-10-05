@@ -1,6 +1,6 @@
 ---
 title: Histórico por conteúdo
-description: A série histórica de cada eixo, item e subitem do programa, de 2016 a 2027.
+description: A série histórica de cada eixo, item e subitem do programa, de 2016 a 2027, por disciplina e idioma.
 sidebar_position: 5
 ---
 
@@ -8,46 +8,124 @@ sidebar_position: 5
   import { linhasDe } from '$lib/filtros.js';
 
   const AREAS = ['Linguagens', 'Matemática', 'Ciências da Natureza', 'Ciências Humanas'];
+  const IDIOMAS = { Espanhol: 'ES', Francês: 'FR', Inglês: 'EN' };
+  const LE = 'Língua Estrangeira';
+  const TODAS = 'Todas';
+  const ehLE = (r) => r === LE || r in IDIOMAS;
 
-  // Área › Eixo › Item, escolha única. As listas saem da hierarquia inteira, carregada uma vez: o eixo só oferece os
-  // eixos da área escolhida e o item só os itens do eixo. Trocar a área leva ao primeiro eixo dela e ao item mais
-  // cobrado desse eixo; trocar o eixo leva ao item mais cobrado dele.
+  // Área › Disciplina › Eixo › Item, escolha única. As listas saem da hierarquia inteira, carregada uma vez: a
+  // disciplina só oferece as da área, o eixo só os eixos com itens da disciplina e o item só os itens do eixo. Trocar
+  // a área volta para "todas as disciplinas", o primeiro eixo e o item mais cobrado dele; trocar o eixo leva ao item
+  // mais cobrado dele; trocar a disciplina mantém o eixo e o item quando eles existem nela.
+  //
+  // Disciplina: em Ciências da Natureza, cada item é de Biologia, Física ou Química (os eixos são interdisciplinares).
+  // Em Linguagens, o edital usa os mesmos eixos para Língua Portuguesa, Literatura e Língua Estrangeira: Língua
+  // Portuguesa e Literatura são as questões em português (pelo item), e Língua Estrangeira é o bloco de espanhol,
+  // francês e inglês, visto inteiro ou um idioma por vez.
   let area = 'Matemática';
+  let recorte = TODAS;
   let eixo = null;
   let item = null;
 
-  $: hier = linhasDe(hierarquia);
-  $: areas = AREAS.filter((a) => hier.some((r) => r.area === a));
-  $: eixos = eixosDe(hier, area);
-  $: itens = itensDe(hier, eixo);
+  $: hier = linhasDe(conteudos);
+  $: listaExames = linhasDe(exames_mapa);
 
-  function eixosDe(linhas, a) {
+  // Questões de cada recorte|conteúdo|exame e o total de cada recorte|conteúdo desde 2016.
+  $: porExame = new Map(linhasDe(contagens).map((r) => [r.recorte + '|' + r.id_conteudo + '|' + r.id_exame, Number(r.questoes)]));
+  $: totais = somar(linhasDe(contagens), listaExames);
+  function somar(linhas, exames) {
+    const ano = new Map(exames.map((e) => [e.id_exame, Number(e.ano)]));
+    const t = new Map();
+    for (const r of linhas) {
+      const chave = r.recorte + '|' + r.id_conteudo;
+      if (!t.has(chave)) t.set(chave, { questoes: 0, exames: 0, ultimo_ano: 0 });
+      const s = t.get(chave);
+      s.questoes += Number(r.questoes);
+      s.exames += 1;
+      s.ultimo_ano = Math.max(s.ultimo_ano, ano.get(r.id_exame) ?? 0);
+    }
+    return t;
+  }
+  const totalDe = (t, r, id) => t.get(r + '|' + id)?.questoes ?? 0;
+
+  $: areas = AREAS.filter((a) => hier.some((r) => r.area === a));
+  $: grupos = recortesDe(hier, area);
+  $: eixos = eixosDe(hier, area, recorte);
+  $: itens = itensDe(hier, area, recorte, eixo, totais);
+
+  // As opções do passo 2, em grupos (o de língua estrangeira vira um <optgroup>). Área de uma disciplina só: uma
+  // opção, com o nome dela.
+  function recortesDe(linhas, a) {
+    const disciplinas = [...new Set(linhas.filter((r) => r.area === a).map((r) => r.disciplina))].sort((x, y) => x.localeCompare(y, 'pt'));
+    if (disciplinas.length < 2) return [{ grupo: null, opcoes: [{ valor: TODAS, rotulo: disciplinas[0] ?? a }] }];
+    const lista = [{ grupo: null, opcoes: [{ valor: TODAS, rotulo: 'Todas as disciplinas' }, ...disciplinas.map((d) => ({ valor: d, rotulo: d }))] }];
+    if (a === 'Linguagens')
+      lista.push({
+        grupo: LE,
+        opcoes: [{ valor: LE, rotulo: 'Os três idiomas' }, ...Object.keys(IDIOMAS).map((i) => ({ valor: i, rotulo: i }))]
+      });
+    return lista;
+  }
+  // O conteúdo entra no recorte? (língua estrangeira usa o programa inteiro de Linguagens)
+  const noRecorte = (r, linha) => r === TODAS || (ehLE(r) ? linha.area === 'Linguagens' : linha.disciplina === r);
+
+  function eixosDe(linhas, a, r) {
     const vistos = new Map();
-    for (const r of linhas) if (r.area === a && !vistos.has(r.id_eixo)) vistos.set(r.id_eixo, r.eixo);
+    for (const l of linhas)
+      if (l.nivel === 'item' && l.area === a && noRecorte(r, l) && !vistos.has(l.id_eixo)) vistos.set(l.id_eixo, l.eixo);
     return [...vistos].map(([id, nome]) => ({ id, nome })).sort((x, y) => x.id.localeCompare(y.id));
   }
-  function itensDe(linhas, e) {
+  function itensDe(linhas, a, r, e, t) {
     return linhas
-      .filter((r) => r.id_eixo === e)
-      .map((r) => ({ id: r.id_item, nome: r.item, questoes: Number(r.questoes) }))
+      .filter((l) => l.nivel === 'item' && l.area === a && l.id_eixo === e && noRecorte(r, l))
+      .map((l) => ({ id: l.id_item, nome: l.item, vigente: l.vigente, questoes: totalDe(t, r, l.id_item) }))
       .sort((x, y) => y.questoes - x.questoes || x.nome.localeCompare(y.nome));
   }
   function escolherArea(a) {
     area = a;
-    escolherEixo(eixosDe(hier, a)[0]?.id ?? null);
+    recorte = TODAS;
+    escolherEixo(eixosDe(hier, a, TODAS)[0]?.id ?? null);
+  }
+  function escolherRecorte(r) {
+    recorte = r;
+    const novosEixos = eixosDe(hier, area, r);
+    if (!novosEixos.some((e) => e.id === eixo)) return escolherEixo(novosEixos[0]?.id ?? null);
+    const novosItens = itensDe(hier, area, r, eixo, totais);
+    if (!novosItens.some((i) => i.id === item)) item = novosItens[0]?.id ?? null;
   }
   function escolherEixo(e) {
     eixo = e;
-    item = itensDe(hier, e)[0]?.id ?? null;
+    item = itensDe(hier, area, recorte, e, totais)[0]?.id ?? null;
   }
-  $: if (hier.length && eixo === null) escolherArea(area);
+  $: if (hier.length && totais.size && eixo === null) escolherArea(area);
 
   $: nomeEixo = eixos.find((e) => e.id === eixo)?.nome ?? '';
   $: nomeItem = itens.find((i) => i.id === item)?.nome ?? '';
-  $: dadosItens = linhasDe(mapa_itens).filter((r) => r.id_eixo === eixo);
-  $: dadosSubitens = linhasDe(mapa_subitens).filter((r) => r.id_item === item);
-  $: dadosQuestoes = linhasDe(questoes_itens).filter((r) => r.id_item === item);
-  $: resumo = linhasDe(resumo_itens).filter((r) => r.id_item === item);
+  $: emRecorte = recorte === TODAS ? '' : ', em ' + (recorte === LE ? 'Língua Estrangeira (os três idiomas)' : recorte);
+
+  // Uma linha por conteúdo × exame (vazia quando o conteúdo não caiu no exame), no recorte escolhido.
+  function linhasDoMapa(lista, campo, idCampo, exames, r, contagem, t) {
+    return lista.flatMap((c) => {
+      const nome = c.nome + (c.vigente ? '' : ' *') + (totalDe(t, r, c.id) === 0 ? ' (nunca caiu)' : '');
+      return exames.map((e) => ({
+        exame: e.rotulo,
+        id_exame: e.id_exame,
+        [campo]: nome,
+        [idCampo]: c.id,
+        questoes: contagem.get(r + '|' + c.id + '|' + e.id_exame) ?? null
+      }));
+    });
+  }
+  $: subitens = hier
+    .filter((l) => l.nivel === 'subitem' && l.id_item === item)
+    .map((l) => ({ id: l.id_subitem, nome: l.subitem, vigente: l.vigente }));
+  $: dadosItens = linhasDoMapa(itens, 'item', 'id_item', listaExames, recorte, porExame, totais);
+  $: dadosSubitens = linhasDoMapa(subitens, 'subitem', 'id_subitem', listaExames, recorte, porExame, totais);
+  $: totalItem = totais.get(recorte + '|' + item);
+  $: resumo = totalItem ? [totalItem] : [];
+  // A versão da questão entra no recorte? (disciplina da classificação, ou o idioma da versão)
+  const naVersao = (r, q) => r === TODAS || (r in IDIOMAS ? q.idioma === IDIOMAS[r] : q.disciplina === r);
+  $: dadosQuestoes = linhasDe(questoes_itens).filter((q) => q.id_item === item && naVersao(recorte, q));
 
   // Nomes longos de conteúdo empurravam o mapa para a direita: o rótulo quebra em até duas linhas de ~34 caracteres,
   // com reticências se passar disso (o nome inteiro aparece ao passar o mouse). Todos os rótulos ficam visíveis.
@@ -68,11 +146,10 @@ sidebar_position: 5
   // espremidos e os rótulos se sobrepunham).
   const LINHA = 34;
   const DATAS = 72;
-  const linhasDoMapa = (dados, campo) => new Set(dados.map((r) => r[campo])).size;
   // (a altura do gráfico inclui a faixa das datas, que o ECharts desconta antes de desenhar as linhas)
   const opcoesMapa = { yAxis: { axisLabel: { interval: 0, lineHeight: 13, formatter: (v) => rotuloCurto(v) } } };
-  $: nItens = linhasDoMapa(dadosItens, 'item');
-  $: nSubitens = linhasDoMapa(dadosSubitens, 'subitem');
+  $: nItens = itens.length;
+  $: nSubitens = subitens.length;
 </script>
 
 Escolha um conteúdo e veja em que exames ele caiu desde 2016. Cada célula dos mapas é o número de questões daquele
@@ -80,59 +157,47 @@ exame (vazia quando nenhuma).
 
 <Hierarquia compacto=true />
 
-```sql hierarquia
-select c.area, c.id_eixo, c.eixo, c.id_item, c.item, coalesce(r.qtd_questoes, 0) as questoes
-from uerj.conteudo as c
-left join uerj.recorrencia as r on r.nivel = 'item' and r.id_conteudo = c.id_item
-where c.nivel = 'item'
+```sql exames_mapa
+select id_exame, rotulo, ano from uerj.exames order by id_exame
 ```
 
-```sql mapa_itens
-select
-    e.rotulo as exame,
-    e.id_exame,
-    c.id_eixo,
-    c.item || case when c.vigente then '' else ' *' end
-        || case when sum(coalesce(i.qtd_questoes, 0)) over (partition by c.id_item) = 0 then ' (nunca caiu)' else '' end
-        as item,
-    c.id_item,
-    i.qtd_questoes as questoes
-from uerj.exames as e
-cross join (select id_eixo, id_item, item, vigente from uerj.conteudo where nivel = 'item') as c
-left join uerj.incidencia as i
-    on i.id_exame = e.id_exame and i.nivel = 'item' and i.id_conteudo = c.id_item
+```sql conteudos
+select nivel, area, disciplina, id_eixo, eixo, id_item, item, id_subitem, subitem, vigente from uerj.conteudo
 ```
 
-```sql mapa_subitens
-select
-    e.rotulo as exame,
-    e.id_exame,
-    c.id_item,
-    c.subitem || case when c.vigente then '' else ' *' end
-        || case when sum(coalesce(i.qtd_questoes, 0)) over (partition by c.id_subitem) = 0 then ' (nunca caiu)' else '' end
-        as subitem,
-    c.id_subitem,
-    i.qtd_questoes as questoes
-from uerj.exames as e
-cross join (select id_item, id_subitem, subitem, vigente from uerj.conteudo where nivel = 'subitem') as c
-left join uerj.incidencia as i
-    on i.id_exame = e.id_exame and i.nivel = 'subitem' and i.id_conteudo = c.id_subitem
-```
-
-```sql resumo_itens
-select
-    id_conteudo as id_item,
-    cast(sum(qtd_questoes) as integer) as questoes,
-    count(distinct id_exame) as exames,
-    max(ano) as ultimo_ano
-from uerj.incidencia
-where nivel = 'item'
+```sql contagens
+-- Questões por exame, recorte e conteúdo (item ou subitem). Recortes: a disciplina da classificação (Física,
+-- Língua Portuguesa, Língua Estrangeira...), cada idioma do bloco de língua estrangeira e "Todas". A unidade é o
+-- número da questão: as versões de língua estrangeira de um mesmo número contam uma vez.
+with base as (
+    select id_exame, numero, disciplina as recorte, id_item, id_subitem from uerj.classificacoes
+    union all
+    select
+        id_exame,
+        numero,
+        case idioma when 'ES' then 'Espanhol' when 'FR' then 'Francês' when 'EN' then 'Inglês' end,
+        id_item,
+        id_subitem
+    from uerj.classificacoes
+    where idioma is not null
+    union all
+    select id_exame, numero, 'Todas', id_item, id_subitem from uerj.classificacoes
+)
+select id_exame, recorte, id_item as id_conteudo, cast(count(distinct numero) as integer) as questoes
+from base
+group by all
+union all
+select id_exame, recorte, id_subitem, cast(count(distinct numero) as integer)
+from base
+where id_subitem is not null
 group by all
 ```
 
 ```sql questoes_itens
 select
     c.id_item,
+    c.disciplina,
+    q.idioma,
     q.id_questao,
     q.classificacao,
     q.resposta,
@@ -140,7 +205,7 @@ select
     q.observacoes,
     q.url_prova,
     q.url_comentario
-from (select distinct id_item, id_questao from uerj.classificacoes) as c
+from (select distinct id_item, disciplina, id_questao from uerj.classificacoes) as c
 inner join uerj.questoes as q using (id_questao)
 order by q.id_questao desc
 ```
@@ -158,25 +223,49 @@ order by q.id_questao desc
     <span class="seta" aria-hidden="true">›</span>
     <label class="passo">
       <span class="num">2</span>
-      <span class="rotulo">Eixo <small>da área escolhida</small></span>
+      <span class="rotulo">Disciplina <small>da área escolhida</small></span>
+      <select value={recorte} on:change={(e) => escolherRecorte(e.currentTarget.value)} disabled={grupos.length === 1 && grupos[0].opcoes.length === 1}>
+        {#each grupos as g}
+          {#if g.grupo}
+            <optgroup label={g.grupo}>
+              {#each g.opcoes as o}<option value={o.valor}>{o.rotulo}</option>{/each}
+            </optgroup>
+          {:else}
+            {#each g.opcoes as o}<option value={o.valor}>{o.rotulo}</option>{/each}
+          {/if}
+        {/each}
+      </select>
+    </label>
+    <span class="seta" aria-hidden="true">›</span>
+    <label class="passo">
+      <span class="num">3</span>
+      <span class="rotulo">Eixo <small>da disciplina escolhida</small></span>
       <select value={eixo} on:change={(e) => escolherEixo(e.currentTarget.value)} disabled={!eixos.length}>
         {#each eixos as e}<option value={e.id}>{e.nome}</option>{/each}
       </select>
     </label>
     <span class="seta" aria-hidden="true">›</span>
     <label class="passo">
-      <span class="num">3</span>
+      <span class="num">4</span>
       <span class="rotulo">Item <small>do eixo escolhido (questões desde 2016)</small></span>
       <select bind:value={item} disabled={!itens.length}>
         {#each itens as i}<option value={i.id}>{i.nome} ({i.questoes})</option>{/each}
       </select>
     </label>
   </div>
-  <p class="escolha-nota">Ao trocar a área, o eixo e o item mudam sozinhos para os da nova área; ao trocar o eixo, o item
-  muda para o mais cobrado dele.</p>
+  <p class="escolha-nota">Ao trocar a área, a disciplina, o eixo e o item mudam sozinhos para os da nova área; ao trocar
+  o eixo, o item muda para o mais cobrado dele.</p>
+  {#if area === 'Linguagens'}
+    <p class="escolha-nota">Em Linguagens, o edital usa os mesmos eixos para as três disciplinas. Língua Portuguesa e
+    Literatura contam só as questões em português. Língua Estrangeira conta o bloco de espanhol, francês e inglês: as
+    três versões de uma questão contam uma vez, e escolher um idioma mostra só as questões dele.</p>
+  {:else if area === 'Ciências da Natureza'}
+    <p class="escolha-nota">Os eixos de Ciências da Natureza misturam as disciplinas: com Biologia, Física ou Química
+    escolhida, cada eixo mostra só os itens dela.</p>
+  {/if}
 </div>
 
-## Itens do eixo {nomeEixo}, exame a exame
+## Itens do eixo {nomeEixo}{emRecorte}, exame a exame
 
 <div class="mapa-rolagem"><div class="mapa-largo">
 <Heatmap
@@ -200,11 +289,11 @@ order by q.id_questao desc
 <p class="dica-rolagem">Arraste o mapa para o lado para ver todos os exames.</p>
 
 Itens marcados com * não estão mais no edital de 2027; eles aparecem porque caíram em exames anteriores. "Nunca
-caiu" quer dizer que nenhum gabarito comentado oficial classificou uma questão nesse conteúdo desde 2016, mesmo ele
-estando no edital: uma questão pode usar a ideia (conjuntos numa questão de probabilidade, por exemplo) e ser
+caiu" quer dizer que nenhum gabarito comentado oficial classificou uma questão nesse conteúdo desde 2016 (na disciplina
+escolhida), mesmo ele estando no edital: uma questão pode usar a ideia (conjuntos numa questão de probabilidade, por exemplo) e ser
 classificada pela UERJ em outro item.
 
-## O item {nomeItem}, subitem por subitem
+## O item {nomeItem}{emRecorte}, subitem por subitem
 
 <Grid cols=3>
   <BigValue data={resumo} value=questoes title="Questões desde 2016" emptySet=pass emptyMessage="0" valueClass="valor" />

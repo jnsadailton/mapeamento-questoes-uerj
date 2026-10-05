@@ -137,8 +137,8 @@ order by id_exame desc, numero, idioma nulls first
 
 - **Questão**: `AAAA-N-NN`, o ano do vestibular, o número do exame (o Exame Único usa 1) e o número da questão. No
   bloco de língua estrangeira, o sufixo indica o idioma (`-ES`, `-FR`, `-EN`).
-- **Acertos**: percentual publicado pela UERJ. Fica vazio quando o gabarito comentado não o traz (2021, 2024-2,
-  2027-2, anuladas e algumas questões de 2020-2 e 2022-1).
+- **Acertos**: percentual publicado pela UERJ. Fica vazio quando não há essa informação no gabarito comentado (2021,
+  2024-2, 2027-2, anuladas e algumas questões de 2020-2 e 2022-1).
 - **Adendo do projeto**: aparece quando o projeto completou, deduziu ou estimou parte da classificação. Todo o resto
   vem do PDF oficial.
 - **Prova** abre o caderno de prova oficial na página em que a questão começa (a questão pode depender de um texto

@@ -9,9 +9,11 @@ sidebar_position: 6
   import { barrasDeitadas } from '$lib/graficos.js';
   const opcoesBarras = barrasDeitadas();
 
-  // Área › Eixo › Item: valem para a página inteira.
+  // Área › Disciplina › Eixo › Item: valem para a página inteira. A disciplina é a da classificação (em Linguagens,
+  // Língua Estrangeira separa o bloco de espanhol, francês e inglês das questões em português).
   const conteudo = criarCascata([
     { nome: 'areas', valor: 'area', ordenar: naOrdem(AREAS) },
+    { nome: 'disciplinas', valor: 'disciplina' },
     { nome: 'eixos', valor: 'id_eixo', rotulo: 'eixo' },
     { nome: 'itens', valor: 'id_item', rotulo: 'item' }
   ]);
@@ -30,6 +32,7 @@ sidebar_position: 6
   $: if (sel)
     gravarInputs(inputs_store, {
       areas: paraInput(sel.areas, opc.areas),
+      disciplinas: paraInput(sel.disciplinas, opc.disciplinas),
       eixos: paraInput(sel.eixos, opc.eixos),
       itens: paraInput(sel.itens, opc.itens),
       niveis_dificuldade: paraInput([nivel])
@@ -104,7 +107,7 @@ percentual com a frequência de cada conteúdo, para mostrar onde vale mais a pe
 poucos acertos**. Dá para ver por **item** e descer até os **subitens** de cada item.
 
 <ol class="como-usar">
-  <li>Escolha a área, o eixo ou o item nos filtros, ou deixe tudo marcado.</li>
+  <li>Escolha a área, a disciplina, o eixo ou o item nos filtros, ou deixe tudo marcado.</li>
   <li>Veja o que está na faixa de <b>diferencial</b> do gráfico de frequência × acertos e na lista logo abaixo dele:
   conteúdos que caem bastante e que a maioria erra.</li>
   <li>Para ver os <b>subitens</b> de um item, toque em "ver subitens" na lista, use "Ver os subitens de…" embaixo de cada
@@ -112,11 +115,15 @@ poucos acertos**. Dá para ver por **item** e descer até os **subitens** de cad
 </ol>
 
 ```sql hierarquia
-select distinct area, id_eixo, eixo, id_item, item from uerj.dificuldade where nivel = 'item'
+select distinct area, disciplina, id_eixo, eixo, id_item, item
+from uerj.classificacoes
+where percentual_acertos is not null and not anulada
 ```
 
 <div class="filtros">
   <Filtro titulo="Área" opcoes={opc.areas ?? []} selecionados={sel?.areas ?? []} on:change={(e) => escolher('areas', e.detail)} />
+  <span class="passo" aria-hidden="true">›</span>
+  <Filtro titulo="Disciplina" opcoes={opc.disciplinas ?? []} selecionados={sel?.disciplinas ?? []} on:change={(e) => escolher('disciplinas', e.detail)} />
   <span class="passo" aria-hidden="true">›</span>
   <Filtro titulo="Eixo" opcoes={opc.eixos ?? []} selecionados={sel?.eixos ?? []} on:change={(e) => escolher('eixos', e.detail)} />
   <span class="passo" aria-hidden="true">›</span>
@@ -145,36 +152,76 @@ select distinct area, id_eixo, eixo, id_item, item from uerj.dificuldade where n
 </div>
 
 <Alert status="info">
-O percentual não existe para todas as questões, e a falta é da fonte oficial: o gabarito comentado de 2021 não tem o
-campo, o de 2024-2 traz o campo em branco e o de 2027-2 não o publica. Faltam também as anuladas e algumas questões de
-2020-2 e 2022-1. Essas questões ficam fora das médias. O mínimo de questões tira da conta conteúdos com poucas questões,
+Não há percentual de acertos para 2021, 2024-2 e 2027-2: os gabaritos comentados desses exames não trazem essa
+informação. Faltam também as anuladas e algumas questões de 2020-2 e 2022-1. Essas questões ficam fora das médias. O mínimo de questões tira da conta conteúdos com poucas questões,
 cuja média é instável.
 </Alert>
 
 ```sql conteudos
+-- Frequência e acertos de cada conteúdo, contando só as questões da seleção (a disciplina Língua Estrangeira, por
+-- exemplo, usa só as versões em espanhol, francês e inglês). Frequência: números de questão, com as versões de língua
+-- estrangeira contando uma vez. Acertos: cada versão com percentual publicado é um ponto; anuladas ficam de fora.
+with selecao as (
+    select *
+    from uerj.classificacoes
+    where area in ${inputs.areas.value}
+        and disciplina in ${inputs.disciplinas.value}
+        and id_eixo in ${inputs.eixos.value}
+        and id_item in ${inputs.itens.value}
+),
+
+pontos as (
+    select 'item' as nivel, id_item as id_conteudo, id_exame, numero, id_questao, percentual_acertos, anulada from selecao
+    union all
+    select 'subitem', id_subitem, id_exame, numero, id_questao, percentual_acertos, anulada
+    from selecao
+    where id_subitem is not null
+),
+
+frequencia as (
+    select nivel, id_conteudo, cast(count(distinct id_exame || '-' || cast(numero as varchar)) as integer) as questoes
+    from pontos
+    group by all
+),
+
+acertos as (
+    select
+        nivel,
+        id_conteudo,
+        cast(count(*) as integer) as questoes_com_percentual,
+        avg(p) as media,
+        median(p) as mediana,
+        min(p) as minimo,
+        max(p) as maximo
+    from (
+        select distinct nivel, id_conteudo, id_questao, percentual_acertos / 100 as p
+        from pontos
+        where percentual_acertos is not null and not anulada
+    )
+    group by all
+)
+
 select
-    d.nivel,
-    d.id_conteudo,
-    d.rotulo as conteudo,
-    d.area,
-    d.eixo,
-    d.id_item,
-    d.item,
-    case when d.nivel = 'subitem' then d.item else d.eixo end as acima,
-    d.qtd_questoes as questoes_com_percentual,
-    r.qtd_questoes as questoes,
-    d.media_acertos / 100 as media,
-    d.mediana_acertos / 100 as mediana,
-    d.min_acertos / 100 as minimo,
-    d.max_acertos / 100 as maximo,
-    r.qtd_questoes * (1 - d.media_acertos / 100) as erros_esperados
-from uerj.dificuldade as d
-inner join uerj.recorrencia as r on r.nivel = d.nivel and r.id_conteudo = d.id_conteudo
-where d.nivel in ${inputs.niveis_dificuldade.value}
-    and d.area in ${inputs.areas.value}
-    and d.id_eixo in ${inputs.eixos.value}
-    and d.id_item in ${inputs.itens.value}
-    and d.qtd_questoes >= ${inputs.minimo.value}
+    a.nivel,
+    a.id_conteudo,
+    coalesce(c.subitem, c.item) as conteudo,
+    c.area,
+    c.eixo,
+    c.id_item,
+    c.item,
+    case when a.nivel = 'subitem' then c.item else c.eixo end as acima,
+    a.questoes_com_percentual,
+    f.questoes,
+    a.media,
+    a.mediana,
+    a.minimo,
+    a.maximo,
+    f.questoes * (1 - a.media) as erros_esperados
+from acertos as a
+inner join frequencia as f using (nivel, id_conteudo)
+inner join uerj.conteudo as c on c.id_conteudo = a.id_conteudo
+where a.nivel in ${inputs.niveis_dificuldade.value}
+    and a.questoes_com_percentual >= ${inputs.minimo.value}
 ```
 
 ## Onde mais se perde ponto
@@ -338,7 +385,8 @@ um formato de ponto. Toque num ponto (ou passe o mouse) para ver o nome.
 </DataTable>
 
 Cada versão de questão com percentual publicado é um ponto da média; no bloco de língua estrangeira, cada idioma conta
-separadamente.
+separadamente. Com uma disciplina marcada, as questões e as médias são só as dela: em Linguagens, Língua Portuguesa e
+Literatura são as questões em português, e Língua Estrangeira, o bloco de espanhol, francês e inglês.
 
 ## As questões mais difíceis
 
@@ -349,7 +397,8 @@ where percentual_acertos is not null
     and id_questao in (
         select id_questao
         from uerj.classificacoes
-        where area in ${inputs.areas.value} and id_eixo in ${inputs.eixos.value} and id_item in ${inputs.itens.value}
+        where area in ${inputs.areas.value} and disciplina in ${inputs.disciplinas.value}
+            and id_eixo in ${inputs.eixos.value} and id_item in ${inputs.itens.value}
     )
 order by percentual_acertos
 limit 25
@@ -374,7 +423,8 @@ where q.percentual_acertos is not null
     and q.id_questao in (
         select id_questao
         from uerj.classificacoes
-        where area in ${inputs.areas.value} and id_eixo in ${inputs.eixos.value} and id_item in ${inputs.itens.value}
+        where area in ${inputs.areas.value} and disciplina in ${inputs.disciplinas.value}
+            and id_eixo in ${inputs.eixos.value} and id_item in ${inputs.itens.value}
     )
 group by all
 order by e.id_exame
@@ -398,7 +448,8 @@ order by e.id_exame
   emptySet=pass
 />
 
-A média é a das questões da seleção dos filtros. Faltam 2021, 2024-2 e 2027-2, que não têm percentual publicado.
+A média é a das questões da seleção dos filtros. Faltam 2021, 2024-2 e 2027-2, porque não há percentual de acertos
+desses exames.
 
 <style>
   .como-usar { list-style: decimal; max-width: 72ch; margin: 0.5rem 0 1rem; padding-left: 1.4rem; font-size: 0.95rem; line-height: 1.55; }

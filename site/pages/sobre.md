@@ -44,6 +44,10 @@ simulados.
 - No bloco de língua estrangeira, cada idioma tem uma versão da questão. Na **incidência** (o que caiu), a unidade é o
   número da questão: um conteúdo citado nas três versões conta uma vez. Na **dificuldade**, cada versão tem o próprio
   percentual de acertos e conta separadamente.
+- **Disciplinas.** Em Ciências da Natureza, cada item do programa é de Biologia, Física ou Química. Em Linguagens, o
+  edital tem um programa só para Língua Portuguesa, Literatura e Língua Estrangeira: as questões em português são de
+  Língua Portuguesa ou Literatura conforme o item, e as do bloco de língua estrangeira formam a disciplina Língua
+  Estrangeira.
 - Quando o comentário só informa o item, a questão conta para o item, mas não para nenhum subitem.
 - As anuladas entram na incidência (o conteúdo foi cobrado) e ficam fora da dificuldade.
 
@@ -84,9 +88,9 @@ questão têm adendo.
 
 ## Limitações
 
-- **Percentual de acertos:** o gabarito comentado de 2021 não tem o campo nem o nível de dificuldade, o de 2024-2 traz
-  o campo em branco e o de 2027-2 não o publica. Faltam também as anuladas e algumas questões de 2020-2 e 2022-1. A
-  falta é da fonte oficial.
+- **Percentual de acertos:** não há essa informação para 2021, 2024-2 e 2027-2, porque os gabaritos comentados desses
+  exames não a trazem (os de 2021 e 2027-2 também não trazem o nível de dificuldade). Faltam também as anuladas e
+  algumas questões de 2020-2 e 2022-1. A falta é da fonte oficial.
 - **Gabarito comentado × gabarito oficial:** em 2022-1, as questões 3 e 17 (francês) têm gabarito diferente no
   comentário e no gabarito oficial. O site usa o oficial, que a prova confirma.
 - **Lacunas:** um subitem que nunca caiu pode ter entrado no edital há pouco tempo. A página de lacunas mostra desde

@@ -13,8 +13,13 @@ sidebar_position: 2
     'Ciências Humanas': 'var(--twc-area-chs)'
   };
 
+  // Ciências da Natureza: cada item é de uma disciplina (os eixos são interdisciplinares).
+  const CNT = 'Ciências da Natureza';
+  const DISCIPLINAS_CNT = ['Biologia', 'Física', 'Química'];
+
   let busca = '';
   let areasSel = new Set(); // vazio = todas
+  let disciplinasSel = new Set(); // vazio = todas (só vale para Ciências da Natureza)
   let incluirAntigos = false;
 
   const normalizar = (t) => (t ?? '').toString().normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
@@ -24,6 +29,11 @@ sidebar_position: 2
     const s = new Set(areasSel);
     s.has(a) ? s.delete(a) : s.add(a);
     areasSel = s;
+  }
+  function alternarDisciplina(d) {
+    const s = new Set(disciplinasSel);
+    s.has(d) ? s.delete(d) : s.add(d);
+    disciplinasSel = s;
   }
 
   // Área › Eixo › Item › Subitem a partir das linhas (uma por subitem), mantendo a ordem dos IDs.
@@ -36,7 +46,8 @@ sidebar_position: 2
       const itens = eixos.get(l.id_eixo).itens;
       if (!itens.has(l.id_item))
         itens.set(l.id_item, {
-          id: l.id_item, nome: l.item, vigente: l.item_vigente, questoes: Number(l.questoes_item), subitens: []
+          id: l.id_item, nome: l.item, disciplina: l.disciplina, vigente: l.item_vigente, questoes: Number(l.questoes_item),
+          subitens: []
         });
       itens.get(l.id_item).subitens.push(l);
     }
@@ -54,10 +65,12 @@ sidebar_position: 2
     (l) =>
       (incluirAntigos || l.subitem_vigente) &&
       (areasSel.size === 0 || areasSel.has(l.area)) &&
+      (disciplinasSel.size === 0 || l.area !== CNT || disciplinasSel.has(l.disciplina)) &&
       (!termo || normalizar([l.area, l.eixo, l.item, l.subitem, l.outras_redacoes].join(' ')).includes(termo))
   );
   $: arvore = montar(filtradas);
   $: buscando = termo.length > 0;
+  $: mostraDisciplinas = areasSel.size === 0 || areasSel.has(CNT);
 </script>
 
 O programa da UERJ organiza tudo o que pode cair em quatro níveis. Esta página mostra a lista completa, como um
@@ -84,6 +97,19 @@ select * from uerj.programa order by id_subitem
         on:click={() => alternarArea(a)}>{a}</button>
     {/each}
   </div>
+  {#if mostraDisciplinas}
+    <div class="chips" role="group" aria-label="Filtrar Ciências da Natureza por disciplina">
+      <span class="chips-rotulo">Ciências da Natureza:</span>
+      {#each DISCIPLINAS_CNT as d}
+        <button
+          class="chip"
+          class:ativo={disciplinasSel.has(d)}
+          aria-pressed={disciplinasSel.has(d)}
+          style={'--cor: ' + COR[CNT]}
+          on:click={() => alternarDisciplina(d)}>{d}</button>
+      {/each}
+    </div>
+  {/if}
   <label class="antigos">
     <input type="checkbox" bind:checked={incluirAntigos} />
     Incluir conteúdos que saíram do edital (aparecem em editais antigos)
@@ -96,7 +122,7 @@ select * from uerj.programa order by id_subitem
   {:else if !filtradas.length}
     Nada encontrado{busca ? ' para "' + busca + '"' : ''}. Tente outra palavra ou limpe os filtros de área.
   {:else}
-    {plural(filtradas.length, 'subitem', 'subitens')}{busca ? ' com "' + busca + '"' : ''}{areasSel.size ? ' em ' + [...areasSel].join(', ') : ''}.
+    {plural(filtradas.length, 'subitem', 'subitens')}{busca ? ' com "' + busca + '"' : ''}{areasSel.size ? ' em ' + [...areasSel].join(', ') : ''}{mostraDisciplinas && disciplinasSel.size ? ' (Ciências da Natureza: ' + [...disciplinasSel].join(', ') + ')' : ''}.
     {#if buscando}A busca também procura nas outras redações dos editais antigos.{/if}
   {/if}
 </p>
@@ -108,6 +134,15 @@ select * from uerj.programa order by id_subitem
         <span class="nome">{area.nome}</span>
         <span class="conta">{plural(area.eixos.length, 'eixo', 'eixos')}, {plural(area.qtdItens, 'item', 'itens')} e {plural(area.qtdSubitens, 'subitem', 'subitens')}</span>
       </summary>
+      {#if area.nome === 'Linguagens'}
+        <p class="nota-area">O edital tem um programa só para as três disciplinas de Linguagens: Língua Portuguesa,
+        Literatura e Língua Estrangeira (espanhol, francês ou inglês). Por isso as contagens desta área juntam as questões
+        em português e as do bloco de língua estrangeira; as três versões de uma questão de língua estrangeira contam uma
+        vez. Para ver cada disciplina ou idioma separado, use o <a href="/historico">Histórico por conteúdo</a>.</p>
+      {:else if area.nome === CNT}
+        <p class="nota-area">Os eixos de Ciências da Natureza misturam Biologia, Física e Química; a disciplina de cada
+        item aparece ao lado do nome dele.</p>
+      {/if}
       {#each area.eixos as eixo (eixo.id)}
         <details class="eixo" open={buscando}>
           <summary>
@@ -120,6 +155,7 @@ select * from uerj.programa order by id_subitem
               <summary>
                 <span class="nivel">Item</span>
                 <span class="nome">{item.nome}</span>
+                {#if area.nome === CNT}<span class="disciplina">{item.disciplina}</span>{/if}
                 {#if !item.vigente}<span class="tag">fora do edital 2027</span>{/if}
                 <span class="badge" class:zero={!item.questoes}>{plural(item.questoes, 'questão', 'questões')}</span>
               </summary>
@@ -168,6 +204,12 @@ A contagem de questões é a mesma das outras páginas: cada número de questão
   .chip { padding: 0.35rem 0.75rem; border-radius: 999px; font-size: 0.85rem; font-weight: 600; cursor: pointer;
           border: 1px solid hsl(var(--cor) / 0.6); color: hsl(var(--twc-base-content)); background: transparent; }
   .chip.ativo { background: hsl(var(--cor)); border-color: hsl(var(--cor)); color: #0b0b0b; }
+  .chips-rotulo { align-self: center; font-size: 0.8rem; font-weight: 600; color: hsl(var(--twc-base-content-muted)); }
+  .nota-area { margin: 0.4rem 0 0.2rem 0.6rem; max-width: 72ch; font-size: 0.85rem; line-height: 1.5;
+               color: hsl(var(--twc-base-content-muted)); }
+  .nota-area a { color: hsl(var(--twc-primary)); text-decoration: underline; text-underline-offset: 2px; }
+  .disciplina { font-size: 0.72rem; font-weight: 600; padding: 0.05rem 0.45rem; border-radius: 4px;
+                background: hsl(var(--cor) / 0.18); color: hsl(var(--twc-base-content)); }
   .antigos { display: flex; gap: 0.4rem; align-items: center; font-size: 0.85rem; }
   .resumo { font-size: 0.9rem; color: hsl(var(--twc-base-content-muted)); }
   .arvore { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
