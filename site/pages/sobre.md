@@ -60,7 +60,7 @@ simulados.
 | **Atraso** | Exames desde a última cobrança divididos pelo intervalo normal (só para o que caiu 3 vezes ou mais). |
 | **Sumido que costuma voltar** | Do edital vigente, caiu 3 vezes ou mais e está com atraso de 1,5 ou mais (no mínimo 2 exames sem cair). |
 | **Prioridade de estudo** | Questões do item × taxa média de erro: quantas questões do item um candidato típico errou. |
-| **Lacuna** | Subitem do edital de 2027 que nenhuma questão tocou desde 2016. |
+| **Lacuna** | Subitem do edital de 2027 em que nenhuma questão foi classificada desde 2016. *Antiga*: está no edital desde antes de 2021; *recente*: entrou em 2021 ou depois. Lacuna não quer dizer que não vai cair. |
 
 Todos descrevem o que já aconteceu. A banca não segue uma fila, então nenhum deles é previsão da próxima prova.
 

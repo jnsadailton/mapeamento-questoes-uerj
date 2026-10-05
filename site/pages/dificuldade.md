@@ -1,6 +1,6 @@
 ---
 title: Dificuldade
-description: Onde os candidatos mais erram e o que cai muito e tem poucos acertos.
+description: Onde os candidatos mais erram e o que cai muito e tem poucos acertos, por item e por subitem.
 sidebar_position: 6
 ---
 
@@ -21,12 +21,27 @@ sidebar_position: 6
   $: opc = sel ? conteudo.opcoes(hier, sel) : {};
   const escolher = (nome, valores) => (sel = conteudo.escolher(hier, sel, nome, valores));
   const limparFiltros = () => (sel = conteudo.inicial(hier));
+
+  // Nível do detalhe: com todos os itens marcados, a página mostra itens; com só alguns itens marcados, mostra os
+  // subitens deles. Toda a página (prioridade, gráficos, listas) segue o mesmo nível.
+  $: porSubitem = !!sel && (opc.itens ?? []).length > 0 && sel.itens.length < opc.itens.length;
+  $: nivel = porSubitem ? 'subitem' : 'item';
+  $: Nivel = porSubitem ? 'Subitem' : 'Item';
   $: if (sel)
     gravarInputs(inputs_store, {
       areas: paraInput(sel.areas, opc.areas),
       eixos: paraInput(sel.eixos, opc.eixos),
-      itens: paraInput(sel.itens, opc.itens)
+      itens: paraInput(sel.itens, opc.itens),
+      niveis_dificuldade: paraInput([nivel])
     });
+  $: itensEscolhidos = porSubitem ? (opc.itens ?? []).filter((o) => sel.itens.includes(o.valor)).map((o) => o.rotulo) : [];
+  const verSubitensDe = (idItem) => {
+    if (!idItem) return;
+    escolher('itens', [idItem]);
+    // leva o leitor de volta ao começo dos gráficos, onde o detalhe aparece
+    document.getElementById('frequencia-acertos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+  const voltarAosItens = () => escolher('itens', (opc.itens ?? []).map((o) => o.valor));
 
   // Cada eixo tem cor e formato fixos dentro da área (na ordem do programa): a cor sozinha não distingue quatro eixos
   // quando os pontos se sobrepõem (docs/paleta-de-cores.md).
@@ -46,11 +61,8 @@ sidebar_position: 6
   })();
   $: coresEixos = Object.fromEntries(Object.entries(estiloEixo).map(([nome, e]) => [nome, e.cor]));
 
-  // Detalhamento: com todos os itens marcados, cada ponto é um item (um gráfico por área); com só alguns itens
-  // marcados, cada ponto é um subitem (um gráfico por item).
-  $: porSubitem = !!sel && (opc.itens ?? []).length > 0 && sel.itens.length < opc.itens.length;
-  $: nivelPontos = porSubitem ? 'subitem' : 'item';
-  $: pontos = linhasDe(dispersao).filter((r) => r.nivel === nivelPontos);
+  // Gráficos pequenos: um por área (itens) ou um por item escolhido (subitens).
+  $: pontos = linhasDe(conteudos).filter((r) => r.nivel === nivel);
   const media = (l, campo) => l.reduce((t, r) => t + Number(r[campo]), 0) / l.length;
   const porId = (a, b) => (estiloEixo[a]?.id ?? '').localeCompare(estiloEixo[b]?.id ?? '');
   $: grupos = (() => {
@@ -58,12 +70,18 @@ sidebar_position: 6
     for (const r of pontos) {
       const chave = porSubitem ? r.id_item : r.area;
       if (!mapa.has(chave))
-        mapa.set(chave, { chave, titulo: porSubitem ? r.item : r.area, sub: porSubitem ? 'eixo ' + r.eixo : '', pontos: [] });
+        mapa.set(chave, {
+          chave,
+          titulo: porSubitem ? 'Subitens de ' + r.item : r.area,
+          sub: porSubitem ? 'eixo ' + r.eixo : '',
+          pontos: []
+        });
       mapa.get(chave).pontos.push(r);
     }
     const lista = [...mapa.values()].map((g) => ({
       ...g,
       eixos: [...new Set(g.pontos.map((p) => p.eixo))].sort(porId),
+      itens: porSubitem ? [] : [...g.pontos].sort((a, b) => a.conteudo.localeCompare(b.conteudo, 'pt')),
       mediaQ: media(g.pontos, 'questoes'),
       mediaA: media(g.pontos, 'media')
     }));
@@ -79,17 +97,18 @@ sidebar_position: 6
     .sort((a, b) => b.erros_esperados - a.erros_esperados);
   const pct = (v) => Math.round(Number(v) * 100) + '%';
   const umDecimal = (v) => Number(v).toFixed(1).replace('.', ',');
-  const verSubitens = (p) => escolher('itens', [p.id_item]);
 </script>
 
-O gabarito comentado da UERJ publica o percentual de candidatos que acertaram cada questão. Aqui ele é cruzado com a
-frequência de cada conteúdo, para mostrar onde vale mais a pena estudar: o que **cai muito e tem poucos acertos**.
+O gabarito comentado da UERJ publica o percentual de candidatos que acertaram cada questão. Esta página cruza esse
+percentual com a frequência de cada conteúdo, para mostrar onde vale mais a pena estudar: o que **cai muito e tem
+poucos acertos**. Dá para ver por **item** e descer até os **subitens** de cada item.
 
-<Alert status="info">
-O percentual não existe para todas as questões, e a falta é da fonte oficial: o gabarito comentado de 2021 não tem o
-campo, o de 2024-2 traz o campo em branco e o de 2027-2 não o publica. Faltam também as anuladas e algumas questões de
-2020-2 e 2022-1. Essas questões ficam fora das médias.
-</Alert>
+<ol class="como-usar">
+  <li>Escolha a área, o eixo ou o item nos filtros, ou deixe tudo marcado.</li>
+  <li>Veja o que está na faixa de <b>prioridade</b> do gráfico de frequência × acertos e na lista logo abaixo dele.</li>
+  <li>Para ver os <b>subitens</b> de um item, toque em "ver subitens" na lista, use "Ver os subitens de…" embaixo de cada
+  gráfico ou marque o item no filtro Item.</li>
+</ol>
 
 ```sql hierarquia
 select distinct area, id_eixo, eixo, id_item, item from uerj.dificuldade where nivel = 'item'
@@ -110,15 +129,37 @@ select distinct area, id_eixo, eixo, id_item, item from uerj.dificuldade where n
   <button class="limpar" on:click={limparFiltros}>Limpar filtros</button>
 </div>
 
-Os filtros valem para a página inteira. O mínimo de questões tira da conta itens e subitens com poucas questões, cuja
-média de acertos é instável.
+<div class="nivel" role="status">
+  <span class="nivel-rotulo">Detalhe:</span>
+  {#if porSubitem}
+    <button class="nivel-passo" on:click={voltarAosItens}>Itens</button>
+    <span class="nivel-seta" aria-hidden="true">›</span>
+    <span class="nivel-passo atual">Subitens de {itensEscolhidos.length === 1 ? itensEscolhidos[0] : itensEscolhidos.length + ' itens'}</span>
+    <button class="voltar" on:click={voltarAosItens}>Voltar para os itens</button>
+  {:else}
+    <span class="nivel-passo atual">Itens</span>
+    <span class="nivel-seta" aria-hidden="true">›</span>
+    <span class="nivel-passo futuro">Subitens: escolha um item</span>
+  {/if}
+</div>
 
-```sql itens
+<Alert status="info">
+O percentual não existe para todas as questões, e a falta é da fonte oficial: o gabarito comentado de 2021 não tem o
+campo, o de 2024-2 traz o campo em branco e o de 2027-2 não o publica. Faltam também as anuladas e algumas questões de
+2020-2 e 2022-1. Essas questões ficam fora das médias. O mínimo de questões tira da conta conteúdos com poucas questões,
+cuja média é instável.
+</Alert>
+
+```sql conteudos
 select
-    d.rotulo as item,
+    d.nivel,
+    d.id_conteudo,
+    d.rotulo as conteudo,
     d.area,
     d.eixo,
     d.id_item,
+    d.item,
+    case when d.nivel = 'subitem' then d.item else d.eixo end as acima,
     d.qtd_questoes as questoes_com_percentual,
     r.qtd_questoes as questoes,
     d.media_acertos / 100 as media,
@@ -127,8 +168,8 @@ select
     d.max_acertos / 100 as maximo,
     r.qtd_questoes * (1 - d.media_acertos / 100) as erros_esperados
 from uerj.dificuldade as d
-inner join uerj.recorrencia as r on r.nivel = 'item' and r.id_conteudo = d.id_conteudo
-where d.nivel = 'item'
+inner join uerj.recorrencia as r on r.nivel = d.nivel and r.id_conteudo = d.id_conteudo
+where d.nivel in ${inputs.niveis_dificuldade.value}
     and d.area in ${inputs.areas.value}
     and d.id_eixo in ${inputs.eixos.value}
     and d.id_item in ${inputs.itens.value}
@@ -137,18 +178,22 @@ where d.nivel = 'item'
 
 ## Prioridade de estudo
 
-O índice de prioridade multiplica as questões do item desde 2016 pela taxa de erro média: é quantas dessas questões
-um candidato típico errou. Quanto maior, mais o item pesa e mais derruba.
+Para cada {nivel}, as questões desde 2016 vezes a taxa de erro média: quantas dessas questões um candidato típico
+errou. Quanto maior, mais o conteúdo pesa e mais derruba.
 
 ```sql prioridade
 select
-    case when length(item) > 48 then left(item, 47) || '…' else item end as rotulo,
-    item,
+    case when length(r) > 48 then left(r, 47) || '…' else r end as rotulo,
     area,
-    questoes,
-    media,
     erros_esperados
-from ${itens}
+from (
+    select
+        -- o mesmo subitem pode existir em itens diferentes: o nome ganha o item entre parênteses
+        case when count(*) over (partition by conteudo) > 1 then conteudo || ' (' || item || ')' else conteudo end as r,
+        area,
+        erros_esperados
+    from ${conteudos}
+)
 order by erros_esperados desc
 limit 15
 ```
@@ -172,48 +217,17 @@ limit 15
   yAxisTitle="Questões erradas por um candidato típico"
   chartAreaHeight=440
   emptySet=pass
-  emptyMessage="Nenhum item com percentual publicado nesta seleção."
+  emptyMessage="Nenhum conteúdo com percentual publicado nesta seleção."
 />
 
-## Frequência × acertos
+<h2 class="markdown" id="frequencia-acertos">Frequência × acertos</h2>
 
 Quanto mais à direita, mais o conteúdo cai; quanto mais embaixo, menos os candidatos acertam. Cada eixo tem uma cor e
-um formato de ponto; toque num ponto (ou passe o mouse) para ver o nome.
-
-<p class="nivel-atual">
-  {#if porSubitem}
-    Cada ponto é um <b>subitem</b>, com um gráfico por item escolhido. Para voltar aos itens, use "Selecionar todos" no
-    filtro Item.
-  {:else}
-    Cada ponto é um <b>item</b>, com um gráfico por área. Para ver os subitens, escolha um ou mais itens no filtro Item
-    ou clique em "ver subitens" na lista abaixo dos gráficos.
-  {/if}
-</p>
-
-```sql dispersao
-select
-    d.nivel,
-    d.id_conteudo,
-    d.area,
-    d.id_eixo,
-    d.eixo,
-    d.id_item,
-    d.item,
-    d.rotulo,
-    r.qtd_questoes as questoes,
-    d.media_acertos / 100 as media,
-    r.qtd_questoes * (1 - d.media_acertos / 100) as erros_esperados
-from uerj.dificuldade as d
-inner join uerj.recorrencia as r on r.nivel = d.nivel and r.id_conteudo = d.id_conteudo
-where d.area in ${inputs.areas.value}
-    and d.id_eixo in ${inputs.eixos.value}
-    and d.id_item in ${inputs.itens.value}
-    and d.qtd_questoes >= ${inputs.minimo.value}
-```
+um formato de ponto. Toque num ponto (ou passe o mouse) para ver o nome.
 
 <div class="multiplos">
 {#each grupos as g (g.chave)}
-  <div>
+  <div class="multiplo">
     <p class="multiplo-titulo">{g.titulo}{#if g.sub}<span>{g.sub}</span>{/if}</p>
     <ul class="eixos">
       {#each g.eixos as e (e)}
@@ -237,7 +251,7 @@ where d.area in ${inputs.areas.value}
       seriesColors={coresEixos}
       echartsOptions={opcoesGrafico(g)}
       legend=false
-      tooltipTitle=rotulo
+      tooltipTitle=conteudo
       yFmt=pct0
       yMin=0
       yMax=1
@@ -253,6 +267,15 @@ where d.area in ${inputs.areas.value}
         <ReferenceLine x={g.mediaQ} hideValue=true lineType=dashed />
       {/if}
     </ScatterPlot>
+    {#if !porSubitem}
+      <label class="detalhar">
+        <span>Ver os subitens de…</span>
+        <select on:change={(e) => verSubitensDe(e.currentTarget.value)}>
+          <option value="">um item de {g.titulo}</option>
+          {#each g.itens as it (it.id_item)}<option value={it.id_item}>{it.conteudo}</option>{/each}
+        </select>
+      </label>
+    {/if}
   </div>
 {:else}
   <p>Nenhum conteúdo com percentual publicado nesta seleção. Diminua o mínimo de questões ou use "Limpar filtros".</p>
@@ -273,37 +296,38 @@ where d.area in ${inputs.areas.value}
 <table>
   <thead>
     <tr>
-      <th>{porSubitem ? 'Subitem' : 'Item'}</th>
-      <th>{porSubitem ? 'Item' : 'Eixo'}</th>
+      <th>{Nivel}</th>
+      <th class="opcional">{porSubitem ? 'Item' : 'Eixo'}</th>
       <th class="num">Questões</th>
       <th class="num">Acertos</th>
-      <th class="num" title="Questões × taxa de erro: quantas dessas questões um candidato típico errou">Erradas por um candidato típico</th>
-      {#if !porSubitem}<th><span class="sr">Detalhar</span></th>{/if}
+      <th class="num" title="Questões × taxa de erro: quantas dessas questões um candidato típico errou">Erradas*</th>
+      {#if !porSubitem}<th><span class="sr">Ver subitens</span></th>{/if}
     </tr>
   </thead>
   <tbody>
     {#each naPrioridade as p (p.id_conteudo)}
       <tr>
-        <td>{p.rotulo}</td>
-        <td>{porSubitem ? p.item : p.eixo}</td>
+        <td>{p.conteudo}<span class="acima-celular">{porSubitem ? p.item : p.eixo}</span></td>
+        <td class="opcional">{porSubitem ? p.item : p.eixo}</td>
         <td class="num">{p.questoes}</td>
         <td class="num">{pct(p.media)}</td>
         <td class="num">{umDecimal(p.erros_esperados)}</td>
-        {#if !porSubitem}<td><button class="ver" on:click={() => verSubitens(p)}>ver subitens</button></td>{/if}
+        {#if !porSubitem}<td><button class="ver" on:click={() => verSubitensDe(p.id_item)}>ver subitens</button></td>{/if}
       </tr>
     {/each}
   </tbody>
 </table>
 </div>
+<p class="nota">* Erradas: quantas dessas questões um candidato típico errou (questões × taxa de erro).</p>
 {:else}
 <p class="vazio">Nenhum conteúdo na faixa de prioridade nesta seleção.</p>
 {/if}
 
-## Todos os itens
+## {porSubitem ? 'Todos os subitens' : 'Todos os itens'}
 
-<DataTable data={itens} rows=10 search=true sort="media" emptySet=pass emptyMessage="Nenhum item nesta seleção.">
-  <Column id=item title="Item" wrap=true />
-  <Column id=eixo title="Eixo" wrap=true />
+<DataTable data={conteudos} rows=10 search=true sort="media" emptySet=pass emptyMessage="Nada nesta seleção.">
+  <Column id=conteudo title={Nivel} wrap=true />
+  <Column id=acima title={porSubitem ? 'Item' : 'Eixo'} wrap=true />
   <Column id=questoes title="Questões" />
   <Column id=media title="Média de acertos" fmt=pct0 contentType=bar barColor="#9cc8f0" />
   <Column id=mediana title="Mediana" fmt=pct0 />
@@ -312,7 +336,7 @@ where d.area in ${inputs.areas.value}
 </DataTable>
 
 Cada versão de questão com percentual publicado é um ponto da média; no bloco de língua estrangeira, cada idioma conta
-separadamente. Itens com poucas questões têm médias instáveis, por isso o filtro de mínimo.
+separadamente.
 
 ## As questões mais difíceis
 
@@ -331,11 +355,11 @@ limit 25
 
 <DataTable data={questoes_dificeis} rows=10 emptySet=pass emptyMessage="Nenhuma questão nesta seleção.">
   <Column id=id_questao title="Questão" />
-  <Column id=area title="Área" />
   <Column id=classificacao title="Item › Subitem" wrap=true />
   <Column id=acertos title="Acertos" fmt=pct0 />
   <Column id=url_prova title="Prova" contentType=link linkLabel="PDF ↗" openInNewTab=true />
   <Column id=url_comentario title="Gabarito comentado" contentType=link linkLabel="PDF ↗" openInNewTab=true />
+  <Column id=area title="Área" />
 </DataTable>
 
 ## Média de acertos por exame
@@ -372,38 +396,71 @@ order by e.id_exame
   emptySet=pass
 />
 
-A média é a das questões da seleção dos filtros. Faltam 2021, 2024-2 e 2027-2, que não têm percentual
-publicado.
+A média é a das questões da seleção dos filtros. Faltam 2021, 2024-2 e 2027-2, que não têm percentual publicado.
 
 <style>
+  .como-usar { list-style: decimal; max-width: 72ch; margin: 0.5rem 0 1rem; padding-left: 1.4rem; font-size: 0.95rem; line-height: 1.55; }
+  .como-usar li { margin: 0.2rem 0; }
+  .como-usar li::marker { font-family: var(--fonte-titulo); font-weight: 600; color: hsl(var(--twc-primary)); }
+  .filtros { display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; align-items: center; margin: 0.5rem 0; }
+  .filtros :global(p) { margin: 0; }
+  .passo { color: hsl(var(--twc-primary)); font-size: 1.2rem; }
+  .limpar { padding: 0.35rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
+            border: 1px solid hsl(var(--twc-primary) / 0.5); color: hsl(var(--twc-primary)); background: transparent; }
+  .limpar:hover, .ver:hover, .voltar:hover { background: hsl(var(--twc-primary) / 0.08); }
+
+  .nivel { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem 0.5rem; margin: 0.75rem 0 1rem;
+           padding: 0.6rem 0.8rem; border-radius: 8px; background: hsl(var(--twc-primary) / 0.07); font-size: 0.9rem; }
+  .nivel-rotulo { font-weight: 650; color: hsl(var(--twc-base-heading)); }
+  .nivel-passo { padding: 0.15rem 0.55rem; border-radius: 999px; font-size: 0.85rem; background: transparent;
+                 color: hsl(var(--twc-primary)); border: 1px solid hsl(var(--twc-primary) / 0.4); }
+  .nivel-passo.atual { background: hsl(var(--twc-primary)); color: hsl(var(--twc-primary-content)); border-color: transparent;
+                       font-weight: 600; }
+  .nivel-passo.futuro { border-style: dashed; color: hsl(var(--twc-base-content-muted)); }
+  .nivel-seta { color: hsl(var(--twc-primary)); }
+  .voltar { margin-left: auto; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
+            border: 1px solid hsl(var(--twc-primary) / 0.5); color: hsl(var(--twc-primary)); background: hsl(var(--twc-base-100)); }
+
   .multiplos { display: grid; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); gap: 0.5rem 2rem; }
+  .multiplo { min-width: 0; }
+  .multiplo-titulo { margin: 0.75rem 0 0; font-weight: 650; color: hsl(var(--twc-base-heading)); }
+  .multiplo-titulo span { margin-left: 0.4rem; font-size: 0.8rem; font-weight: 400; color: hsl(var(--twc-base-content-muted)); }
+  .eixos { display: flex; flex-wrap: wrap; gap: 0.15rem 0.9rem; margin: 0.2rem 0 0; padding: 0; list-style: none;
+           font-size: 0.8rem; color: hsl(var(--twc-base-content)); }
+  .eixos li { display: inline-flex; align-items: center; gap: 0.35rem; }
+  .detalhar { display: flex; flex-wrap: wrap; align-items: center; gap: 0.25rem 0.5rem; margin: 0 0 0.5rem;
+              font-size: 0.85rem; font-weight: 600; color: hsl(var(--twc-base-heading)); }
+  .detalhar select { flex: 1 1 12rem; min-width: 0; height: 2.1rem; padding: 0 0.5rem; border-radius: 6px; font-size: 0.85rem;
+                     font-weight: 400; border: 1px solid hsl(var(--twc-primary) / 0.5); background: hsl(var(--twc-base-100));
+                     color: hsl(var(--twc-base-content)); }
+
   .legenda { display: flex; flex-direction: column; gap: 0.35rem; margin: 0.25rem 0 0.5rem; font-size: 0.85rem;
              color: hsl(var(--twc-base-content-muted)); }
   .legenda > span { display: flex; align-items: center; gap: 0.6rem; }
   .legenda svg { flex: none; }
   .tracejado { stroke: hsl(var(--twc-base-content-muted)); stroke-width: 1.3; stroke-dasharray: 4 3; }
   .faixa { fill: hsl(var(--twc-accent) / 0.25); }
-  .multiplo-titulo { margin: 0.75rem 0 0; font-weight: 650; color: hsl(var(--twc-base-heading)); }
-  .multiplo-titulo span { margin-left: 0.4rem; font-size: 0.8rem; font-weight: 400; color: hsl(var(--twc-base-content-muted)); }
-  .eixos { display: flex; flex-wrap: wrap; gap: 0.15rem 0.9rem; margin: 0.2rem 0 0; padding: 0; list-style: none;
-           font-size: 0.8rem; color: hsl(var(--twc-base-content)); }
-  .eixos li { display: inline-flex; align-items: center; gap: 0.35rem; }
-  .nivel-atual { max-width: none; font-size: 0.9rem; padding: 0.5rem 0.75rem; border-left: 3px solid hsl(var(--twc-primary));
-                 background: hsl(var(--twc-primary) / 0.06); }
-  .filtros { display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; align-items: center; margin: 0.5rem 0 0.5rem; }
-  .filtros :global(p) { margin: 0; }
-  .passo { color: hsl(var(--twc-primary)); font-size: 1.2rem; }
-  .limpar { padding: 0.35rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
-            border: 1px solid hsl(var(--twc-primary) / 0.5); color: hsl(var(--twc-primary)); background: transparent; }
-  .limpar:hover, .ver:hover { background: hsl(var(--twc-primary) / 0.08); }
+
   .tabela-prioridade { overflow-x: auto; }
   .tabela-prioridade table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
   .tabela-prioridade th { text-align: left; font-weight: 650; padding: 0.4rem 0.5rem;
                           border-bottom: 1px solid hsl(var(--twc-base-content) / 0.3); color: hsl(var(--twc-base-heading)); }
-  .tabela-prioridade td { padding: 0.4rem 0.5rem; border-bottom: 1px solid hsl(var(--twc-base-content) / 0.1); }
+  .tabela-prioridade td { padding: 0.45rem 0.5rem; border-bottom: 1px solid hsl(var(--twc-base-content) / 0.1); vertical-align: top; }
   .tabela-prioridade .num { text-align: right; font-variant-numeric: tabular-nums; }
-  .ver { white-space: nowrap; padding: 0.2rem 0.55rem; border-radius: 5px; font-size: 0.8rem; font-weight: 600;
+  .acima-celular { display: none; font-size: 0.78rem; color: hsl(var(--twc-base-content-muted)); }
+  .ver { white-space: nowrap; padding: 0.3rem 0.6rem; border-radius: 5px; font-size: 0.8rem; font-weight: 600;
          border: 1px solid hsl(var(--twc-primary) / 0.5); color: hsl(var(--twc-primary)); background: transparent; }
+  .nota { font-size: 0.8rem; color: hsl(var(--twc-base-content-muted)); }
   .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .vazio { color: hsl(var(--twc-base-content-muted)); }
+
+  @media (max-width: 639px) {
+    .passo { display: none; }
+    .voltar { margin-left: 0; width: 100%; }
+    .detalhar select { flex-basis: 100%; }
+    /* na lista de prioridade, o eixo (ou item) vai para baixo do nome e a coluna dele some */
+    .tabela-prioridade .opcional { display: none; }
+    .acima-celular { display: block; }
+    .tabela-prioridade td, .tabela-prioridade th { padding: 0.45rem 0.3rem; }
+  }
 </style>
