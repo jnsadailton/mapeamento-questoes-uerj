@@ -150,7 +150,7 @@ Ciências da Natureza ganha espaço e Linguagens perde.
   <a href="/painel"><b>O que mais cai</b><span>Filtre vestibular, exame, área, disciplina, eixo e item e veja o ranking em cada nível, com as questões e os links das provas.</span></a>
   <a href="/tendencias"><b>Tendências</b><span>O que está em alta, o que caiu em quase toda prova e o que sumiu mas costuma voltar.</span></a>
   <a href="/historico"><b>Histórico por conteúdo</b><span>Exame a exame, em que prova cada item e subitem caiu desde 2016.</span></a>
-  <a href="/dificuldade"><b>Dificuldade</b><span>Onde os candidatos mais erram e o que cai muito e tem poucos acertos.</span></a>
+  <a href="/dificuldade"><b>Dificuldade</b><span>Onde os candidatos mais erram e o que é um diferencial saber: o que cai bastante e a maioria erra.</span></a>
   <a href="/lacunas"><b>Lacunas</b><span>O que está no edital de 2027 e nunca caiu.</span></a>
   <a href="/questoes"><b>Banco de questões</b><span>Todas as questões com filtros, classificação e links para a prova e o gabarito comentado.</span></a>
 </div>

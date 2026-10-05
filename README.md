@@ -24,7 +24,7 @@ e mostra em que conteúdo do programa cada uma caiu, segundo o gabarito comentad
 
 - **Ver o que mais cai**, filtrando por vestibular, exame, área, disciplina, eixo e item.
 - **Acompanhar tendências:** o que cai em quase toda prova, o que está em alta e o que sumiu mas costuma voltar.
-- **Achar a prioridade de estudo:** o que cai muito e tem poucos acertos.
+- **Descobrir o diferencial:** o que cai bastante e a maioria erra.
 - **Consultar o programa inteiro**, com busca e o que já caiu de cada conteúdo.
 - **Ver o que nunca caiu** e está no edital.
 - **Abrir qualquer questão** no PDF oficial da prova ou do gabarito comentado, direto na página dela.
@@ -32,11 +32,11 @@ e mostra em que conteúdo do programa cada uma caiu, segundo o gabarito comentad
 <table>
   <tr>
     <td><img src="docs/imagens/o-que-mais-cai.png" alt="Ranking dos itens que mais caem, por área"></td>
-    <td><img src="docs/imagens/dificuldade.png" alt="Frequência × acertos por área, com a faixa de prioridade"></td>
+    <td><img src="docs/imagens/dificuldade.png" alt="Frequência × acertos por área, com a faixa de diferencial"></td>
   </tr>
   <tr>
     <td align="center">O que mais cai</td>
-    <td align="center">Dificuldade e prioridade de estudo</td>
+    <td align="center">Dificuldade: o que é diferencial saber</td>
   </tr>
   <tr>
     <td><img src="docs/imagens/historico.png" alt="Mapa de calor dos itens de um eixo, exame a exame"></td>

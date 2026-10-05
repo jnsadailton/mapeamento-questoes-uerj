@@ -1,6 +1,6 @@
 ---
 title: Dificuldade
-description: Onde os candidatos mais erram e o que cai muito e tem poucos acertos, por item e por subitem.
+description: Onde os candidatos mais erram e o que é um diferencial saber, por item e por subitem.
 sidebar_position: 6
 ---
 
@@ -23,7 +23,7 @@ sidebar_position: 6
   const limparFiltros = () => (sel = conteudo.inicial(hier));
 
   // Nível do detalhe: com todos os itens marcados, a página mostra itens; com só alguns itens marcados, mostra os
-  // subitens deles. Toda a página (prioridade, gráficos, listas) segue o mesmo nível.
+  // subitens deles. Toda a página (pontos perdidos, gráficos, listas) segue o mesmo nível.
   $: porSubitem = !!sel && (opc.itens ?? []).length > 0 && sel.itens.length < opc.itens.length;
   $: nivel = porSubitem ? 'subitem' : 'item';
   $: Nivel = porSubitem ? 'Subitem' : 'Item';
@@ -90,7 +90,7 @@ sidebar_position: 6
       : lista.sort((a, b) => AREAS.indexOf(a.chave) - AREAS.indexOf(b.chave));
   })();
   const opcoesGrafico = (g) => ({ series: g.eixos.map((e) => ({ symbol: estiloEixo[e]?.forma ?? 'circle' })) });
-  $: naPrioridade = grupos
+  $: naFaixaDiferencial = grupos
     .flatMap((g) =>
       g.pontos.length > 1 ? g.pontos.filter((p) => Number(p.questoes) > g.mediaQ && Number(p.media) < g.mediaA) : []
     )
@@ -105,7 +105,8 @@ poucos acertos**. Dá para ver por **item** e descer até os **subitens** de cad
 
 <ol class="como-usar">
   <li>Escolha a área, o eixo ou o item nos filtros, ou deixe tudo marcado.</li>
-  <li>Veja o que está na faixa de <b>prioridade</b> do gráfico de frequência × acertos e na lista logo abaixo dele.</li>
+  <li>Veja o que está na faixa de <b>diferencial</b> do gráfico de frequência × acertos e na lista logo abaixo dele:
+  conteúdos que caem bastante e que a maioria erra.</li>
   <li>Para ver os <b>subitens</b> de um item, toque em "ver subitens" na lista, use "Ver os subitens de…" embaixo de cada
   gráfico ou marque o item no filtro Item.</li>
 </ol>
@@ -176,12 +177,12 @@ where d.nivel in ${inputs.niveis_dificuldade.value}
     and d.qtd_questoes >= ${inputs.minimo.value}
 ```
 
-## Prioridade de estudo
+## Onde mais se perde ponto
 
 Para cada {nivel}, as questões desde 2016 vezes a taxa de erro média: quantas dessas questões um candidato típico
-errou. Quanto maior, mais o conteúdo pesa e mais derruba.
+errou. São os pontos que a maioria deixa na prova.
 
-```sql prioridade
+```sql pontos_perdidos
 select
     case when length(r) > 48 then left(r, 47) || '…' else r end as rotulo,
     area,
@@ -199,7 +200,7 @@ limit 15
 ```
 
 <BarChart
-  data={prioridade}
+  data={pontos_perdidos}
   x=rotulo
   y=erros_esperados
   series=area
@@ -262,7 +263,7 @@ um formato de ponto. Toque num ponto (ou passe o mouse) para ver o nome.
       chartAreaHeight=220
     >
       {#if g.pontos.length > 1}
-        <ReferenceArea xMin={g.mediaQ} yMin={0} yMax={g.mediaA} color="accent" label="prioridade" labelPosition="bottomRight" />
+        <ReferenceArea xMin={g.mediaQ} yMin={0} yMax={g.mediaA} color="accent" label="diferencial" labelPosition="bottomRight" />
         <ReferenceLine y={g.mediaA} hideValue=true lineType=dashed />
         <ReferenceLine x={g.mediaQ} hideValue=true lineType=dashed />
       {/if}
@@ -286,13 +287,14 @@ um formato de ponto. Toque num ponto (ou passe o mouse) para ver o nome.
   <span><svg width="28" height="10" aria-hidden="true"><line x1="0" y1="5" x2="28" y2="5" class="tracejado" /></svg>
     <span>média do gráfico: a linha em pé marca o número médio de questões; a deitada, a média de acertos</span></span>
   <span><svg width="28" height="12" aria-hidden="true"><rect width="28" height="12" class="faixa" /></svg>
-    <span><b>prioridade</b>: cai mais que a média e tem menos acertos que a média. Comece por eles.</span></span>
+    <span><b>diferencial</b>: cai mais que a média e tem menos acertos que a média. Saber esses conteúdos é um
+    diferencial, porque a maioria erra.</span></span>
 </div>
 
-### Na faixa de prioridade
+### Conteúdos que são um diferencial
 
-{#if naPrioridade.length}
-<div class="tabela-prioridade">
+{#if naFaixaDiferencial.length}
+<div class="tabela-diferencial">
 <table>
   <thead>
     <tr>
@@ -305,7 +307,7 @@ um formato de ponto. Toque num ponto (ou passe o mouse) para ver o nome.
     </tr>
   </thead>
   <tbody>
-    {#each naPrioridade as p (p.id_conteudo)}
+    {#each naFaixaDiferencial as p (p.id_conteudo)}
       <tr>
         <td>{p.conteudo}<span class="acima-celular">{porSubitem ? p.item : p.eixo}</span></td>
         <td class="opcional">{porSubitem ? p.item : p.eixo}</td>
@@ -320,7 +322,7 @@ um formato de ponto. Toque num ponto (ou passe o mouse) para ver o nome.
 </div>
 <p class="nota">* Erradas: quantas dessas questões um candidato típico errou (questões × taxa de erro).</p>
 {:else}
-<p class="vazio">Nenhum conteúdo na faixa de prioridade nesta seleção.</p>
+<p class="vazio">Nenhum conteúdo na faixa de diferencial nesta seleção.</p>
 {/if}
 
 ## {porSubitem ? 'Todos os subitens' : 'Todos os itens'}
@@ -441,12 +443,12 @@ A média é a das questões da seleção dos filtros. Faltam 2021, 2024-2 e 2027
   .tracejado { stroke: hsl(var(--twc-base-content-muted)); stroke-width: 1.3; stroke-dasharray: 4 3; }
   .faixa { fill: hsl(var(--twc-accent) / 0.25); }
 
-  .tabela-prioridade { overflow-x: auto; }
-  .tabela-prioridade table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-  .tabela-prioridade th { text-align: left; font-weight: 650; padding: 0.4rem 0.5rem;
+  .tabela-diferencial { overflow-x: auto; }
+  .tabela-diferencial table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+  .tabela-diferencial th { text-align: left; font-weight: 650; padding: 0.4rem 0.5rem;
                           border-bottom: 1px solid hsl(var(--twc-base-content) / 0.3); color: hsl(var(--twc-base-heading)); }
-  .tabela-prioridade td { padding: 0.45rem 0.5rem; border-bottom: 1px solid hsl(var(--twc-base-content) / 0.1); vertical-align: top; }
-  .tabela-prioridade .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .tabela-diferencial td { padding: 0.45rem 0.5rem; border-bottom: 1px solid hsl(var(--twc-base-content) / 0.1); vertical-align: top; }
+  .tabela-diferencial .num { text-align: right; font-variant-numeric: tabular-nums; }
   .acima-celular { display: none; font-size: 0.78rem; color: hsl(var(--twc-base-content-muted)); }
   .ver { white-space: nowrap; padding: 0.3rem 0.6rem; border-radius: 5px; font-size: 0.8rem; font-weight: 600;
          border: 1px solid hsl(var(--twc-primary) / 0.5); color: hsl(var(--twc-primary)); background: transparent; }
@@ -458,9 +460,9 @@ A média é a das questões da seleção dos filtros. Faltam 2021, 2024-2 e 2027
     .passo { display: none; }
     .voltar { margin-left: 0; width: 100%; }
     .detalhar select { flex-basis: 100%; }
-    /* na lista de prioridade, o eixo (ou item) vai para baixo do nome e a coluna dele some */
-    .tabela-prioridade .opcional { display: none; }
+    /* na lista de diferencial, o eixo (ou item) vai para baixo do nome e a coluna dele some */
+    .tabela-diferencial .opcional { display: none; }
     .acima-celular { display: block; }
-    .tabela-prioridade td, .tabela-prioridade th { padding: 0.45rem 0.3rem; }
+    .tabela-diferencial td, .tabela-diferencial th { padding: 0.45rem 0.3rem; }
   }
 </style>
