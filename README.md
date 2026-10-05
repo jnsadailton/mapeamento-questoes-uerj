@@ -1,136 +1,108 @@
+<div align="center">
+
 # Mapa das Questões UERJ
 
-Site público e gratuito que mostra o que caiu nas provas objetivas do Vestibular Estadual da UERJ desde 2016, por ano,
-exame, área, eixo, item e subitem do programa.
+O que caiu nas provas objetivas do Vestibular Estadual da UERJ, de 2016 a 2027, conteúdo por conteúdo.
 
-**Site: https://jnsadailton.github.io/mapeamento-questoes-uerj/**
+### [Acessar o site](https://jnsadailton.github.io/mapeamento-questoes-uerj/)
 
-Atualizado a cada push na `main` pelo GitHub Actions ([`.github/workflows/site.yml`](.github/workflows/site.yml)):
-ingestão, testes, extração, `dbt build`, build do Evidence e publicação no GitHub Pages.
+[![Pipeline](https://github.com/jnsadailton/mapeamento-questoes-uerj/actions/workflows/site.yml/badge.svg)](https://github.com/jnsadailton/mapeamento-questoes-uerj/actions/workflows/site.yml)
+![Python 3.12](https://img.shields.io/badge/python-3.12-3776AB)
+![dbt + DuckDB](https://img.shields.io/badge/dbt-DuckDB-FF694B)
+![Evidence](https://img.shields.io/badge/site-Evidence-0072CE)
 
-## Pipeline
+</div>
 
-```text
-PDFs oficiais ──► Ingestão ──► Extração ──► Transformação ──► Site estático interativo
-                   (raw)        (bronze)     (dbt + DuckDB)     (Evidence.dev)
-        └──────────────── orquestrado pelo GitHub Actions ────────────────┘
+![Página inicial do site](docs/imagens/inicio.png)
+
+## O que é
+
+Um site público e gratuito para quem estuda para a UERJ. Ele reúne as **1.260 questões** dos 21 exames de 2016 a 2027
+e mostra em que conteúdo do programa cada uma caiu, segundo o gabarito comentado oficial da universidade.
+
+## O que dá para fazer
+
+- **Ver o que mais cai**, filtrando por vestibular, exame, área, disciplina, eixo e item.
+- **Acompanhar tendências:** o que cai em quase toda prova, o que está em alta e o que sumiu mas costuma voltar.
+- **Achar a prioridade de estudo:** o que cai muito e tem poucos acertos.
+- **Consultar o programa inteiro**, com busca e o que já caiu de cada conteúdo.
+- **Ver o que nunca caiu** e está no edital.
+- **Abrir qualquer questão** no PDF oficial da prova ou do gabarito comentado, direto na página dela.
+
+<table>
+  <tr>
+    <td><img src="docs/imagens/o-que-mais-cai.png" alt="Ranking dos itens que mais caem, por área"></td>
+    <td><img src="docs/imagens/dificuldade.png" alt="Frequência × acertos por área, com a faixa de prioridade"></td>
+  </tr>
+  <tr>
+    <td align="center">O que mais cai</td>
+    <td align="center">Dificuldade e prioridade de estudo</td>
+  </tr>
+  <tr>
+    <td><img src="docs/imagens/historico.png" alt="Mapa de calor dos itens de um eixo, exame a exame"></td>
+    <td><img src="docs/imagens/programa.png" alt="Programa navegável com busca"></td>
+  </tr>
+  <tr>
+    <td align="center">Histórico exame a exame</td>
+    <td align="center">Programa com busca</td>
+  </tr>
+</table>
+
+## Como é feito
+
+```mermaid
+flowchart LR
+    A["PDFs oficiais<br/>da UERJ"] --> B["Ingestão<br/>Python"]
+    B --> C["Extração<br/>PyMuPDF"]
+    C --> D["Transformação<br/>dbt + DuckDB"]
+    D --> E["Site estático<br/>Evidence"]
+    E --> F["GitHub Pages"]
 ```
 
-## Como rodar
+- **Dados oficiais:** 84 PDFs da UERJ (provas, gabaritos, gabaritos comentados e conteúdos programáticos), cada um
+  conferido para garantir que é idêntico ao publicado.
+- **Comparável entre os anos:** a redação do programa muda de um edital para outro; uma hierarquia única liga cada
+  redação antiga ao conteúdo atual.
+- **Testado:** 172 testes na leitura dos PDFs e 58 testes de dados no dbt.
+- **Automatizado:** a cada atualização, o GitHub Actions refaz todo o caminho, do PDF ao site publicado.
+- **Sem servidor e sem custo:** as consultas rodam no navegador (DuckDB-WASM) e o site fica no GitHub Pages.
 
-Requer Python 3.12 e [uv](https://docs.astral.sh/uv/).
+Arquitetura, decisões, modelo de dados e testes em detalhe: **[como funciona](docs/como-funciona.md)**.
+
+## Rodar localmente
+
+Requer Python 3.12, [uv](https://docs.astral.sh/uv/) e Node.js 24.
 
 ```bash
+git clone https://github.com/jnsadailton/mapeamento-questoes-uerj.git
+cd mapeamento-questoes-uerj
+
 uv sync
-uv run pytest
-uv run python -m uerj.ingestao          # baixa os PDFs para data/raw/
-uv run python -m uerj.extracao          # extrai os PDFs para data/bronze/ (Parquet)
-cd dbt
-uv run dbt build --profiles-dir .       # modelos e testes em data/warehouse/uerj.duckdb
-uv run dbt docs generate --profiles-dir . && uv run dbt docs serve --profiles-dir .
-cd ../site                              # requer Node.js 20+
-npm ci
-npm run sources && npm run build        # site estático em site/build/
+uv run pytest                            # testes
+uv run python -m uerj.ingestao           # PDFs em data/raw/ (sem internet: --somente-repositorio)
+uv run python -m uerj.extracao           # dados extraídos em data/bronze/
+
+cd dbt && uv run dbt build --profiles-dir . && cd ..   # modelos e testes de dados
+
+cd site && npm ci && npm run sources && npm run build  # site estático em site/build/
 ```
 
-## Extração (camada bronze)
+## Dados e limitações
 
-| Tabela | Uma linha por | Origem |
-|---|---|---|
-| `gabarito` | questão e idioma | gabarito oficial (resposta e data de aplicação) |
-| `comentario` | comentário | gabarito comentado (percentual de acertos, nível, objetivo, texto) |
-| `classificacao` | classificação de uma questão | gabarito comentado (eixo, item e subitem do programa) |
-| `conteudo_programatico` | subitem do edital | anexo de conteúdos do edital (área, eixo, item, subitem) |
-| `prova` | questão e idioma | caderno de prova (página em que a questão começa, para o site abrir o PDF nela) |
+Fontes: [vestibular.uerj.br](https://www.vestibular.uerj.br/) (provas, gabaritos e editais) e
+[revista.vestibular.uerj.br](https://www.revista.vestibular.uerj.br/questao/) (gabaritos comentados). O catálogo de
+todos os PDFs, com o endereço de cada um, está em [`fontes/fontes.yml`](fontes/fontes.yml).
 
-Os PDFs mudam de layout ao longo dos anos. Os gabaritos são lidos pela posição das palavras na página, e nos
-gabaritos comentados cada comentário é ligado ao rótulo da questão pela posição, porque a ordem do texto extraído é
-embaralhada. Os testes em `tests/test_extracao.py` cobrem os 21 exames e as lacunas conhecidas das próprias fontes.
+- O percentual de acertos existe para 1.248 das 1.482 versões de questão: os gabaritos comentados de 2021, 2024-2 e
+  2027-2 não o publicam, e ele falta nas anuladas e em algumas questões de 2020-2 e 2022-1.
+- Ligar uma redação antiga ao conteúdo atual exige julgamento em alguns casos; cada decisão está justificada no
+  repositório.
+- Escopo: 1º e 2º Exames de Qualificação e Exame Único. Ficam de fora o Exame Discursivo e a Redação.
 
-## Modelagem (dbt + DuckDB)
+## Autor
 
-```text
-bronze (Parquet) ─► staging ─► intermediate ─────────────────► marts
-seeds de curadoria ───────────┘  curadoria, partes do subitem,   dim_exame, dim_conteudo, fct_questao,
-                                 ligação pelo dicionário          fct_classificacao, bridge_programa_ano,
-                                                                  mart_incidencia, mart_dificuldade, mart_lacunas
-```
+Criado por **[Adailton Nascimento](https://www.linkedin.com/in/adailton-araujo-nascimento/)**. O desenvolvimento contou
+com o apoio do [Claude Code](https://claude.com/claude-code), assistente de programação da Anthropic.
 
-O texto de eixo, item e subitem muda de um edital para outro e os comentários o reescrevem de muitas formas
-("sequências" e "sucessões", "lei de Stevin" e "lei se Stevin", subitens antigos que viraram outro item). Para comparar
-os anos, todo texto passa por uma **hierarquia canônica** (Área › Eixo › Item › Subitem, IDs como `MAT.2.03.01`):
-
-| Seed | Papel |
-|---|---|
-| `conteudo_base.csv` | a hierarquia: base no edital de 2027, com os conteúdos de editais antigos marcados como fora do edital vigente |
-| `dicionario_conteudo.csv` | cada texto (item, subitem) visto num edital ou comentário → um ou mais conteúdos canônicos, com o método (exato, similar, manual) e a justificativa das decisões manuais |
-| `correcoes.csv` | classificações transcritas da imagem do PDF, feitas à mão (questão sem comentário) ou completadas quando o PDF omite ou troca eixo, item ou subitem |
-| `eixos_atribuidos.csv` | eixo tirado do edital quando o comentário não o informa |
-
-O que o projeto completou ou estimou leva um adendo público (`observacao`), exibido junto da questão. Um texto que não
-casa com o dicionário vai para o modelo `pendencias` e faz o teste `assert_sem_pendencias` falhar;
-`uv run python -m uerj.curadoria` sugere as ligações para revisão.
-
-Decisões de modelagem:
-
-- **Disciplina:** Ciências da Natureza separada em Física, Química e Biologia (pelo item), Linguagens em Língua
-  Portuguesa, Literatura e Língua Estrangeira. Ciências Humanas fica como área única, porque os editais tratam
-  Geografia e História de forma integrada (quase todo item aparece nas duas).
-- **Língua estrangeira:** as versões em espanhol, francês e inglês são questões distintas em `fct_questao` e
-  `fct_classificacao`, cada uma com gabarito, classificação e percentual de acertos próprios. Na **incidência**
-  (`mart_incidencia`), a unidade é o número da questão no exame: se duas versões caem no mesmo conteúdo, ele conta uma
-  vez (o candidato responde só um idioma, e contar as três daria peso triplo ao bloco); se caem em conteúdos diferentes,
-  cada conteúdo conta. Nenhuma versão é descartada. Na **dificuldade** (`mart_dificuldade`), cada versão é um ponto,
-  porque cada uma tem o próprio percentual. Uma questão com várias classificações conta para cada conteúdo.
-- **Percentual de acertos:** existe para 1.248 das 1.482 versões de questão. A falta é uma limitação dos gabaritos
-  comentados, não da extração. O gabarito comentado de 2021 existe, mas não tem o campo (nem o nível de dificuldade);
-  o de 2024-2 traz o campo em branco; o de 2027-2 não o traz; e ele falta nas anuladas e em algumas questões de 2020-2
-  e 2022-1.
-- **Lacunas:** um subitem do edital vigente que nenhuma questão tocou desde 2016. As redações antigas de editais e
-  comentários já chegam ligadas ao subitem atual equivalente, e o modelo mostra há quantos exames o subitem está no
-  edital (alguns entraram só em 2024 ou 2027).
-
-Testes do dbt: 60 questões por exame, anuladas exatamente as oficiais, toda questão não anulada classificada,
-percentual entre 0 e 100 (e ausente onde o PDF não o publica), chaves únicas e estrangeiras, e nenhuma pendência.
-
-## Site (Evidence)
-
-Site estático feito com [Evidence](https://legacy-docs.evidence.dev/) (versão open source): páginas em Markdown + SQL,
-com os filtros rodando no navegador (DuckDB-WASM). Criado por **Adailton Nascimento**.
-
-| Página | O que mostra |
-|---|---|
-| Início | números gerais e destaques: o que mais cai, o que está em alta e o que sumiu mas costuma voltar |
-| Programa | o dicionário completo do programa (área › eixo › item › subitem), com busca e as redações dos editais antigos |
-| O que mais cai | filtros em cascata (vestibular, exame, área › disciplina › eixo › item, vários ao mesmo tempo); rankings de eixos, itens e subitens, concentração, links dos PDFs selecionados e a lista das questões da seleção |
-| Tendências | regularidade, em alta e em baixa (2025–2027 contra os anos anteriores) e sumidos que costumam voltar, com filtros área › disciplina › eixo |
-| Histórico por conteúdo | escolha guiada área › eixo › item; mapas de calor conteúdo × exame, do eixo ao subitem, e as questões do item |
-| Dificuldade | filtros área › eixo › item; prioridade de estudo (questões × taxa de erro); frequência × acertos com a faixa de prioridade, que detalha de item para subitem, e a lista do que está nela; as questões mais difíceis |
-| Lacunas | o que está no edital de 2027 e nunca caiu |
-| Banco de questões | todas as questões, com filtros em cascata, classificação e links para a prova e o gabarito comentado, abertos na página da questão |
-
-Os filtros de seleção múltipla são um componente próprio ([`site/components/Filtro.svelte`](site/components/Filtro.svelte)):
-cada nível só oferece o que existe dentro do que está marcado acima (ex.: com só Linguagens, a disciplina oferece
-Língua Portuguesa, Literatura e Língua Estrangeira).
-
-Os indicadores de recorrência vêm do modelo `mart_recorrencia` e são descritivos: não preveem a próxima prova. A paleta
-de cores (com a validação para daltonismo) está em [`docs/paleta-de-cores.md`](docs/paleta-de-cores.md). O logo da
-UERJ é o arquivo oficial do kit de marca da universidade e identifica a fonte dos dados; o projeto é independente.
-
-O Evidence 40 não tem tradução e compara o endereço das páginas sem o `basePath`. O script
-[`site/scripts/traduzir-componentes.mjs`](site/scripts/traduzir-componentes.mjs), que roda sozinho depois do `npm ci`,
-traduz os textos fixos dos componentes ("Select all", "Search"...) e corrige o menu lateral para marcar a página atual.
-
-## Fontes
-
-Os 84 PDFs usados (prova, gabarito, conteúdo programático e gabarito comentado de 21 exames) estão listados em
-[`fontes/fontes.yml`](fontes/fontes.yml), cada um com o sha256 esperado. A ingestão tenta, nesta ordem, o site da UERJ,
-uma captura do Wayback Machine e a cópia versionada em `fontes/pdfs/`, e usa a primeira que devolver o arquivo
-idêntico. A fonte de cada arquivo fica registrada em `data/raw/proveniencia.csv`.
-
-Sem internet, `uv run python -m uerj.ingestao --somente-repositorio` usa só a cópia versionada.
-
-## Créditos
-
-Criado por **Adailton Nascimento**. O desenvolvimento contou com o apoio do
-[Claude Code](https://claude.com/claude-code), assistente de programação da Anthropic.
+Projeto independente e gratuito, sem vínculo com a UERJ. A marca da universidade aparece no site só para identificar a
+fonte dos dados.
