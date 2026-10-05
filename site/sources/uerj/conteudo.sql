@@ -7,3 +7,4 @@ left join bridge_programa_ano as b
     on b.id_subitem = d.id_conteudo
     or (d.nivel = 'item' and b.id_subitem like d.id_conteudo || '.%')
 group by all
+order by d.id_conteudo

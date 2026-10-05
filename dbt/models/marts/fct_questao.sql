@@ -18,7 +18,7 @@ principal as (
 ),
 
 observacoes as (
-    select id_questao, string_agg(distinct observacao, ' ') as observacoes
+    select id_questao, string_agg(distinct observacao, ' ' order by observacao) as observacoes
     from {{ ref('fct_classificacao') }}
     where observacao is not null
     group by id_questao

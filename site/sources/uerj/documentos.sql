@@ -8,3 +8,4 @@ select
     obtido_em,
     sha256
 from dim_documento
+order by id_exame, tipo

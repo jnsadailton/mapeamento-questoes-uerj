@@ -31,3 +31,4 @@ inner join dim_exame as e using (id_exame)
 inner join areas as a using (id_area)
 left join dim_conteudo as d on d.id_conteudo = i.id_conteudo
 left join eixos as x on x.id_eixo = i.id_conteudo
+order by i.id_exame, i.nivel, i.id_conteudo

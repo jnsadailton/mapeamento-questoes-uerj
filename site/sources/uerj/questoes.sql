@@ -4,7 +4,7 @@ with conteudos as (
     select
         c.id_questao,
         string_agg(d.item || coalesce(' › ' || d.subitem, ''), ' | ' order by c.ordem, c.id_conteudo) as classificacao,
-        string_agg(distinct d.eixo, ' | ') as eixos
+        string_agg(distinct d.eixo, ' | ' order by d.eixo) as eixos
     from fct_classificacao as c
     inner join dim_conteudo as d using (id_conteudo)
     group by c.id_questao

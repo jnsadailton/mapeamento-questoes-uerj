@@ -5,7 +5,27 @@
 	import '$lib/estilo.css';
 	import { EvidenceDefaultLayout } from '@evidence-dev/core-components';
 	import { addBasePath } from '@evidence-dev/sdk/utils/svelte';
+	import { onMount } from 'svelte';
+	import { onNavigate } from '$app/navigation';
 	export let data;
+
+	// Cada deploy pode trocar os arquivos de dados (o nome leva o hash do conteúdo) e apaga os antigos. Uma aba aberta
+	// antes do deploy ainda tem o índice velho e falharia ao abrir outra página ("Failed to open file"). Ao navegar,
+	// confere o índice; se mudou, carrega a página de novo em vez de navegar dentro da aba.
+	const lerIndice = () =>
+		fetch(addBasePath('/data/manifest.json'), { cache: 'no-cache' })
+			.then((r) => (r.ok ? r.text() : null))
+			.catch(() => null);
+	let indice = null;
+	onMount(async () => (indice = await lerIndice()));
+	onNavigate(async (navegacao) => {
+		if (!indice || !navegacao.to || navegacao.willUnload) return;
+		const atual = await lerIndice();
+		if (atual && atual !== indice) {
+			window.location.assign(navegacao.to.url.href);
+			return new Promise(() => {});
+		}
+	});
 </script>
 
 <EvidenceDefaultLayout

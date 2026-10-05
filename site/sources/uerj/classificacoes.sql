@@ -25,3 +25,4 @@ from fct_classificacao as c
 inner join dim_conteudo as d using (id_conteudo)
 inner join dim_exame as e using (id_exame)
 inner join fct_questao as q using (id_questao)
+order by c.id_questao, d.id_item, d.id_subitem nulls first

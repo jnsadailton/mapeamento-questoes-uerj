@@ -64,6 +64,11 @@ const TROCAS = {
 		['text="Save Image"', 'text="Salvar imagem"'],
 		['text="Download Data"', 'text="Baixar dados"']
 	],
+	// índice dos dados sempre revalidado: o GitHub Pages guarda o manifest.json por 10 min, e um índice velho aponta
+	// para arquivos que o deploy seguinte apagou ("Failed to open file")
+	'../../evidence/template/src/pages/+layout.js': [
+		["await fetch(addBasePath('/data/manifest.json'));", "await fetch(addBasePath('/data/manifest.json'), { cache: 'no-cache' });"]
+	],
 	// menu dos três pontos: atalho de impressão Ctrl+P (⌘P só no Mac e no iPhone/iPad) e aparência em português
 	'organisms/layout/header/KebabMenu.svelte': [
 		[

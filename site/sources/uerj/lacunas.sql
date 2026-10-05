@@ -15,3 +15,4 @@ select
     l.nunca_caiu
 from mart_lacunas as l
 inner join dim_conteudo as d on d.id_conteudo = l.id_subitem
+order by l.id_subitem
