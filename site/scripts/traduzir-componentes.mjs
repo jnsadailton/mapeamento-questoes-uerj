@@ -1,6 +1,6 @@
-// Ajusta os componentes do Evidence 40 no node_modules: textos fixos em português (filtros, tabelas e botões dos
-// gráficos), o menu lateral marcando a página atual, com os títulos das páginas como estão escritos, e a fonte dos
-// gráficos igual à do site.
+// Ajusta os componentes do Evidence 40 no node_modules: textos fixos em português (filtros, tabelas, botões dos
+// gráficos e o menu dos três pontos), o menu lateral marcando a página atual, com os títulos das páginas como estão
+// escritos, e a fonte dos gráficos igual à do site.
 //
 // O Evidence 40 não tem tradução: os textos estão escritos em inglês nos arquivos .svelte do pacote, que o Vite
 // compila no build. E o menu lateral compara o endereço da página sem o basePath (/mapeamento-questoes-uerj), então
@@ -63,6 +63,24 @@ const TROCAS = {
 	'unsorted/viz/core/ECharts.svelte': [
 		['text="Save Image"', 'text="Salvar imagem"'],
 		['text="Download Data"', 'text="Baixar dados"']
+	],
+	// menu dos três pontos: atalho de impressão Ctrl+P (⌘P só no Mac e no iPhone/iPad) e aparência em português
+	'organisms/layout/header/KebabMenu.svelte': [
+		[
+			"\timport { dev } from '$app/environment';\n",
+			"\timport { dev } from '$app/environment';\n" +
+				"\timport { onMount } from 'svelte';\n" +
+				"\tlet atalhoImprimir = 'Ctrl+P';\n" +
+				"\tonMount(() => { if (/Mac|iPhone|iPad/i.test(navigator.platform || navigator.userAgent)) atalhoImprimir = '⌘P'; });\n"
+		],
+		['\t\t\t\tPrint PDF\n\t\t\t\t<DropdownMenu.Shortcut>⌘P</DropdownMenu.Shortcut>', '\t\t\t\tImprimir ou salvar PDF\n\t\t\t\t<DropdownMenu.Shortcut>{atalhoImprimir}</DropdownMenu.Shortcut>'],
+		["{$showQueries ? 'Hide ' : 'Show '} Queries", "{$showQueries ? 'Esconder' : 'Mostrar'} consultas"],
+		['\t\t\t\t\tAppearance\n', '\t\t\t\t\tAparência\n'],
+		// um pouco mais largo, para o texto em português não encostar no atalho
+		['<DropdownMenu.Content class="w-52 text-xs">', '<DropdownMenu.Content class="w-60 text-xs">'],
+		["\t\t\t? 'System'\n", "\t\t\t? 'Sistema'\n"],
+		["\t\t\t\t? 'Light'\n", "\t\t\t\t? 'Claro'\n"],
+		["\t\t\t\t: 'Dark';", "\t\t\t\t: 'Escuro';"]
 	]
 };
 
