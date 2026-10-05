@@ -29,7 +29,7 @@ hide_title: true
     <a class="cta-principal" href="/painel">Ver o que mais cai</a>
     <a class="cta-secundario" href="/questoes">Buscar uma questão</a>
   </div>
-  <p class="hero-autor">Criado por <strong>Adailton Nascimento</strong></p>
+  <p class="hero-autor">Criado por <a href="https://www.linkedin.com/in/adailton-araujo-nascimento/" target="_blank" rel="noopener"><strong>Adailton Nascimento</strong></a></p>
 </section>
 
 ```sql kpis
@@ -164,6 +164,7 @@ Ciências da Natureza ganha espaço e Linguagens perde.
                  line-height: 1.02; font-weight: 600; color: hsl(var(--twc-base-heading)); }
   .hero-texto { margin: 0 0 1.25rem; max-width: 62ch; font-size: 1.05rem; line-height: 1.6; }
   .hero-autor { margin: 1.1rem 0 0; font-size: 0.85rem; color: hsl(var(--twc-base-content-muted)); }
+  .hero-autor a { color: hsl(var(--twc-primary)); text-underline-offset: 0.18em; }
   .cta { display: flex; flex-wrap: wrap; gap: 0.6rem; }
   .cta a { padding: 0.6rem 1.1rem; border-radius: 6px; font-weight: 600; text-decoration: none; }
   .cta-principal { background: hsl(var(--twc-primary)); color: hsl(var(--twc-primary-content)) !important; }

@@ -178,6 +178,7 @@ order by q.id_questao desc
 
 ## Itens do eixo {nomeEixo}, exame a exame
 
+<div class="mapa-rolagem"><div class="mapa-largo">
 <Heatmap
   data={dadosItens}
   x=exame
@@ -195,6 +196,8 @@ order by q.id_questao desc
   emptySet=pass
   emptyMessage="Nenhum conteúdo para mostrar."
 />
+</div></div>
+<p class="dica-rolagem">Arraste o mapa para o lado para ver todos os exames.</p>
 
 Itens marcados com * não estão mais no edital de 2027; eles aparecem porque caíram em exames anteriores. "Nunca
 caiu" quer dizer que nenhum gabarito comentado oficial classificou uma questão nesse conteúdo desde 2016, mesmo ele
@@ -209,6 +212,7 @@ classificada pela UERJ em outro item.
   <BigValue data={resumo} value=ultimo_ano fmt="0" title="Último vestibular em que caiu" emptySet=pass emptyMessage="nunca caiu" valueClass="valor" />
 </Grid>
 
+<div class="mapa-rolagem"><div class="mapa-largo">
 <Heatmap
   data={dadosSubitens}
   x=exame
@@ -226,6 +230,8 @@ classificada pela UERJ em outro item.
   emptySet=pass
   emptyMessage="Nenhum conteúdo para mostrar."
 />
+</div></div>
+<p class="dica-rolagem">Arraste o mapa para o lado para ver todos os exames.</p>
 
 Quando o comentário oficial só informa o item, a questão conta para o item, mas não para nenhum subitem.
 
@@ -258,5 +264,13 @@ Quando o comentário oficial só informa o item, a questão conta para o item, m
   select:focus { outline: 2px solid hsl(var(--twc-primary) / 0.6); outline-offset: 1px; }
   .seta { color: hsl(var(--twc-primary)); font-size: 1.3rem; padding-bottom: 0.2rem; }
   .escolha-nota { margin: 0.6rem 0 0; font-size: 0.8rem; color: hsl(var(--twc-base-content-muted)); }
-  @media (max-width: 640px) { .seta { display: none; } select { max-width: 100%; width: 100%; } .passo { width: 100%; } }
+  .mapa-rolagem { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .dica-rolagem { display: none; margin: 0.25rem 0 0; font-size: 0.8rem; color: hsl(var(--twc-base-content-muted)); }
+  @media (max-width: 640px) {
+    .seta { display: none; }
+    select { max-width: 100%; width: 100%; }
+    .passo { width: 100%; }
+    .mapa-largo { min-width: 760px; }
+    .dica-rolagem { display: block; }
+  }
 </style>

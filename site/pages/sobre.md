@@ -4,7 +4,7 @@ description: De onde vêm os dados, como as questões são classificadas e quais
 sidebar_position: 9
 ---
 
-O **Mapa das Questões UERJ** foi criado por **Adailton Nascimento**, como projeto independente, público e gratuito. Não
+O **Mapa das Questões UERJ** foi criado por [**Adailton Nascimento**](https://www.linkedin.com/in/adailton-araujo-nascimento/), como projeto independente, público e gratuito. Não
 tem ligação com a UERJ. Todos os dados vêm de documentos oficiais publicados pela universidade, e o código está aberto no
 [GitHub](https://github.com/jnsadailton/mapeamento-questoes-uerj). A marca da UERJ aparece no site para identificar a
 fonte dos dados; o arquivo é o oficial, do kit de marca publicado pela universidade.

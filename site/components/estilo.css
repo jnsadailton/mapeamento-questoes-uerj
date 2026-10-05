@@ -156,3 +156,33 @@ summary:focus-visible {
 	outline-offset: 2px;
 	border-radius: 4px;
 }
+
+/* ---- celular ------------------------------------------------------------------------------------------------- */
+
+/* nada passa da largura da tela (clip, e não hidden, para não quebrar o cabeçalho fixo) */
+html,
+body {
+	overflow-x: clip;
+}
+
+@media (max-width: 639px) {
+	h1.markdown,
+	h1.title {
+		font-size: 1.85rem;
+	}
+
+	h2.markdown {
+		font-size: 1.4rem;
+		margin-top: 2rem;
+	}
+
+	.valor {
+		font-size: 2rem !important;
+	}
+
+	/* indicadores (BigValue) dois por linha, em vez de um embaixo do outro */
+	.grid.grid-cols-1:has(.valor) {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		column-gap: 1rem;
+	}
+}

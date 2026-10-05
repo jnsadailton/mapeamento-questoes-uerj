@@ -25,7 +25,7 @@
 			<img class="rodape-logo" src={addBasePath('/logo-uerj.svg')} alt="Marca da UERJ" width="40" height="44" />
 			<div>
 				<p>
-					Criado por <strong>Adailton Nascimento</strong>. Dados dos PDFs oficiais do Vestibular Estadual da
+					Criado por <a href="https://www.linkedin.com/in/adailton-araujo-nascimento/" target="_blank" rel="noopener"><strong>Adailton Nascimento</strong></a>. Dados dos PDFs oficiais do Vestibular Estadual da
 					UERJ (provas, gabaritos, gabaritos comentados e editais).
 				</p>
 				<p class="rodape-aviso">

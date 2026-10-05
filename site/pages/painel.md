@@ -6,6 +6,8 @@ sidebar_position: 3
 
 <script>
   import { AREAS, gravarInputs, criarCascata, linhasDe, naOrdem, paraInput, unicas } from '$lib/filtros.js';
+  import { barrasDeitadas } from '$lib/graficos.js';
+  const opcoesBarras = barrasDeitadas();
 
   // Cor fixa por área (tokens do tema, ver docs/paleta-de-cores.md)
   const coresArea = {
@@ -154,6 +156,7 @@ order by questoes desc, eixo
   seriesOrder={ordemAreas}
   seriesColors={coresArea}
   swapXY=true
+  echartsOptions={opcoesBarras}
   sort=false
   labels=true
   seriesLabels=false
@@ -199,6 +202,7 @@ select * from ${rank_itens_total} limit 15
   seriesOrder={ordemAreas}
   seriesColors={coresArea}
   swapXY=true
+  echartsOptions={opcoesBarras}
   sort=false
   labels=true
   seriesLabels=false
@@ -286,6 +290,7 @@ limit 15
   seriesOrder={ordemAreas}
   seriesColors={coresArea}
   swapXY=true
+  echartsOptions={opcoesBarras}
   sort=false
   labels=true
   seriesLabels=false
@@ -327,6 +332,7 @@ order by questoes desc
   seriesOrder={ordemAreas}
   seriesColors={coresArea}
   swapXY=true
+  echartsOptions={opcoesBarras}
   sort=false
   labels=true
   seriesLabels=false

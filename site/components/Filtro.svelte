@@ -2,7 +2,7 @@
 	// Filtro de seleção múltipla. As opções e a seleção vêm da página, que monta a cascata (Área › Disciplina › Eixo ›
 	// Item) a partir da hierarquia: este componente só mostra e avisa a mudança com o evento `change` (detail = valores
 	// selecionados, na ordem das opções).
-	import { createEventDispatcher } from 'svelte';
+	import { createEventDispatcher, tick } from 'svelte';
 
 	export let titulo;
 	export let opcoes = []; // [{ valor, rotulo }]
@@ -13,6 +13,18 @@
 	let aberto = false;
 	let busca = '';
 	let raiz;
+	let painel;
+	let deslocamento = 0;
+
+	// No celular, um filtro perto da borda direita abriria a lista para fora da tela: desloca a lista para dentro.
+	async function abrir() {
+		aberto = !aberto;
+		deslocamento = 0;
+		if (!aberto) return;
+		await tick();
+		const r = painel?.getBoundingClientRect();
+		if (r) deslocamento = Math.min(0, window.innerWidth - 12 - r.right);
+	}
 
 	const normalizar = (t) => String(t ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
@@ -55,14 +67,14 @@
 		class:parcial={!todos}
 		aria-expanded={aberto}
 		aria-controls={id}
-		on:click={() => (aberto = !aberto)}
+		on:click={abrir}
 	>
 		<span class="titulo">{titulo}</span>
 		<span class="resumo">{resumo}</span>
 		<svg class="seta" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5" /></svg>
 	</button>
 	{#if aberto}
-		<div class="painel" id={id} role="group" aria-label={titulo}>
+		<div class="painel" id={id} role="group" aria-label={titulo} bind:this={painel} style={'left: ' + deslocamento + 'px'}>
 			{#if opcoes.length > 8}
 				<input class="busca" type="search" placeholder="Buscar" bind:value={busca} aria-label={'Buscar em ' + titulo} />
 			{/if}

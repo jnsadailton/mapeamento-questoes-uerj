@@ -6,6 +6,8 @@ sidebar_position: 6
 
 <script>
   import { AREAS, criarCascata, gravarInputs, linhasDe, naOrdem, paraInput } from '$lib/filtros.js';
+  import { barrasDeitadas } from '$lib/graficos.js';
+  const opcoesBarras = barrasDeitadas();
 
   // Área › Eixo › Item: valem para a página inteira.
   const conteudo = criarCascata([
@@ -159,6 +161,7 @@ limit 15
   seriesOrder={['Linguagens', 'Matemática', 'Ciências da Natureza', 'Ciências Humanas']}
   seriesColors={{'Linguagens': 'area-lin', 'Matemática': 'area-mat', 'Ciências da Natureza': 'area-cnt', 'Ciências Humanas': 'area-chs'}}
   swapXY=true
+  echartsOptions={opcoesBarras}
   sort=false
   labels=true
   seriesLabels=false
@@ -175,7 +178,7 @@ limit 15
 ## Frequência × acertos
 
 Quanto mais à direita, mais o conteúdo cai; quanto mais embaixo, menos os candidatos acertam. Cada eixo tem uma cor e
-um formato de ponto; passe o mouse sobre um ponto para ver o nome.
+um formato de ponto; toque num ponto (ou passe o mouse) para ver o nome.
 
 <p class="nivel-atual">
   {#if porSubitem}
