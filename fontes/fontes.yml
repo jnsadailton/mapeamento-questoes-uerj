@@ -1,4 +1,4 @@
-# Manifesto dos PDFs oficiais usados no projeto.
+# Catálogo dos PDFs oficiais usados no projeto.
 #
 # Um registro por exame e tipo de documento (21 exames x 4 tipos). A ingestão (python -m uerj.ingestao) tenta as fontes
 # nesta ordem e usa a primeira que devolver o arquivo com o sha256 abaixo:

@@ -23,6 +23,6 @@ sources:
       external_location: "read_csv('../data/raw/{name}.csv', header = true, all_varchar = true)"
     tables:
       - name: fontes
-        description: Manifesto dos PDFs (fontes/fontes.yml) em CSV, com as URLs oficiais e do Wayback Machine.
+        description: Catálogo dos PDFs (fontes/fontes.yml) em CSV, com as URLs oficiais e do Wayback Machine.
       - name: proveniencia
         description: De qual fonte (UERJ, Wayback Machine ou cópia do repositório) veio cada PDF na última ingestão.

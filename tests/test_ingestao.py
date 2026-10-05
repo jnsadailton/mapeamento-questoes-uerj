@@ -5,7 +5,7 @@ from urllib.error import URLError
 
 import pytest
 
-from uerj.ingestao import manifesto
+from uerj.ingestao import catalogo
 from uerj.ingestao.obter import obter, obter_todos
 
 CONTEUDO = b'%PDF-1.4 conteudo do teste'
@@ -22,7 +22,7 @@ def raiz(tmp_path):
 
 @pytest.fixture
 def doc():
-    return manifesto.Documento(
+    return catalogo.Documento(
         exame='2016-1', tipo='prova', arquivo='fontes/pdfs/2016-1/2016-1_prova.pdf',
         sha256=hashlib.sha256(CONTEUDO).hexdigest(), tamanho=len(CONTEUDO),
         url_oficial='https://uerj.exemplo/prova.pdf',
@@ -109,20 +109,20 @@ def test_grava_proveniencia(doc, raiz, tmp_path):
     assert len(linhas) == 1 and linhas[0]['fonte'] == 'repositorio'
 
 
-def test_manifesto_completo():
-    docs = manifesto.carregar()
+def test_catalogo_completo():
+    docs = catalogo.carregar()
     assert len(docs) == 84
     assert len({d.exame for d in docs}) == 21
 
 
-def test_manifesto_confere_com_copias_versionadas():
-    for d in manifesto.carregar():
-        b = (manifesto.RAIZ / d.arquivo).read_bytes()
+def test_catalogo_confere_com_copias_versionadas():
+    for d in catalogo.carregar():
+        b = (catalogo.RAIZ / d.arquivo).read_bytes()
         assert len(b) == d.tamanho, d.nome
         assert hashlib.sha256(b).hexdigest() == d.sha256, d.nome
 
 
-def test_manifesto_rejeita_documento_faltando():
-    docs = manifesto.carregar()[1:]
+def test_catalogo_rejeita_documento_faltando():
+    docs = catalogo.carregar()[1:]
     with pytest.raises(ValueError, match='faltam documentos'):
-        manifesto.validar(docs)
+        catalogo.validar(docs)

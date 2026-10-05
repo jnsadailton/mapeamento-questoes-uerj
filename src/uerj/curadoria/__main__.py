@@ -11,7 +11,7 @@ from pathlib import Path
 
 import duckdb
 
-from ..ingestao.manifesto import RAIZ
+from ..ingestao.catalogo import RAIZ
 from . import normalizar
 
 SEEDS = RAIZ / 'dbt' / 'seeds'

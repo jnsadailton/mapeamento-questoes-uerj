@@ -3,7 +3,7 @@ from concurrent.futures import ProcessPoolExecutor
 import pytest
 
 from uerj.extracao.bronze import extrair_exame
-from uerj.ingestao.manifesto import EXAMES, RAIZ
+from uerj.ingestao.catalogo import EXAMES, RAIZ
 
 
 @pytest.fixture(scope='session')

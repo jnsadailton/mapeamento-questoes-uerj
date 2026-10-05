@@ -8,7 +8,7 @@ import pytest
 
 from uerj.curadoria import normalizar
 from uerj.curadoria.__main__ import sugerir
-from uerj.ingestao.manifesto import EXAMES, RAIZ
+from uerj.ingestao.catalogo import EXAMES, RAIZ
 
 SEEDS = RAIZ / 'dbt' / 'seeds'
 TIPOS = {'classificacao_manual', 'transcricao', 'complemento'}

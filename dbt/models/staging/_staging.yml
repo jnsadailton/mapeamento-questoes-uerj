@@ -21,7 +21,7 @@ models:
   - name: stg_conteudo_programatico
     description: Subitens do anexo de conteúdos do edital de cada exame, como estão no PDF.
   - name: stg_fontes
-    description: Manifesto dos PDFs com a fonte de onde cada um veio na última ingestão.
+    description: Catálogo dos PDFs com a fonte de onde cada um veio na última ingestão.
     columns:
       - name: url_oficial
         data_tests: [not_null]

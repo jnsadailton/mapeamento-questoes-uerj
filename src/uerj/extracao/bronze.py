@@ -8,11 +8,11 @@ from pathlib import Path
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from ..ingestao import manifesto
+from ..ingestao import catalogo
 from ..ingestao.obter import DESTINO as RAW
 from . import comentado, conteudo, gabarito, prova
 
-BRONZE = manifesto.RAIZ / 'data' / 'bronze'
+BRONZE = catalogo.RAIZ / 'data' / 'bronze'
 
 texto, inteiro, real = pa.string(), pa.int32(), pa.float64()
 ESQUEMAS = {
@@ -58,7 +58,7 @@ def main():
     p.add_argument('--raw', default=RAW)
     p.add_argument('--destino', default=BRONZE)
     a = p.parse_args()
-    exames = sorted({d.exame for d in manifesto.carregar()})
+    exames = sorted({d.exame for d in catalogo.carregar()})
     faltando = [e for e in exames if not (Path(a.raw) / e).is_dir()]
     if faltando:
         raise SystemExit(f'Faltam PDFs em {a.raw} para {faltando}. Rode antes: uv run python -m uerj.ingestao')

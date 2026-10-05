@@ -3,7 +3,7 @@ from collections import Counter, defaultdict
 
 import pytest
 
-from uerj.ingestao.manifesto import EXAMES
+from uerj.ingestao.catalogo import EXAMES
 
 UNICO = {'2021-1', '2022-1', '2023-1'}
 ANULADAS = {'2017-2': 35, '2023-1': 34, '2024-1': 29, '2024-2': 59, '2025-2': 38, '2026-1': 38, '2027-1': 29,

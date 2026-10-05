@@ -1,10 +1,10 @@
-"""Obtém cada PDF do manifesto e grava em data/raw/, registrando de qual fonte veio.
+"""Obtém cada PDF do catálogo e grava em data/raw/, registrando de qual fonte veio.
 
 Ordem das fontes: site da UERJ, Wayback Machine e, por último, a cópia versionada em fontes/pdfs/. Vale a primeira que
 devolver o arquivo com o sha256 esperado. Um arquivo com hash diferente nunca é usado: vira aviso na proveniência.
 
 O servidor antigo da UERJ (sistema.vestibular.uerj.br, editais de 2016 a 2018) responde com o certificado SSL vencido.
-Nesse caso, e só nele, o download é refeito sem verificar o certificado: o sha256 do manifesto garante que o arquivo é
+Nesse caso, e só nele, o download é refeito sem verificar o certificado: o sha256 do catálogo garante que o arquivo é
 o esperado, e a proveniência registra o aviso.
 """
 import csv
@@ -19,7 +19,7 @@ from pathlib import Path
 from urllib.error import URLError
 from urllib.request import Request, urlopen
 
-from .manifesto import RAIZ
+from .catalogo import RAIZ
 
 log = logging.getLogger(__name__)
 
@@ -83,8 +83,8 @@ def obter(doc, destino=DESTINO, fontes=FONTES, baixar=baixar, raiz=RAIZ):
                 continue
         sha = hashlib.sha256(conteudo).hexdigest()
         if sha != doc.sha256:
-            avisos.append(f'{fonte}: sha256 diferente do manifesto ({sha})')
-            log.warning('%s: %s devolveu sha256 diferente do manifesto; arquivo ignorado', doc.nome, fonte)
+            avisos.append(f'{fonte}: sha256 diferente do catálogo ({sha})')
+            log.warning('%s: %s devolveu sha256 diferente do catálogo; arquivo ignorado', doc.nome, fonte)
             continue
         alvo = Path(destino) / doc.exame / doc.nome
         alvo.parent.mkdir(parents=True, exist_ok=True)
@@ -96,7 +96,7 @@ def obter(doc, destino=DESTINO, fontes=FONTES, baixar=baixar, raiz=RAIZ):
 
 
 def obter_todos(docs, destino=DESTINO, paralelo=4, **kw):
-    """Obtém todos os documentos e grava destino/proveniencia.csv e destino/fontes.csv (o manifesto em CSV)."""
+    """Obtém todos os documentos e grava destino/proveniencia.csv e destino/fontes.csv (o catálogo em CSV)."""
     with ThreadPoolExecutor(paralelo) as ex:
         provs = list(ex.map(lambda d: obter(d, destino, **kw), docs))
     Path(destino).mkdir(parents=True, exist_ok=True)
