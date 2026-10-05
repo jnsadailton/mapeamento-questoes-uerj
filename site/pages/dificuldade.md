@@ -106,6 +106,8 @@ O gabarito comentado da UERJ publica o percentual de candidatos que acertaram ca
 percentual com a frequência de cada conteúdo, para mostrar onde vale mais a pena estudar: o que **cai muito e tem
 poucos acertos**. Dá para ver por **item** e descer até os **subitens** de cada item.
 
+<AnoVestibular />
+
 <ol class="como-usar">
   <li>Escolha a área, a disciplina, o eixo ou o item nos filtros, ou deixe tudo marcado.</li>
   <li>Veja o que está na faixa de <b>diferencial</b> do gráfico de frequência × acertos e na lista logo abaixo dele:
@@ -443,7 +445,7 @@ order by e.id_exame
   yFmt=pct0
   yMin=0
   yMax=1
-  xAxisTitle="Exame"
+  xAxisTitle="Exame (ano do vestibular)"
   yAxisTitle="Média de acertos"
   emptySet=pass
 />

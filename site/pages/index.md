@@ -18,7 +18,7 @@ hide_title: true
 
 <section class="hero">
   <img class="hero-logo" src="/logo-uerj.svg" alt="Marca da UERJ" width="64" height="70" />
-  <p class="hero-sobre">Vestibular Estadual da UERJ, provas objetivas de 2016 a 2027</p>
+  <p class="hero-sobre">Vestibular Estadual da UERJ, provas objetivas dos vestibulares 2016 a 2027</p>
   <h1 class="hero-titulo">O que mais cai na UERJ, conteúdo por conteúdo</h1>
   <p class="hero-texto">
     As 1260 questões dos Exames de Qualificação e do Exame Único, ligadas ao eixo, ao item e ao subitem do programa em
@@ -32,6 +32,8 @@ hide_title: true
   <p class="hero-autor">Criado por <a href="https://www.linkedin.com/in/adailton-araujo-nascimento/" target="_blank" rel="noopener"><strong>Adailton Nascimento</strong></a></p>
 </section>
 
+<AnoVestibular />
+
 ```sql kpis
 select
     (select count(*) from uerj.exames) as exames,
@@ -43,7 +45,7 @@ select
 <Grid cols=4>
   <BigValue data={kpis} value=exames title="Exames analisados" valueClass="valor" />
   <BigValue data={kpis} value=questoes fmt="0" title="Questões classificadas" valueClass="valor" />
-  <BigValue data={kpis} value=cobertura fmt=pct0 title="Do edital 2027 já cobrado" valueClass="valor" />
+  <BigValue data={kpis} value=cobertura fmt=pct0 title="Do edital do Vestibular 2027 já cobrado" valueClass="valor" />
   <BigValue data={kpis} value=media_acertos fmt=pct0 title="Acertos em média" valueClass="valor" />
 </Grid>
 
@@ -86,7 +88,7 @@ limit 5
   </div>
   <div class="cartao">
     <p class="cartao-titulo">Em alta</p>
-    <p class="cartao-sub">Questões por exame, antes de 2025 e de 2025 a 2027</p>
+    <p class="cartao-sub">Questões por exame, antes do Vestibular 2025 e de 2025 a 2027</p>
     <ol>
       {#each em_alta as l}
         <li><span>{l.rotulo}</span><b>{Number(l.taxa_anterior).toFixed(1).replace('.', ',')} → {Number(l.taxa_recente).toFixed(1).replace('.', ',')}</b></li>
@@ -149,9 +151,9 @@ Ciências da Natureza ganha espaço e Linguagens perde.
   <a href="/programa"><b>Programa</b><span>O dicionário completo: todas as áreas, eixos, itens e subitens, com busca e o que já caiu de cada um.</span></a>
   <a href="/painel"><b>O que mais cai</b><span>Filtre vestibular, exame, área, disciplina, eixo e item e veja o ranking em cada nível, com as questões e os links das provas.</span></a>
   <a href="/tendencias"><b>Tendências</b><span>O que está em alta, o que caiu em quase toda prova e o que sumiu mas costuma voltar.</span></a>
-  <a href="/historico"><b>Histórico por conteúdo</b><span>Exame a exame, em que prova cada item e subitem caiu desde 2016.</span></a>
+  <a href="/historico"><b>Histórico por conteúdo</b><span>Exame a exame, em que prova cada item e subitem caiu desde o Vestibular 2016.</span></a>
   <a href="/dificuldade"><b>Dificuldade</b><span>Onde os candidatos mais erram e o que é um diferencial saber: o que cai bastante e a maioria erra.</span></a>
-  <a href="/lacunas"><b>Lacunas</b><span>O que está no edital de 2027 e nunca caiu.</span></a>
+  <a href="/lacunas"><b>Lacunas</b><span>O que está no edital do Vestibular 2027 e nunca caiu.</span></a>
   <a href="/questoes"><b>Banco de questões</b><span>Todas as questões com filtros, classificação e links para a prova e o gabarito comentado.</span></a>
 </div>
 

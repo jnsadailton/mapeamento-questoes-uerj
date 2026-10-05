@@ -46,7 +46,8 @@
 			<div>
 				<p>
 					Criado por <a href="https://www.linkedin.com/in/adailton-araujo-nascimento/" target="_blank" rel="noopener"><strong>Adailton Nascimento</strong></a>. Dados dos PDFs oficiais do Vestibular Estadual da
-					UERJ (provas, gabaritos, gabaritos comentados e editais).
+					UERJ (provas, gabaritos, gabaritos comentados e editais). Os anos são os do vestibular, não os da
+					aplicação da prova.
 				</p>
 				<p class="rodape-aviso">
 					Projeto independente e gratuito, sem vínculo com a UERJ. A marca da universidade identifica a fonte

@@ -55,6 +55,8 @@ sidebar_position: 3
 Monte a sua seleção e tudo abaixo se atualiza: os indicadores, os rankings de eixos, itens e subitens, os links das
 provas escolhidas e, no fim da página, a lista das questões.
 
+<AnoVestibular />
+
 <Hierarquia compacto=true />
 
 ```sql anos
@@ -347,7 +349,7 @@ Ciências Humanas aparece inteira porque os editais não separam Geografia e His
 
 ## As provas selecionadas
 
-Links para os PDFs oficiais de cada exame da seleção, no site da UERJ. Os conteúdos programáticos de 2016 a 2018
+Links para os PDFs oficiais de cada exame da seleção, no site da UERJ. Os conteúdos programáticos dos vestibulares 2016 a 2018
 ficam no servidor antigo da universidade, cujo certificado de segurança venceu: o navegador pode mostrar um aviso antes
 de abrir (o arquivo é o oficial, conferido pelo projeto).
 

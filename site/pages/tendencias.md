@@ -31,9 +31,11 @@ sidebar_position: 4
   $: acimaTitulo = porSubitem ? 'Item' : 'Eixo';
 </script>
 
-Quatro jeitos de olhar o histórico de cada conteúdo desde 2016, além do volume: **regularidade** (cai em quase toda
+Quatro jeitos de olhar o histórico de cada conteúdo desde o Vestibular 2016, além do volume: **regularidade** (cai em quase toda
 prova?), **tendência** (está caindo mais ou menos nos últimos anos?) e **atraso** (sumiu há mais tempo que o normal?).
 São indicadores do passado, não previsões.
+
+<AnoVestibular />
 
 ```sql hierarquia
 select distinct area, disciplina, eixo from uerj.recorrencia
@@ -141,7 +143,7 @@ select * from ${variacao} where tendencia = 'em baixa' order by variacao
 </div>
 </Grid>
 
-*Antes* e *2025–27* são questões por exame. "Em alta": pelo menos 2 questões recentes e uma taxa 50% maior que a
+*Antes* e *2025–27* (vestibulares 2025 a 2027) são questões por exame. "Em alta": pelo menos 2 questões recentes e uma taxa 50% maior que a
 anterior. "Em baixa": pelo menos 3 questões antes e uma taxa que caiu à metade ou menos.
 
 ## Sumidos que costumam voltar

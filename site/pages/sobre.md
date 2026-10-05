@@ -11,9 +11,11 @@ fonte dos dados; o arquivo é o oficial, do kit de marca publicado pela universi
 
 ## Escopo
 
-As provas objetivas do Vestibular Estadual da UERJ de 2016 a 2027: o 1º e o 2º Exame de Qualificação de cada ano e o
-Exame Único de 2021, 2022 e 2023, ao todo 21 exames de 60 questões. Ficam de fora o Exame Discursivo, a Redação e os
+As provas objetivas do Vestibular Estadual da UERJ, dos vestibulares 2016 a 2027: o 1º e o 2º Exame de Qualificação
+de cada vestibular e o Exame Único de 2021, 2022 e 2023, ao todo 21 exames de 60 questões. Ficam de fora o Exame Discursivo, a Redação e os
 simulados.
+
+<AnoVestibular />
 
 ## Como os dados são produzidos
 
@@ -65,7 +67,7 @@ simulados.
 | **Sumido que costuma voltar** | Do edital vigente, caiu 3 vezes ou mais e está com atraso de 1,5 ou mais (no mínimo 2 exames sem cair). |
 | **Pontos perdidos** | Questões do conteúdo × taxa média de erro: quantas dessas questões um candidato típico errou. |
 | **Diferencial** | Conteúdo que cai mais que a média e tem menos acertos que a média: saber é um diferencial, porque a maioria erra. |
-| **Lacuna** | Subitem do edital de 2027 em que nenhuma questão foi classificada desde 2016. *Antiga*: está no edital desde antes de 2021; *recente*: entrou em 2021 ou depois. Lacuna não quer dizer que não vai cair. |
+| **Lacuna** | Subitem do edital mais recente (Vestibular 2027) em que nenhuma questão foi classificada desde o Vestibular 2016. *Antiga*: está no edital desde antes do Vestibular 2021; *recente*: entrou no de 2021 ou depois. As provas objetivas de 2027 já foram aplicadas; se o subitem continuar no próximo edital, pode cair. |
 
 Todos descrevem o que já aconteceu. A banca não segue uma fila, então nenhum deles é previsão da próxima prova.
 

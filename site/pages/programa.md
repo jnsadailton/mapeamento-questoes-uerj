@@ -74,7 +74,9 @@ sidebar_position: 2
 </script>
 
 O programa da UERJ organiza tudo o que pode cair em quatro níveis. Esta página mostra a lista completa, como um
-dicionário: abra uma área, um eixo e um item para ver os subitens e quanto cada um já caiu desde 2016.
+dicionário: abra uma área, um eixo e um item para ver os subitens e quanto cada um já caiu desde o Vestibular 2016.
+
+<AnoVestibular />
 
 <Hierarquia />
 
@@ -156,7 +158,7 @@ select * from uerj.programa order by id_subitem
                 <span class="nivel">Item</span>
                 <span class="nome">{item.nome}</span>
                 {#if area.nome === CNT}<span class="disciplina">{item.disciplina}</span>{/if}
-                {#if !item.vigente}<span class="tag">fora do edital 2027</span>{/if}
+                {#if !item.vigente}<span class="tag">fora do edital de 2027</span>{/if}
                 <span class="badge" class:zero={!item.questoes}>{plural(item.questoes, 'questão', 'questões')}</span>
               </summary>
               <ul>
@@ -164,7 +166,7 @@ select * from uerj.programa order by id_subitem
                   <li>
                     <div class="linha-subitem">
                       <span class="nome">{s.subitem}</span>
-                      {#if !s.subitem_vigente}<span class="tag">fora do edital 2027</span>{/if}
+                      {#if !s.subitem_vigente}<span class="tag">fora do edital de 2027</span>{/if}
                       {#if Number(s.questoes_subitem) > 0}
                         <span class="badge">{plural(Number(s.questoes_subitem), 'questão', 'questões')}</span>
                       {:else if s.subitem_vigente}
@@ -189,7 +191,7 @@ select * from uerj.programa order by id_subitem
 </div>
 
 As redações mudam de um edital para outro ("sequências" e "sucessões", subitens que trocaram de item). O projeto liga
-cada redação antiga ao conteúdo atual equivalente; é por isso que uma questão de 2016 conta para o subitem de 2027.
+cada redação antiga ao conteúdo atual equivalente; é por isso que uma questão do Vestibular 2016 conta para o subitem do edital de 2027.
 A contagem de questões é a mesma das outras páginas: cada número de questão conta uma vez.
 
 <style>

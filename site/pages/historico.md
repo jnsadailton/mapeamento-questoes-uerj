@@ -1,6 +1,6 @@
 ---
 title: Histórico por conteúdo
-description: A série histórica de cada eixo, item e subitem do programa, de 2016 a 2027, por disciplina e idioma.
+description: A série histórica de cada eixo, item e subitem do programa, dos vestibulares 2016 a 2027, por disciplina e idioma.
 sidebar_position: 5
 ---
 
@@ -152,8 +152,10 @@ sidebar_position: 5
   $: nSubitens = subitens.length;
 </script>
 
-Escolha um conteúdo e veja em que exames ele caiu desde 2016. Cada célula dos mapas é o número de questões daquele
+Escolha um conteúdo e veja em que exames ele caiu desde o Vestibular 2016. Cada célula dos mapas é o número de questões daquele
 exame (vazia quando nenhuma).
+
+<AnoVestibular />
 
 <Hierarquia compacto=true />
 

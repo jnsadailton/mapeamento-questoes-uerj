@@ -1,6 +1,6 @@
 ---
 title: Lacunas
-description: O que está no edital de 2027 e nunca caiu desde 2016, e o que está há mais tempo sem cair.
+description: O que está no edital mais recente (2027) e nunca caiu desde 2016, e o que está há mais tempo sem cair.
 sidebar_position: 7
 ---
 
@@ -12,11 +12,31 @@ sidebar_position: 7
   $: if (!selAreas && opcAreas.length) selAreas = opcAreas.map((o) => o.valor);
   $: if (selAreas) gravarInputs(inputs_store, { areas: paraInput(selAreas, opcAreas) });
   $: ex = linhasDe(exemplo)[0];
+  $: ult = linhasDe(ultimo_vestibular)[0];
 </script>
 
-Uma **lacuna** é um conteúdo que **está no edital** (então pode cair na prova) mas em que **nenhuma questão foi
-classificada** desde 2016, segundo os gabaritos comentados oficiais da UERJ. A página mostra os subitens do edital de
-2027 nessa situação.
+Uma **lacuna** é um conteúdo que **está no edital mais recente**, o do Vestibular 2027, mas **nunca caiu**: nenhuma
+questão foi classificada nele desde o Vestibular 2016, segundo os gabaritos comentados oficiais da UERJ.
+
+```sql ultimo_vestibular
+select
+    ano,
+    string_agg(strftime(data_aplicacao, '%d/%m/%Y'), ' e ' order by data_aplicacao) as datas
+from uerj.exames
+where ano = (select max(ano) from uerj.exames)
+group by ano
+```
+
+<AnoVestibular />
+
+{#if ult}
+<Alert status="warning">
+<b>As provas objetivas do Vestibular {ult.ano} já foram aplicadas</b> ({ult.datas}). Então esta página não é uma
+previsão do que vai cair: ela mostra o que está no edital mais atual e não caiu em nenhuma prova desde 2016, inclusive
+nas de {ult.ano}. Quando sair o próximo edital, a lista passa a usá-lo. Até lá, serve de referência, porque o programa
+muda pouco de um ano para o outro (de 2026 para 2027, 251 dos 259 subitens se mantiveram).
+</Alert>
+{/if}
 
 ```sql exemplo
 select area, item, subitem, qtd_exames_no_edital, primeiro_ano_no_edital
@@ -36,11 +56,11 @@ limit 1
 <div class="tipos">
   <div class="tipo">
     <p class="tipo-nome">Lacuna antiga</p>
-    <p>Está no edital desde antes de 2021 e nunca caiu. A UERJ teve várias chances de cobrar e não cobrou.</p>
+    <p>Está no edital desde antes do Vestibular 2021 e nunca caiu. A UERJ teve várias chances de cobrar e não cobrou.</p>
   </div>
   <div class="tipo">
     <p class="tipo-nome">Lacuna recente</p>
-    <p>Entrou no edital em 2021 ou depois. Teve poucas chances de cair, então ainda não diz muito.</p>
+    <p>Entrou no edital no Vestibular 2021 ou depois. Teve poucas chances de cair, então ainda não diz muito.</p>
   </div>
   <div class="tipo">
     <p class="tipo-nome">Sumido</p>
@@ -49,8 +69,8 @@ limit 1
 </div>
 
 <Alert status="info">
-<b>Lacuna não quer dizer que não vai cair.</b> Tudo o que está no edital pode ser cobrado. As lacunas mostram o que a
-UERJ costuma deixar de lado: com pouco tempo, comece pelo que cai sempre (veja "O que mais cai") sem ignorar estes
+<b>Lacuna não quer dizer que nunca vai cair.</b> Se o conteúdo continuar no próximo edital, pode ser cobrado. As
+lacunas mostram o que a UERJ costuma deixar de lado: com pouco tempo, comece pelo que cai sempre (veja "O que mais cai") sem ignorar estes
 conteúdos. E "nunca caiu" se refere à classificação oficial: uma questão pode usar a ideia (conjuntos numa questão de
 probabilidade, por exemplo) e ser classificada em outro item.
 </Alert>
@@ -72,7 +92,7 @@ where area in ${inputs.areas.value}
 ```
 
 <Grid cols=4>
-  <BigValue data={resumo} value=subitens title="Subitens no edital de 2027" emptySet=pass valueClass="valor" />
+  <BigValue data={resumo} value=subitens title="Subitens no edital mais recente" emptySet=pass valueClass="valor" />
   <BigValue data={resumo} value=lacunas title="Lacunas (nunca caíram)" emptySet=pass valueClass="valor" />
   <BigValue data={resumo} value=lacunas_antigas title="Lacunas antigas" emptySet=pass valueClass="valor" />
   <BigValue data={resumo} value=lacunas_recentes title="Lacunas recentes" emptySet=pass valueClass="valor" />
@@ -98,11 +118,11 @@ order by qtd_exames_no_edital desc, item, subitem
   <Column id=subitem title="Subitem" wrap=true />
   <Column id=item title="Item" wrap=true />
   <Column id=tipo title="Lacuna" />
-  <Column id=primeiro_ano_no_edital title="No edital desde" fmt="0" />
+  <Column id=primeiro_ano_no_edital title="No edital desde o vestibular" fmt="0" />
   <Column id=qtd_exames_no_edital title="Exames no edital" />
 </DataTable>
 
-*Exames no edital*: em quantos dos 21 exames desde 2016 o subitem constava do conteúdo programático.
+*Exames no edital*: em quantos dos 21 exames desde o Vestibular 2016 o subitem constava do conteúdo programático.
 
 ## Há mais tempo sem cair
 
@@ -124,8 +144,6 @@ limit 30
   <Column id=ultimo_ano title="Último vestibular" fmt="0" />
   <Column id=anos_sem_cair title="Anos sem cair" />
 </DataTable>
-
-O ano é o do vestibular, não o da aplicação: o vestibular 2027 teve as provas aplicadas em 2026.
 
 <style>
   .exemplo { max-width: 72ch; padding: 0.6rem 0.8rem; border-left: 3px solid hsl(var(--twc-accent));
